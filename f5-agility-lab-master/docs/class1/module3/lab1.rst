@@ -8,6 +8,8 @@ In this scenario, we are going to create a group of all of the devices
 in our Boston data center and schedule a nightly backup that archives a
 copy off to our archive for DR purposes.
 
+Step 1. Create a device group
+
 First, we need to create the group for our backup schedule to reference.
 We have two options in BIG-IQ: static groups, where devices are added
 and removed manually and dynamic groups, where devices are selected from
@@ -35,7 +37,9 @@ center. This makes the dynamic group the logical choice.
 
 .. image:: image/image21.png
 
-1. Click the Save & Close button to save the group.
+Click the Save & Close button to save the group.
+
+Step 2. Create a backup schedule
 
 Now, we can create our backup schedule that references this dynamic
 group.
@@ -82,7 +86,7 @@ In the Backup Archive section, enter the following:
 
 .. image:: image/image24.png
 
-1. Click Save & Close to save the scheduled backup job.
+Click Save & Close to save the scheduled backup job.
 
 .. |image0| image:: media/image1.png
    :width: 6.49583in
