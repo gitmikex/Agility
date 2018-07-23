@@ -1,8 +1,3 @@
-Module 3 – Automate device backups and archiving a copy of the backup file
-=============================================
-
-Task 1.3: Automate device backups and archiving a copy of the backup file 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this scenario, we are going to create a group of all of the devices
 in our Boston data center and schedule a nightly backup that archives a

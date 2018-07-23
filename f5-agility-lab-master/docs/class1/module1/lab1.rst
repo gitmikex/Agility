@@ -1,9 +1,3 @@
-Module 1 – Import BIG-IP devices for management and inventory
------------------------------------
-
-Task 1.1: Import BIG-IP devices for management and inventory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Step 1. Import a device to an existing Cluster
 
    Log in to the BIG-IQ system with your user name (admin) and password
