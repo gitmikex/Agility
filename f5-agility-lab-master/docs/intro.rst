@@ -15,7 +15,7 @@ environment has multiple cron jobs that are generating traffic that
 populates the monitoring tab.
 
 Infrastructure
---------------
+=========================
 
 F5\ :sup:`®` BIG-IQ:sup:`®` Centralized Management is a platform that
 you use as a tool to help you manage BIG-IP\ :sup:`®` devices and all of
@@ -139,7 +139,7 @@ management and configuration deployment.
 In this lab, we will only deploy one DCD and one BIG-IQ CM Console.
 
 Device Information
-==================
+=========================
 
 **Management**
 ~~~~~~~~~~~~~~
