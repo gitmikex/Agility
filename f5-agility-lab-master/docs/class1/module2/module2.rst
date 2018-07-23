@@ -1,10 +1,18 @@
-Module – Installing a BIG-IP Virtual Edition
+Module – Review BIG-IP cluster status and configurations
 =============================================
 
-.. TODO:: Needs module description
+Task 1.2: Review BIG-IP cluster status and configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this module you will learn how to install a |f5| |bip| |ve| into your
-environment.
+BIG-IQ provides visibility in to the BIG-IP cluster configuration and
+status. You can review the sync status, drill down to review cluster
+configuration, and initiate cluster sync activities from BIG-IQ.
+
+**Big-IP Clusters - (DSC) Device Service Clusters**
+
+    Device Service Clustering, or DSC, is a BIG-IP TMOS feature that
+    lets you organize BIG-IP devices in groups allowing for
+    synchronization of configuration objects.
 
 .. toctree::
    :maxdepth: 1

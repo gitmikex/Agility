@@ -1,39 +1,48 @@
-Lab – Install a |bip| |ve| image on a Hypervisor
-------------------------------------------------
+Task 1.2: Review BIG-IP cluster status and configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO:: Needs lab description
+BIG-IQ provides visibility in to the BIG-IP cluster configuration and
+status. You can review the sync status, drill down to review cluster
+configuration, and initiate cluster sync activities from BIG-IQ.
 
-In the previous lab we learned how to download the |bip| |ve| image.  Now, we
-can install the image onto a hypervisor.
+**Big-IP Clusters - (DSC) Device Service Clusters**
 
-Task – Upload the image to your Hypervisor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Device Service Clustering, or DSC, is a BIG-IP TMOS feature that
+    lets you organize BIG-IP devices in groups allowing for
+    synchronization of configuration objects.
 
-.. TODO:: Needs task description
+    To start managing DSC devices you must add devices configured in DSC
+    to the BIG-IP Device Inventory. Discover the devices into BIGIQ
+    Inventory by assigning the clustered devices to a BIGIQ clustered
+    group.
 
-In this task you will upload the image to your hypervisor.
+1.  Log in to the BIG-IQ system with your user name and password.
 
-Follow these steps to complete this task:
+2.  On the top menu bar, select Devices from the BIG-IQ menu.
 
-.. rst-class:: task-stepsx
+3.  On the left, click BIG-IP CLUSTERS.
 
-#. Open your hypervisor management console
-#. Figure out how to upload the image
+4.  Click DSC Groups.
 
-   .. ERROR:: These are bad instructions...
+    |image16|
 
-#. Great!  You're done
+5.  You can skip the discovery steps since the DSC groups have been
+    discovered for you.
 
-Task – Start a |bip| |ve| Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6.  | Mouse over the status icons to see the status of each of the
+      discovered clusters
+    | |image17|
 
-.. TODO:: Needs task description
+7.  | Click on the cluster Name to view more details about the cluster.
+    | Choose the device-group failover link for your BostonCluster.
+    | |image18|
 
-In this task we will start and instance of |bip| using the image uploaded in
-the previous task.
+8.  Review the Properties tab and notice that you can start a cluster
+    sync operation from the bottom of the screen.
 
-Follow these steps to complete this task:
+    |image19|
 
-#. Open your hypervisor management console
-#. Click the |bip| image
-#. Click the 'Start' button (or it's equivalent)
+9.  Review the Traffic Groups tab\ |image20|
+
+10. Click the n objects link to view the objects in the traffic group.
+    Close the window after the review.
