@@ -1,49 +1,46 @@
-Lab – Download the |bip| |ve| Image
------------------------------------
+Step 1. Import a device to an existing Cluster
 
-.. TODO:: Needs lab description
+Log in to the BIG-IQ system with your user name (admin) and password (admin).
 
-This lab will teach you how to download the |bip| |ve| image to your system.
+On the top menu bar, select Devices from the BIG-IQ menu.
 
-Task – Open a Web Browser
-~~~~~~~~~~~~~~~~~~~~~~~~~
+On the left-hand menu bar, click BIG-IP Devices.
 
-.. TODO:: Needs task description
+Click the Add Device button in the main pane.
 
-In this task you will open a web browser and navigate to the |f5| Downloads
-site.
+a. In the IP Address field, type the IP address of the device: **10.1.10.10**
 
-.. NOTE:: An account is required to download software.  You can create one at
-   https://login.f5.com/resource/registerEmail.jsp
+b. In the User Name and Password fields, type the user name (admin) and password (admin) for the device.
 
-Follow these steps to complete this task:
+c. Cluster Display Name: **Use Existing**.
 
-#. Open your web browser
-#. Navigate to https://downloads.f5.com
-#. Login with your username and password.
-#. After logging in you should see the following window:
+d. Select a Cluster: **BostonCluster**
 
-   |image1|
+e. Leave everything else default.
 
-Task – Download the Image
-~~~~~~~~~~~~~~~~~~~~~~~~~
+.. image:: image/image1.png
 
-.. TODO:: Needs task description
+Click the Add button to add this device to BIG-IQ.
 
-In this task we will download the |f5| |bip| |ve| image to your system
+BIG-IQ now exchanges certs with the BIG-IP and pops up a window for the administrator to select which modules to manage from BIG-IQ. For this device, select LTM, ASM, AFM and DNS Services. Keep the Statistics monitoring boxes all checked, and then click the Continue button.
 
-Follow these steps to complete this task:
+.. image:: image/image2.png
 
-#. Click the 'Find a Download' button.
+The discovery process will start, and you should see a screen similar to the following screenshot. At this point, BIG-IQ is using REST calls to the BIG-IP to pull the selected parts of the BIG-IP configuration into BIG-IQ.
 
-   .. image:: /_static/image002.png
+.. image:: image/image3.png
 
-#. Click the link that contains the |bip| TMOS software version you would like
-   to download.
+Allow the import jobs to complete. At this point, the configuration of
+the BIG-IPs that have been imported are not yet editable in BIG-IQ. To
+make the configurations editable in BIG-IQ, we need to complete the
+import tasks.
 
-   .. IMPORTANT:: Be sure to click a link that has "\ |ve|" in the name
-
-#. Find the image appropriate for your hypervisor
-#. Download the image and save it to you local system
-
-.. |image1| image:: /_static/image001.png
+.. |image1| image:: media/image1.png
+   :width: 6.49583in
+   :height: 4.29167in
+.. |image2| image:: media/image2.png
+   :width: 6.49583in
+   :height: 4.41667in
+.. |image3| image:: media/image3.png
+   :width: 6.50000in
+   :height: 1.54167in

@@ -1,48 +1,62 @@
-Lab – Install a |f5| |bip| Appliance
-------------------------------------
 
-.. TODO:: Needs lab description
+BIG-IQ provides visibility in to the BIG-IP cluster configuration and
+status. You can review the sync status, drill down to review cluster
+configuration, and initiate cluster sync activities from BIG-IQ.
 
-In this lab we will unpack and install the |bip| Appliance into a rack in your
-datacenter.
+**Big-IP Clusters - (DSC) Device Service Clusters**
 
-Task – Unpack the |bip| Appliance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Device Service Clustering, or DSC, is a BIG-IP TMOS feature that
+    lets you organize BIG-IP devices in groups allowing for
+    synchronization of configuration objects.
 
-.. TODO:: Needs task description
+    To start managing DSC devices you must add devices configured in DSC
+    to the BIG-IP Device Inventory. Discover the devices into BIGIQ
+    Inventory by assigning the clustered devices to a BIGIQ clustered
+    group.
 
-In this task you will remove the |bip| Appliance from it's packaging.
+1.  Log in to the BIG-IQ system with your user name and password.
 
-Follow these steps to complete this task:
+2.  On the top menu bar, select Devices from the BIG-IQ menu.
 
-#. Open the box with an extremely sharp knife or cutter
+3.  On the left, click BIG-IP CLUSTERS.
 
-   .. DANGER:: Knives are sharp and can cut you.  Please be careful.
+4.  Click DSC Groups.
 
-      |knivessharp|
+    |image16|
 
-#. Carefully remove the |bip| from it's packaging
-#. Set it down on a stable surface
+5.  You can skip the discovery steps since the DSC groups have been
+    discovered for you.
 
-Task – Install the |bip| Appliance in a Datacenter Rack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6.  | Mouse over the status icons to see the status of each of the
+      discovered clusters
+    | |image17|
 
-.. TODO:: Needs task description
+7.  | Click on the cluster Name to view more details about the cluster.
+    | Choose the device-group failover link for your BostonCluster.
+    | |image18|
 
-In this task you will install the |bip| Appliance into a Rack.  You will need
-the following tools:
+8.  Review the Properties tab and notice that you can start a cluster
+    sync operation from the bottom of the screen.
 
-- Phillips Screwdriver
-- Hammer
-- Crowbar
+    |image19|
 
-.. CAUTION:: Appliances can be heavy.  Please follow all applicable safety
-   guidelines.
+9.  Review the Traffic Groups tab\ |image20|
 
-Follow these steps to complete this task:
+10. Click the n objects link to view the objects in the traffic group.
+    Close the window after the review.
 
-#. Install the rackmount rails onto the appliance using the included hardware
-#. Lift the appliance into place
-#. Complete installation by using your tools to secure the appliance.
-
-.. |knivessharp| image:: http://theinkkitchen.com/wp-content/uploads/2014/08/Screenshot-2014-07-30-12.22.44.png
+.. |image16| image:: media/image16.png
+   :width: 6.45000in
+   :height: 1.71250in
+.. |image17| image:: media/image17.png
+   :width: 2.73924in
+   :height: 1.46857in
+.. |image18| image:: media/image18.png
+   :width: 4.35362in
+   :height: 2.17681in
+.. |image19| image:: media/image19.png
+   :width: 6.50000in
+   :height: 3.75000in
+.. |image20| image:: media/image20.png
+   :width: 4.80625in
+   :height: 0.88320in
