@@ -1,7 +1,7 @@
-Module – Review BIG-IP cluster status and configurations
+Module 2 – Review BIG-IP cluster status and configurations
 =============================================
 
-Task 1.2: Review BIG-IP cluster status and configurations
+BIG-IP cluster status and configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 BIG-IQ provides visibility in to the BIG-IP cluster configuration and

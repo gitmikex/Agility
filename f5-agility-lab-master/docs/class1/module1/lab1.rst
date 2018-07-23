@@ -1,11 +1,8 @@
-Lab – Import BIG-IP devices for management and inventory
+Module 1 – Import BIG-IP devices for management and inventory
 -----------------------------------
 
 Task 1.1: Import BIG-IP devices for management and inventory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Big-IP Devices
-^^^^^^^^^^^^^^
 
 1. Log in to the BIG-IQ system with your user name (admin) and password
    (admin).

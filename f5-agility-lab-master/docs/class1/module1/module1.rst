@@ -1,7 +1,7 @@
-Module – Import BIG-IP devices for management and inventory
+Module 1 – Import BIG-IP devices for management and inventory
 =============================================
 
-Task 1.1: Import BIG-IP devices for management and inventory
+Import BIG-IP devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start managing a BIG-IP® device, you must add it to the BIG-IP

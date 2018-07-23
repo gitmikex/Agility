@@ -1,7 +1,7 @@
-Module – Automate device backups and archiving a copy of the backup file
+Module 3 – Automate device backups and archiving a copy of the backup file
 =============================================
 
-Task 1.3: Automate device backups and archiving a copy of the backup file 
+Device backups and archiving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 BIG-IQ provides the ability to backup individual or groups of managed
