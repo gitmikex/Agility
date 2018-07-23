@@ -1,49 +1,64 @@
-Module 1 – Import BIG-IP devices for management and inventory
-=============================================
+Module 1: Move a certificate from unmanaged to managed state
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To start managing a BIG-IP® device, you must add it to the BIG-IP
-Devices inventory list on the BIG-IQ® system.
+1. At the top of the screen, click Configuration.
 
-Adding a device to the BIG-IP Devices inventory is a two-stage process.
+2. On the left, click LOCAL TRAFFIC > Certificate Management > Certificates & Keys. These are the imported from BIG-IP but not yet managed by BIG-IQ.
 
-Stage 1:
+.. image:: image/image1.png
 
--  You enter the IP address, port (if other than default), and credentials of the BIG-IP device you're adding, and associate it with a cluster (if applicable).
+3. Click the name of the unmanaged certificate **f5-ca-bundle**. You will need to import the certificate from the managed BIG-IP.
 
--  BIG-IQ opens communication (establishes trust) with the BIG-IP device.
+.. image:: image/image2.png
 
--  BIG-IQ discovers the current configuration for any selected services you specified are licensed on the BIG-IP system, like LTM® (optional).
+Before you can import the certificate to BIG-IQ, you will need to export certificate/key from the managed BIG-IP device.
 
-Stage 2:
+4. Log onto the TMUI interface of the **BOS-vBIG-IP01.temmarc.com** device to export the certificate/key pair.
 
--  BIG-IQ imports the licensed services configuration you selected in stage 1 (optional).
+Click System ›› Certificate Management ›› Traffic Certificate Management ›› SSL Certificate List ›› f5-ca-bundle
 
-The basic discovery allows for device inventory, device health
-monitoring, backup and restore of the managed device, integration with
-F5’s iHealth service, software upgrade, and device template deployment.
-As part of the discovery process, you can choose to manage other parts
-of the BIG-IP configuration.
+.. image:: image/image3.png
 
-In this scenario, we will import a BIG-IP device and associate it with
-an existing Cluster, review the device information available in BIG-IQ,
-export our inventory to a CSV file, and review the inventory.
+Click Export and then click on **Download f5-ca-bundle.crt** button to save the certificate to a file to a location that you can easily locate.
 
-    Adding devices to BIG-IQ Inventory:
+.. image:: image/image4.png
 
-Dependencies:
+After saving the certificate file, click Cancel button to go back to
+previous screen.
 
-1. The BIG-IP device must be located in your network.
+5. Now, circle back to the BIG-IQ TMUI and go back to the Certificate Properties \ **State** setting, click the \ **Import** button and then:
 
-2. The BIG-IP device must be running a compatible software version.
+-  To upload the certificate's file, select Upload File and click the Choose File button to navigate to the certificate file you saved before.
 
-3. Port 22 and 443 must be open to the BIG-IQ management address, or any alternative IP address used to add the BIG-IP device to the BIG-IQ inventory.
+.. image:: image/image5.png
 
-K34133507: BIG-IQ Centralized Management compatibility matrix
+Since this is a bundled certificate/key pair, you can skip the next
+step.
 
-K15073: BIG-IQ software support policy
+6. For the Key Properties State setting, click the Import button and then:
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
+-  To upload the key's file, select Upload File and click the Choose File button to navigate to the key file.
 
-   lab*
+7. Click the Save & Close button. Your certificate/key pair is now **Managed** by BIG-IQ.
+
+.. image:: image/image6.png
+
+
+.. |image1| image:: media/image1.png
+   :width: 6.50000in
+   :height: 1.82917in
+.. |image2| image:: media/image2.png
+   :width: 6.49583in
+   :height: 3.38750in
+.. |image3| image:: media/image3.png
+   :width: 6.49583in
+   :height: 4.02083in
+.. |image4| image:: media/image4.png
+   :width: 6.49583in
+   :height: 3.14583in
+.. |image5| image:: media/image5.png
+   :width: 6.49167in
+   :height: 3.06250in
+.. |image6| image:: media/image6.png
+   :width: 6.49167in
+   :height: 1.82083in

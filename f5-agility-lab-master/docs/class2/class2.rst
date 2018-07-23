@@ -1,41 +1,47 @@
-Class 1 Device Management
+Class 2 SSL Certificate Management
 =======================
 
 Goal:
 
-The following labs will get you familiar with the management of BIG-IP
-devices.
+The following labs will get you familiar with the BIG-IQ for managing
+the local traffic SSL certificates for the BIG-IP devices from BIG-IQ.
+From one centralized location, BIG-IQ makes it easy for you to request,
+import, and manage CA-signed SSL certificates, as well as import signed
+SSL certificates, keys, and PKCS #12 archive files created elsewhere.
+And if you want to create a self-signed certificate on BIG-IQ for your
+managed devices, you can do that too.
 
-The following steps have been completed for you to ensure the proper
-setup of the lab environment.
+SSL certificates will come in two flavors, managed or un-managed. When
+BIG-IQ discovers a BIG-IP, it is only able to pull the metadata about a
+cert from the BIG-IP. This process completes the cert and key
+information on the BIG-IQ, so that BIG-IQ can fully manage the
+discovered certs.
 
--  A Data Collection Device (DCD) for statistical analysis has been
-   added to the BIG-IQ CM.
-
--  Two standalone BIG devices have been imported to BIG-IQ CM, and the
-   services on them have been imported.
-
--  A DNS Sync Group has been established with the two standalone BIG-IP
-   DNS devices
+Once you've imported or created an SSL certificate and keys, you can
+assign them to your managed devices by associating them with a Local
+Traffic Manager clientssl or serverssl profile, and deploying it.
 
 Tasks:
 
-1. Import BIG-IP device to BIG-IQ for centralized management and
-   inventory
+1. Move a certificate from unmanaged to managed state.
 
-2. Review BIG-IP cluster status and configurations
+2. Create and Import a self-signed certificates/key to BIG-IQ
 
-3. Automate device backups and archive a copy of the backup file
+3. Renew expired certificates and Deploy from BIG-IQ to managed BIG-IP
 
 Note
 
-**Important:** Before you attempt to add the BIG-IP cluster, make sure
-that the devices are **‘In Sync’** from a configuration standpoint, or
-you will get an error when attempting to import. You will need to access
-one of the devices directly to do this. Log in to either BOS-BIGIP and
-sync the configurations if they are not in sync.
+When you discover a BIG-IP device, BIG-IQ Centralized Management imports
+its SSL certificates' properties (metadata), but not the actual SSL
+certificates and key pairs. These certificates display as Unmanaged on
+the BIG-IQ Certificates & Keys screen. This allows you to monitor each
+SSL certificate's expiration date from BIG-IQ, without having to log on
+directly to the BIG-IP device.
 
-Expected time to complete: **3 hours**
+Convert an unmanaged SSL key certificate and key pair to managed so you
+can centrally manage it from BIG-IQ Centralized Management. This saves
+you time because you don't have to log on to individual BIG-IP devices
+to create, monitor, or deploy certificates.
 
 .. toctree::
    :maxdepth: 1
