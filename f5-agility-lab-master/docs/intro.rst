@@ -52,6 +52,9 @@ following elements:
 
 .. image:: image-intro/image1.png
 
+.. NOTE::
+	 We recommend that all work for this lab be performed from your local Web browser or from the windows jumphost. No installation with your local system is required.
+
 BIG-IQ Centralized Management system
 ''''''''''''''''''''''''''''''''''''
 
