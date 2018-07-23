@@ -19,3 +19,16 @@ The CSV file is automatically downloaded to your client. Launch the CSV file fro
 Review the contents of the file and understand all of the information that is provided.
 
 .. image:: image/image15.png
+
+.. |image12| image:: media/image12.png
+   :width: 6.49583in
+   :height: 4.40833in
+.. |image13| image:: media/image13.png
+   :width: 3.92659in
+   :height: 1.02071in
+.. |image14| image:: media/image14.png
+   :width: 2.45803in
+   :height: 0.56243in
+.. |image15| image:: media/image15.png
+   :width: 6.50000in
+   :height: 1.82639in

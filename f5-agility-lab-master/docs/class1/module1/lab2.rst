@@ -52,3 +52,31 @@ Click the back arrow button at the top of the section to return to the inventory
 Once you have completed all of the import tasks for BOS-vBIGIP02, click the arrow in the upper left of the Services panel to return to the device inventory screen.
 
 .. image:: image/image11.png
+
+.. |image4| image:: media/image4.png
+   :width: 1.60397in
+   :height: 0.21872in
+.. |image5| image:: media/image5.png
+   :width: 6.50000in
+   :height: 1.04444in
+.. |image5| image:: media/image6.png
+   :width: 6.50000in
+   :height: 0.73333in
+.. |image6| image:: media/image7.png
+   :width: 6.48750in
+   :height: 3.29167in
+.. |image7| image:: media/image8.png
+   :width: 5.17917in
+   :height: 2.06667in
+.. |image8| image:: media/image9.png
+   :width: 6.50000in
+   :height: 0.71667in
+.. |image9| image:: media/image10.png
+   :width: 6.50000in
+   :height: 0.55903in
+.. |image10| image:: media/image11.png
+   :width: 2.26013in
+   :height: 0.93738in
+.. |image11| image:: media/image11.png
+   :width: 2.26013in
+   :height: 0.93738in

@@ -44,3 +44,19 @@ configuration, and initiate cluster sync activities from BIG-IQ.
 
 10. Click the n objects link to view the objects in the traffic group.
     Close the window after the review.
+
+.. |image16| image:: media/image16.png
+   :width: 6.45000in
+   :height: 1.71250in
+.. |image17| image:: media/image17.png
+   :width: 2.73924in
+   :height: 1.46857in
+.. |image18| image:: media/image18.png
+   :width: 4.35362in
+   :height: 2.17681in
+.. |image19| image:: media/image19.png
+   :width: 6.50000in
+   :height: 3.75000in
+.. |image20| image:: media/image20.png
+   :width: 4.80625in
+   :height: 0.88320in
