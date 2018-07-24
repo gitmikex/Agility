@@ -1,128 +1,187 @@
-Module 1: Add licensing base-key to BIG-IQ for consumption
+Module 1: Stage a new application on BIG-IQ for deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Navigate to **LICENSE MANAGEMENT** > **Licenses** under the **Device** tab. (Represents device operations)
+1.  We will build our application starting at the nodes and making our way to the virtual servers. 
 
-.. image:: image/image6.png
+Navigate to the **Configuration** tab on the top menu bar.
 
-Click **Add License**
+Navigate to **LOCAL TRAFFIC** > **Nodes**
 
-.. image:: image/image7.png
+|image1|
 
-Fill in the form for your purchased license pool (VEP) (Use the key from your lab instructor)
+Click the Create button to create a node
 
-.. image:: image/image8.png
-
-License Name: PurchasedPool\_1G\_Best
-
-Copy and Paste the VEP license key obtained from your lab instructor.
-
-Click **Activate** in the lower right
-
-Click **Accept** in the lower right to accept the EULA.
-
-2. Repeat steps 6-8 for the Volume license pool (VLS) (Use the key from your email)
-
-.. image:: image/image9.png
-
-While the Volume Pool is activating, click on the pool name to see the activation of all of the offering types for the pool.
-
-License Name: VolumeLicensePool\_10G\_Best
-
-Copy and Paste the VLS license key obtained from your lab instructor.
-
-.. image:: image/image10.png
-
-.. image:: image/image11.png
-
-**Note:** This pool will not be active until all of the offerings complete activation.
-
-Click the arrow at the top of the pool properties screen to add the next pool.
-
-.. image:: image/image12.png
-
-3. Repeat steps 6-8 for the Utility license pool (MSP) (Use the key from your lab instructor)
-
-License Name: UtilityLicensePool
-
-Copy and Paste the MSP license key obtained from your lab instructor.
-
-.. image:: image/image13.png
-
-NOTE: Utility pools activate offerings, just like the Volume pools,
-    so the same holds true that the pool will not be active until the
-    offerings are activated.
-
-4. Now, we will create a new pool to hold our LAB VE keys. Click the **New RegKey Pool** button.
-   
-.. image:: image/image14.png
-
-Fill out the Registration Key pool name:
-
-.. image:: image/image15.png
-
-Click the **Add RegKey** button to add your first LAB VE key:
-
-.. image:: image/image16.png
-
-Add the first LAB VE key to the pool.
-
-.. image:: image/image17.png
-
-Click **Activate** in the lower right.
-
-Click **Accept** in the lower right to accept the EULA.
-
-.. image:: image/image18.png
-
-Repeat step 16-18 for your second LAB VE regkey.
-
-You should now have a screen that looks like this:
-
-.. image:: image/image19.png
-
-Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device.
+|image2|
 
 
-.. |image6| image:: media/image6.png
-   :width: 2.24972in
-   :height: 0.96863in
-.. |image7| image:: media/image7.png
-   :width: 6.48958in
-   :height: 1.66667in
-.. |image8| image:: media/image8.png
-   :width: 5.03062in
-   :height: 2.71841in
-.. |image9| image:: media/image9.png
-   :width: 5.04104in
-   :height: 2.71841in
-.. |image10| image:: media/image10.png
+Fill out the configuration properties for the node
+    | Name: **BIQAppNode1**
+    | Device: **BOS-vBIGIP01.termmarc.com**
+    | Address: **10.1.20.110**
+
+|image3|
+
+Click the **Save & Close** button in the lower right
+
+Repeat steps 4 and 5 for the second node
+    | Name: **BIQAppNode2**
+    | Device: **BOS-vBIGIP01.termmarc.com**
+    | Address: **10.1.20.121**
+
+Verify that the MyApp nodes are created by typing MyApp in the filter box in the upper right and pressing return.
+ 
+ |image4|
+
+You should now see an entry for each of the MyApp nodes on BIG-IP01 and BIG-IP02. 
+
+\*\*\ ***When you create an object on a clustered device, BIG-IQ automatically replicates that configuration to the peer node in the staged configuration.***
+
+|image5|
+
+2. Now we will create a pool with these nodes as pool members.
+
+Navigate to **LOCAL TRAFFIC > Pools**
+
+|image6|
+
+
+Click the Create button to start creating your pool
+
+|image7|
+
+Fill out the Pool Properties
+    | Name: **BIQAppPool**
+    | Device: **BOS-vBIGIP01.termmarc.com**
+    | Health Monitors: **/Common/tcp**
+    | Load Balancing Method: **Round Robin**
+
+|image8|
+
+Click the **Save & Close** button in the lower right
+
+Click on the MyAppPool name in the list of pools to add pool members
+
+|image9|
+
+Click on the New Member button under Resources to add pool members
+
+|image10|
+
+Complete the Pool Member Properties for the first pool member
+    | Node Type: Existing Node
+    | Node: **BIQAppNode1**
+    | Port: **80**
+
+|image11|
+
+Click the **Save** button in the lower right to save the pool member.
+
+Repeat steps 15 and 16 for the second pool member MyAppNode2 port 80.
+
+Click the **Save** **& Close** button in the lower right to save your pool.
+
+3. Now we will create a custom profile for our Virtual Server.
+
+Navigate to **LOCAL TRAFFIC > Profiles**
+ 
+ |image12|
+
+Click the Create button to create our custom profile
+
+|image13|
+
+Fill out the Profile Properties
+    | Name: **Source\_Addr\_Timeout\_75**
+    | Type: **Persistence Source Address**
+    | Parent Profile: **Source\_addr**
+    | Timeout: **Specify 75 Seconds**
+
+|image14|
+
+Click **Save & Close** in the lower right.
+
+4. Now we will create our Virtual Server. Navigate to **LOCAL TRAFFIC > Virtual Servers**
+
+|image15|
+
+
+Click the Create button to create the Virtual Server
+
+|image16|
+
+
+Fill out the Virtual Server Properties
+    | Name: **BIQAppVS**
+    | Device: **BOS-vBIGIP01.termmarc.com**
+    | Destination Address: **10.1.10.120**
+    | Service Port **8088
+    | HTTP Profile: **/Common/http**
+
+|image17|
+
+Scroll down and fill out the Resources
+    | Default Pool: **BIQAppPool**
+    | Default Persistence Profile: **Source\_Addr\_Timeout\_75
+      **\ Leave all other options at their default settings.
+
+|image18|
+
+Click **Save & Close** in the lower right
+
+We now have staged our application and we will deploy it in a later workflow.
+
+
+.. |image1| image:: media/image2.png
+   :width: 2.29138in
+   :height: 2.18723in
+.. |image2| image:: media/image3.png
+   :width: 1.91643in
+   :height: 1.02071in
+.. |image3| image:: media/image4.png
+   :width: 4.53068in
+   :height: 4.42653in
+.. |image4| image:: media/image5.png
+   :width: 3.44749in
+   :height: 1.04154in
+.. |image5| image:: media/image6.png
    :width: 6.50000in
-   :height: 1.82917in
-.. |image11| image:: media/image11.png
-   :width: 3.04129in
-   :height: 3.48915in
-.. |image12| image:: media/image12.png
-   :width: 4.89522in
-   :height: 0.98946in
-.. |image13| image:: media/image13.png
-   :width: 5.10353in
-   :height: 2.82256in
-.. |image14| image:: media/image14.png
-   :width: 3.19752in
-   :height: 0.96863in
-.. |image15| image:: media/image15.png
-   :width: 4.50833in
-   :height: 2.09583in
-.. |image16| image:: media/image16.png
+   :height: 2.30556in
+.. |image6| image:: media/image7.png
+   :width: 2.28096in
+   :height: 1.87477in
+.. |image7| image:: media/image8.png
+   :width: 1.98934in
+   :height: 1.06237in
+.. |image8| image:: media/image9.png
    :width: 6.50000in
-   :height: 2.73333in
-.. |image17| image:: media/image17.png
-   :width: 6.49583in
-   :height: 3.25417in
-.. |image18| image:: media/image18.png
-   :width: 6.49167in
-   :height: 4.17500in
-.. |image19| image:: media/image19.png
-   :width: 6.49167in
-   :height: 2.40417in
+   :height: 4.62014in
+.. |image9| image:: media/image10.png
+   :width: 6.50000in
+   :height: 0.58611in
+.. |image10| image:: media/image11.png
+   :width: 1.36441in
+   :height: 0.76032in
+.. |image11| image:: media/image12.png
+   :width: 5.25636in
+   :height: 4.42407in
+.. |image12| image:: media/image13.png
+   :width: 2.29138in
+   :height: 1.23943in
+.. |image13| image:: media/image14.png
+   :width: 1.82269in
+   :height: 1.31234in
+.. |image14| image:: media/image15.png
+   :width: 5.68125in
+   :height: 4.58081in
+.. |image15| image:: media/image16.png
+   :width: 2.32263in
+   :height: 0.78115in
+.. |image16| image:: media/image17.png
+   :width: 2.72883in
+   :height: 1.01029in
+.. |image17| image:: media/image18.png
+   :width: 6.50000in
+   :height: 4.10486in
+.. |image18| image:: media/image19.png
+   :width: 5.93676in
+   :height: 3.26001in
