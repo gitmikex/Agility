@@ -1,4 +1,4 @@
-Class 1 Device Management
+Class 1 - Device Management
 =======================
 
 Goal:

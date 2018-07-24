@@ -5,14 +5,11 @@ configuration, and initiate cluster sync activities from BIG-IQ.
 
 **Big-IP Clusters - (DSC) Device Service Clusters**
 
-    Device Service Clustering, or DSC, is a BIG-IP TMOS feature that
-    lets you organize BIG-IP devices in groups allowing for
-    synchronization of configuration objects.
+Device Service Clustering, or DSC, is a BIG-IP TMOS feature that lets you organize BIG-IP devices in groups allowing for synchronization of configuration objects.
 
-    To start managing DSC devices you must add devices configured in DSC
-    to the BIG-IP Device Inventory. Discover the devices into BIGIQ
-    Inventory by assigning the clustered devices to a BIGIQ clustered
-    group.
+To start managing DSC devices you must add devices configured in DSC to the BIG-IP Device Inventory. 
+
+Discover the devices into BIGIQ Inventory by assigning the clustered devices to a BIGIQ clustered group.
 
 1.  Log in to the BIG-IQ system with your user name and password.
 
@@ -22,25 +19,26 @@ configuration, and initiate cluster sync activities from BIG-IQ.
 
 4.  Click DSC Groups.
 
-    |image16|
+.. image:: image/image16.png
 
-5.  You can skip the discovery steps since the DSC groups have been
-    discovered for you.
+5.  You can skip the discovery steps since the DSC groups have been discovered for you.
 
-6.  | Mouse over the status icons to see the status of each of the
-      discovered clusters
-    | |image17|
+6.  Mouse over the status icons to see the status of each of the discovered clusters
 
-7.  | Click on the cluster Name to view more details about the cluster.
-    | Choose the device-group failover link for your BostonCluster.
-    | |image18|
+.. image:: image/image17.png
+
+7.  Click on the cluster Name to view more details about the cluster. Choose the device-group failover link for your BostonCluster.
+
+.. image:: image/image18.png
 
 8.  Review the Properties tab and notice that you can start a cluster
     sync operation from the bottom of the screen.
 
-    |image19|
+.. image:: image/image19.png
 
-9.  Review the Traffic Groups tab\ |image20|
+9.  Review the Traffic Groups tab。
+
+.. image:: image/image20.png
 
 10. Click the n objects link to view the objects in the traffic group.
     Close the window after the review.

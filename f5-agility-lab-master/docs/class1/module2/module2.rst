@@ -7,9 +7,7 @@ configuration, and initiate cluster sync activities from BIG-IQ.
 
 **Big-IP Clusters - (DSC) Device Service Clusters**
 
-    Device Service Clustering, or DSC, is a BIG-IP TMOS feature that
-    lets you organize BIG-IP devices in groups allowing for
-    synchronization of configuration objects.
+Device Service Clustering, or DSC, is a BIG-IP TMOS feature that lets you organize BIG-IP devices in groups allowing for synchronization of configuration objects.
 
 .. toctree::
    :maxdepth: 1

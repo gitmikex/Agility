@@ -1,4 +1,4 @@
-Class 2 SSL Certificate Management
+Class 2 - SSL Certificate Management
 =======================
 
 Goal:
