@@ -63,11 +63,11 @@ associated user's ability to see related objects.
 
 
 .. |image8| image:: media/image8.png
-   :width: 5.03062in
-   :height: 2.71841in
+   :width: 6.25000in
+   :height: 0.72083in
 .. |image9| image:: media/image9.png
-   :width: 5.04104in
-   :height: 2.71841in
+   :width: 6.48750in
+   :height: 2.99167in
 .. |image10| image:: media/image10.png
    :width: 6.50000in
-   :height: 1.82917in
+   :height: 3.07917in

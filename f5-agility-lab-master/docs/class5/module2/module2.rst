@@ -1,84 +1,115 @@
-Module 2 Assign Pool Licensing to a device BIG-IP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Module 2: Create and deploy multiple changes with selected roll-back. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device. 
+Objective
+^^^^^^^^^
 
-We will start by granting one of our LAB VE keys.
+In this deployment, we will be using the 1\ :sup:`st` change made to app1pool, as well as 2\ :sup:`nd` change made to app2pool in the previous task 5.1, to demonstrate the ability to partially roll back one of the two changes for this deployment.
 
-1.  Select the license that you want to assign to a device and click the **Assign** button. 
-    
-.. image:: image/image20.png
+1. First, we will need to deploy the 2\ :sup:`nd` change that consists of a new monitor to the app2pool.
 
-You can assign the licenses to managed devices or unmanaged devices from BIG-IQ.
+-  Starting from the Deployment tab on the top, and under EVALUATE & DEPLOY, click on Local Traffic & Network on the left.
 
-For this lab, you should avoid giving licenses to BOS-vBIG-IP01 or BOS-vBIG-IP02. We are going to test Managed device licensing by using SEA-vBIG-IP01.
+-  Click on Create under Deployments.
 
-    | Select **Managed Device**
-    | Device: SEA-vBIG-IP01.termmarc.com
+   Name: **Test-Deploy**
 
-.. image:: image/image21.png
+-  Ensure the default “Source Scope: All Changes” is selected
 
-Click the Assign button in the lower right.
+-  Select the BOS BIG-IP HA Pair from the Devices Targeted box and move them to the right Selected box.
 
-Click the OK button to proceed with the assignment of the license.
+-  Click on Create button on the bottom right to create the Evaluation of the deployment
 
-.. image:: image/image22.png
+-  Verify all changes are part of the deployment.
 
-You should now see that license as assigned out of the pool to Device Name: SEA-vBIGIP01.termmarc.com with the License Status as “Licensed”.
+   -  New mon-https Health Monitor
 
-.. image:: image/image23.png
+.. image:: image/image11.png
 
-You can also view all assignments by clicking on Assignments in the left hand menu
+-  Cancel the differences window to return to Evaluation list window, select **Test-deploy** and click on Deploy button above.
 
-.. image:: image/image24.png
+.. image:: image/image12.png
 
-.. image:: image/image25.png
+-  Click on Deploy button again to confirm and observe completion
 
-2.  Now we can create a report that shows our license usage. Click the Report button below Assignments.
+   What we have done so far, is to deploy the 2\ :sup:`nd` change made to the HA pair in task 5.1, since we only deployed 1\ :sup:`st` change.
 
-.. image:: image/image26.png
+2. Next, we will do a restore of the configurations on the HA pair, by rolling back one of the two changes we just made. 
 
-We will generate a Historical Report that shows the license assignments that we have done today.
+We will need to use a previous snapshot made prior to the two changes done earlier, in order to restore one of the changes.
 
-    | Select Type: Historical Report
-    | Licenses: All License Types
-    | **Move all license pools from Available to Selected**
-    | Usage period: Leave Starting Date and Ending Date as today’s date.
+-  Create **a Partial Restore Evaluation**.
 
-.. image:: image/image27.png
+   -  Locate RESTORE section on the left and click on Local Traffic & Network.
 
-Click Download in the lower right lower corner to download the reports
+   -  Under Restores section, click on Create button to start a task
 
-If your browser raises a question about downloading multiple files, click Allow:
+.. image:: image/image13.png
 
-.. image:: image/image28.png
+Name: **partial-restore**
 
-Review the CSV files that are downloaded.
+Snapshot: **Reimport-10.1.1.10 (snapshot before the changes in task 5.1)**
 
-.. |image20| image:: media/image20.png
-   :width: 3.66621in
-   :height: 1.44774in
-.. |image21| image:: media/image21.png
-   :width: 6.23750in
-   :height: 2.79583in
-.. |image22| image:: media/image22.png
+Create Snapshot: check the box “\ **Create a snapshot prior to restoring**\ ”.
+
+Restore Scope: **Partial Restore**
+
+Method: **Create evaluation**
+
+    Note
+
+Duplicate names are allowed for a snapshot; therefore, the Deployment Date is provided as a reference.
+
+User can narrow the scope of the restore from Full to Partial. For this lab let’s select Partial Restore from the Restore Scope section.
+
+User can “Create Evaluation” or if urgent “Restore Immediately”.
+
+.. image:: image/image14.png
+
+-  Select “Add” for Source Objects
+
+-  Select “/Common/app1pool” and click on “Add” to add the object to
+   Selected tab.
+
+-  Verify difference between BIG-IQ and Snapshot.
+
+.. image:: image/image15.png
+
+.. image:: image/image16.png
+
+-  Click on Save to close the Select Object window, and then click on Create to start the evaluation
+
+-  The user can restore the partial change defined from the Snapshot deployment.
+
+.. image:: image/image17.png
+
+.. image:: image/image18.png
+
+Click on Restore to complete the partial restore of the change made to app1pool.
+
+Close the complete window and click on View to see the restored configuration. You can see that the added member has been removed from app1pool.
+
+.. |image11| image:: media/image11.png
    :width: 6.50000in
-   :height: 1.60139in
-.. |image23| image:: media/image23.png
+   :height: 3.28750in
+.. |image12| image:: media/image12.png
+   :width: 6.48750in
+   :height: 3.07083in
+.. |image13| image:: media/image13.png
+   :width: 4.70833in
+   :height: 1.05460in
+.. |image14| image:: media/image14.png
    :width: 6.50000in
-   :height: 1.85417in
-.. |image24| image:: media/image24.png
-   :width: 2.31221in
-   :height: 1.02071in
-.. |image25| image:: media/image25.png
+   :height: 4.94792in
+.. |image15| image:: media/image15.png
+   :width: 4.22917in
+   :height: 2.20722in
+.. |image16| image:: media/image16.png
    :width: 6.50000in
-   :height: 1.12500in
-.. |image26| image:: media/image26.png
-   :width: 1.77061in
-   :height: 0.95821in
-.. |image27| image:: media/image27.png
-   :width: 6.49583in
-   :height: 3.79583in
-.. |image28| image:: media/image28.png
-   :width: 3.62455in
-   :height: 1.19777in
+   :height: 4.43750in
+.. |image17| image:: media/image17.png
+   :width: 6.50000in
+   :height: 1.57292in
+.. |image18| image:: media/image18.png
+   :width: 4.18547in
+   :height: 2.20833in

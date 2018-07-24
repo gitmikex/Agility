@@ -41,14 +41,15 @@ Note that you also **do not have** permission to delete an address list.
 
 
 .. |image13| image:: media/image13.png
-   :width: 5.10353in
-   :height: 2.82256in
+   :width: 6.49167in
+   :height: 2.30000in
 .. |image14| image:: media/image14.png
-   :width: 3.19752in
-   :height: 0.96863in
-.. |image15| image:: media/image15.png
-   :width: 4.50833in
-   :height: 2.09583in
-.. |image16| image:: media/image16.png
    :width: 6.50000in
-   :height: 2.73333in
+   :height: 3.65625in
+.. |image15| image:: media/image15.png
+   :width: 6.50000in
+   :height: 3.20833in
+.. |image16| image:: media/image16.png
+   :width: 6.49167in
+   :height: 3.21667in
+

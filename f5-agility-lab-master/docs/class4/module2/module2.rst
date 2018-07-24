@@ -57,8 +57,8 @@ Next, you can create a custom role and associate this role type and
 resource group to the new role.
 
 .. |image6| image:: media/image6.png
-   :width: 3.66621in
-   :height: 1.44774in
+   :width: 6.25000in
+   :height: 0.79167in
 .. |image7| image:: media/image7.png
-   :width: 6.23750in
-   :height: 2.79583in
+   :width: 6.48750in
+   :height: 2.96250in

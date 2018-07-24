@@ -61,14 +61,14 @@ Steps:
 
 
 .. |image2| image:: media/image2.png
-   :width: 2.24972in
-   :height: 0.96863in
+   :width: 6.25000in
+   :height: 0.70833in
 .. |image3| image:: media/image3.png
-   :width: 6.48958in
-   :height: 1.66667in
+   :width: 6.48750in
+   :height: 3.00000in
 .. |image4| image:: media/image4.png
-   :width: 5.03062in
-   :height: 2.71841in
+   :width: 6.49583in
+   :height: 2.77083in
 .. |image5| image:: media/image5.png
-   :width: 5.04104in
-   :height: 2.71841in
+   :width: 6.49167in
+   :height: 2.75000in

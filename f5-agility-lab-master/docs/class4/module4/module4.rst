@@ -58,8 +58,8 @@ custom role.
 
 
 .. |image11| image:: media/image11.png
-   :width: 3.04129in
-   :height: 3.48915in
+   :width: 6.25000in
+   :height: 0.72083in
 .. |image12| image:: media/image12.png
-   :width: 4.89522in
-   :height: 0.98946in
+   :width: 6.49167in
+   :height: 3.22917in

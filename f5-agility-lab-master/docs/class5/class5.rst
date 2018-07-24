@@ -1,66 +1,36 @@
-Class 3 - License Management 
+Class 5 - Partial Deployment & Roll Back
 =========================
 
 Goal:
 
-The following labs will get you familiar with the BIG-IQ for managing
-licenses for the BIG-IP devices from BIG-IQ.
+In this lab, we will demonstrate how to manage Virtual Servers on the
+managed BIG-IP devices.
 
-BIG-IQ has the ability to act as a license server for BIG-IP VE devices.
-Using Registration Keys, this function allows customers to move VE keys
-from one device to another without having to contact F5 support. A
-software license is specific to F5 product services (for example,
-BIG-IP® LTM®, BIG-IP APM®, and so forth), and is organized in
-a \ *license pool*. Each license pool contains a specific type of
-license. From BIG-IQ® Centralized Management, you can easily manage
-licenses in those pools for numerous devices. That means you don't have
-to log in to each individual BIG-IP VE device to activate, revoke, or
-reassign a license.
+The objects that you manage using BIG-IQ® depend on associations with
+other, supporting objects. These objects are called \ ***shared
+objects***.
 
-BIG-IQ can manage licenses for up to 5000 BIG-IP VEs. BIG-IQ can handle
-various types of pool licenses, including subscription and ELA pools, as
-well as allowing the customer to create their own pool of licenses out
-of individual VE keys.
+When the BIG-IQ evaluates a deployment to a managed device, it starts by
+deploying the device-specific objects. Then it examines the managed
+device to compile a list of the objects that are needed by other objects
+on that device. Then (based on the recent analysis) the BIG-IQ deletes
+any shared objects that exist on the managed device but are not used. So
+if there are objects on a managed device that are not being used, the
+next time you deploy changes to that device, the unused objects are
+deleted.
 
-Types of license pools:
+You have the option to choose whether you want to evaluate all of the
+changes, or specify which changes to evaluate. Select either \ **All
+Changes** or **Partial Changes** from the selected source.
 
-There are four types of license pools. You can assign, revoke, and
-reassign licenses from these pools as needed.
-
-**Purchased Pool** - Prepaid pool of a specific number of concurrent
-license grants for a single BIG-IP service, such as LTM. For example, a
-purchased pool of 25 licenses for BIG-IP LTM allows you to license up to
-25 concurrent BIG-IP VE systems for LTM.
-
-**Utility Pool** - Designed for service providers, utility pools contain
-licenses for BIG-IP services you grant for a specific unit of measure
-(hourly, daily, monthly, or yearly).
-
-**Volume Pool** - Prepaid subscription (1 and 3-year terms) for a fixed
-number of concurrent license grants for multiple BIG-IP services.
-
-**Registration Key Pool** - A pool of single standalone BIG-IP VE
-registration keys for one or more BIG-IP services. You can revoke and
-reassign a license to BIG-IP VE systems without having to contact F5 to
-allow the license to be moved.
+If you choose to do a partial deployment, additional controls are
+displayed.
 
 Tasks:
 
-3.1: Add licensing base-key to BIG-IQ for consumption
+5.1: Create multiple changes. Deploy single change
 
-3.2: Assign Pool Licensing to a device BIG-IP
-
-This workflow demonstrates the pool based licensing capabilities:
-
--  The ability to import single VE registration keys.
-
--  The steps to allocate these keys to BIG-IP devices.
-
--  The ability to report on the license usage.
-
-First, we must obtain some registration keys for use in this lab.
-
-Your lab instructor will provide the keys in a separate location.
+5.2: Create and deploy multiple changes with selected roll-back
 
 .. toctree::
    :maxdepth: 1
