@@ -1,41 +1,66 @@
-Class 1 Device Management
-=======================
+LAB 3 LICENSE MANAGEMENT 
+=========================
 
 Goal:
 
-The following labs will get you familiar with the management of BIG-IP
-devices.
+The following labs will get you familiar with the BIG-IQ for managing
+licenses for the BIG-IP devices from BIG-IQ.
 
-The following steps have been completed for you to ensure the proper
-setup of the lab environment.
+BIG-IQ has the ability to act as a license server for BIG-IP VE devices.
+Using Registration Keys, this function allows customers to move VE keys
+from one device to another without having to contact F5 support. A
+software license is specific to F5 product services (for example,
+BIG-IP® LTM®, BIG-IP APM®, and so forth), and is organized in
+a \ *license pool*. Each license pool contains a specific type of
+license. From BIG-IQ® Centralized Management, you can easily manage
+licenses in those pools for numerous devices. That means you don't have
+to log in to each individual BIG-IP VE device to activate, revoke, or
+reassign a license.
 
--  A Data Collection Device (DCD) for statistical analysis has been
-   added to the BIG-IQ CM.
+BIG-IQ can manage licenses for up to 5000 BIG-IP VEs. BIG-IQ can handle
+various types of pool licenses, including subscription and ELA pools, as
+well as allowing the customer to create their own pool of licenses out
+of individual VE keys.
 
--  Two standalone BIG devices have been imported to BIG-IQ CM, and the
-   services on them have been imported.
+Types of license pools:
 
--  A DNS Sync Group has been established with the two standalone BIG-IP
-   DNS devices
+There are four types of license pools. You can assign, revoke, and
+reassign licenses from these pools as needed.
+
+**Purchased Pool** - Prepaid pool of a specific number of concurrent
+license grants for a single BIG-IP service, such as LTM. For example, a
+purchased pool of 25 licenses for BIG-IP LTM allows you to license up to
+25 concurrent BIG-IP VE systems for LTM.
+
+**Utility Pool** - Designed for service providers, utility pools contain
+licenses for BIG-IP services you grant for a specific unit of measure
+(hourly, daily, monthly, or yearly).
+
+**Volume Pool** - Prepaid subscription (1 and 3-year terms) for a fixed
+number of concurrent license grants for multiple BIG-IP services.
+
+**Registration Key Pool** - A pool of single standalone BIG-IP VE
+registration keys for one or more BIG-IP services. You can revoke and
+reassign a license to BIG-IP VE systems without having to contact F5 to
+allow the license to be moved.
 
 Tasks:
 
-1. Import BIG-IP device to BIG-IQ for centralized management and
-   inventory
+3.1: Add licensing base-key to BIG-IQ for consumption
 
-2. Review BIG-IP cluster status and configurations
+3.2: Assign Pool Licensing to a device BIG-IP
 
-3. Automate device backups and archive a copy of the backup file
+This workflow demonstrates the pool based licensing capabilities:
 
-Note
+-  The ability to import single VE registration keys.
 
-**Important:** Before you attempt to add the BIG-IP cluster, make sure
-that the devices are **‘In Sync’** from a configuration standpoint, or
-you will get an error when attempting to import. You will need to access
-one of the devices directly to do this. Log in to either BOS-BIGIP and
-sync the configurations if they are not in sync.
+-  The steps to allocate these keys to BIG-IP devices.
 
-Expected time to complete: **3 hours**
+-  The ability to report on the license usage.
+
+First, we must obtain some registration keys for use in this lab.
+
+Your lab instructor will provide the keys in a separate location.
 
 .. toctree::
    :maxdepth: 1

@@ -1,49 +1,128 @@
-Module 1 – Import BIG-IP devices for management and inventory
-=============================================
+Module 1: Add licensing base-key to BIG-IQ for consumption
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To start managing a BIG-IP® device, you must add it to the BIG-IP
-Devices inventory list on the BIG-IQ® system.
+1. Navigate to **LICENSE MANAGEMENT** > **Licenses** under the **Device** tab. (Represents device operations)
 
-Adding a device to the BIG-IP Devices inventory is a two-stage process.
+.. image:: image/image6.png
 
-Stage 1:
+Click **Add License**
 
--  You enter the IP address, port (if other than default), and credentials of the BIG-IP device you're adding, and associate it with a cluster (if applicable).
+.. image:: image/image7.png
 
--  BIG-IQ opens communication (establishes trust) with the BIG-IP device.
+Fill in the form for your purchased license pool (VEP) (Use the key from your lab instructor)
 
--  BIG-IQ discovers the current configuration for any selected services you specified are licensed on the BIG-IP system, like LTM® (optional).
+.. image:: image/image8.png
 
-Stage 2:
+License Name: PurchasedPool\_1G\_Best
 
--  BIG-IQ imports the licensed services configuration you selected in stage 1 (optional).
+Copy and Paste the VEP license key obtained from your lab instructor.
 
-The basic discovery allows for device inventory, device health
-monitoring, backup and restore of the managed device, integration with
-F5’s iHealth service, software upgrade, and device template deployment.
-As part of the discovery process, you can choose to manage other parts
-of the BIG-IP configuration.
+Click **Activate** in the lower right
 
-In this scenario, we will import a BIG-IP device and associate it with
-an existing Cluster, review the device information available in BIG-IQ,
-export our inventory to a CSV file, and review the inventory.
+Click **Accept** in the lower right to accept the EULA.
 
-    Adding devices to BIG-IQ Inventory:
+2. Repeat steps 6-8 for the Volume license pool (VLS) (Use the key from your email)
 
-Dependencies:
+.. image:: image/image9.png
 
-1. The BIG-IP device must be located in your network.
+While the Volume Pool is activating, click on the pool name to see the activation of all of the offering types for the pool.
 
-2. The BIG-IP device must be running a compatible software version.
+License Name: VolumeLicensePool\_10G\_Best
 
-3. Port 22 and 443 must be open to the BIG-IQ management address, or any alternative IP address used to add the BIG-IP device to the BIG-IQ inventory.
+Copy and Paste the VLS license key obtained from your lab instructor.
 
-K34133507: BIG-IQ Centralized Management compatibility matrix
+.. image:: image/image10.png
 
-K15073: BIG-IQ software support policy
+.. image:: image/image11.png
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
+**Note:** This pool will not be active until all of the offerings complete activation.
 
-   lab*
+Click the arrow at the top of the pool properties screen to add the next pool.
+
+.. image:: image/image12.png
+
+3. Repeat steps 6-8 for the Utility license pool (MSP) (Use the key from your lab instructor)
+
+License Name: UtilityLicensePool
+
+Copy and Paste the MSP license key obtained from your lab instructor.
+
+.. image:: image/image13.png
+
+NOTE: Utility pools activate offerings, just like the Volume pools,
+    so the same holds true that the pool will not be active until the
+    offerings are activated.
+
+4. Now, we will create a new pool to hold our LAB VE keys. Click the **New RegKey Pool** button.
+   
+.. image:: image/image14.png
+
+Fill out the Registration Key pool name:
+
+.. image:: image/image15.png
+
+Click the **Add RegKey** button to add your first LAB VE key:
+
+.. image:: image/image16.png
+
+Add the first LAB VE key to the pool.
+
+.. image:: image/image17.png
+
+Click **Activate** in the lower right.
+
+Click **Accept** in the lower right to accept the EULA.
+
+.. image:: image/image18.png
+
+Repeat step 16-18 for your second LAB VE regkey.
+
+You should now have a screen that looks like this:
+
+.. image:: image/image19.png
+
+Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device.
+
+
+.. |image6| image:: media/image6.png
+   :width: 2.24972in
+   :height: 0.96863in
+.. |image7| image:: media/image7.png
+   :width: 6.48958in
+   :height: 1.66667in
+.. |image8| image:: media/image8.png
+   :width: 5.03062in
+   :height: 2.71841in
+.. |image9| image:: media/image9.png
+   :width: 5.04104in
+   :height: 2.71841in
+.. |image10| image:: media/image10.png
+   :width: 6.50000in
+   :height: 1.82917in
+.. |image11| image:: media/image11.png
+   :width: 3.04129in
+   :height: 3.48915in
+.. |image12| image:: media/image12.png
+   :width: 4.89522in
+   :height: 0.98946in
+.. |image13| image:: media/image13.png
+   :width: 5.10353in
+   :height: 2.82256in
+.. |image14| image:: media/image14.png
+   :width: 3.19752in
+   :height: 0.96863in
+.. |image15| image:: media/image15.png
+   :width: 4.50833in
+   :height: 2.09583in
+.. |image16| image:: media/image16.png
+   :width: 6.50000in
+   :height: 2.73333in
+.. |image17| image:: media/image17.png
+   :width: 6.49583in
+   :height: 3.25417in
+.. |image18| image:: media/image18.png
+   :width: 6.49167in
+   :height: 4.17500in
+.. |image19| image:: media/image19.png
+   :width: 6.49167in
+   :height: 2.40417in
