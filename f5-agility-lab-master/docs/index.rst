@@ -1,9 +1,6 @@
 F5 Agility Labs - Index
 =======================
 
-Welcome
--------
-
 Welcome to the **BIG-IQ 6.0 Centralized Management Up And Running** lab at **F5 Agility 2018 Boston**
 
 **Description**: This session will focus on the fundamental concepts and functions of BIG-IQ Centralized Management, with focus on the exciting new features of the latest release of BIG-IQ CM, and cover come basic workflows for managing BIG-IP Device, Security and other most common deployment scenarios.  
@@ -18,9 +15,9 @@ Welcome to the **BIG-IQ 6.0 Centralized Management Up And Running** lab at **F5 
 •	Class 5. ADC Management 
 •	Class 6. Partial Deployment and Partial Restore
 •	Class 7. DNS Sync Group Adminitration
-•	Class 8. Application Templates & Deployment
+•	Class 8. Application Templates & Deployment (Optional)
 
-|repoinfo|
+Expected time to complete: **3.5 Hours**
 
 .. toctree::
    :maxdepth: 2
@@ -30,5 +27,3 @@ Welcome to the **BIG-IQ 6.0 Centralized Management Up And Running** lab at **F5 
 
    intro*
    class*/class*
-   examples
-   markdown

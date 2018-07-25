@@ -1,15 +1,14 @@
 
-
 Step 2. Create a backup schedule
+--------------------------------
 
-Now, we can create our backup schedule that references this dynamic
-group.
+Now, we can create our backup schedule that references this dynamic group.
 
 1. Click on the Back Up & Restore on the left-hand menu
 
 2. Click on Backup Schedules
 
-.. image:: image/image22.png
+|image22|
 
 3. Click the Create button in the main pane
 
@@ -43,9 +42,9 @@ In the Backup Archive section, enter the following:
 | Directory   | **/home/f5**                       |
 +-------------+------------------------------------+
 
-.. image:: image/image23.png
+|image23|
 
-.. image:: image/image24.png
+|image24|
 
 Click Save & Close to save the scheduled backup job.
 

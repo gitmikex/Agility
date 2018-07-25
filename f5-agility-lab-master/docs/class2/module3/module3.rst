@@ -1,4 +1,4 @@
-MTask 2.3: Renew expired certificates and Deploy from BIG-IQ to managed BIG-IP
+Module 3: Renew expired certificates and Deploy from BIG-IQ to managed BIG-IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Objective
@@ -13,22 +13,22 @@ Walk through deployment of Certificate changes to the BIG-IP devices.
 
 -  Renew expired certificate: app01.termmarc.com on SEA-vBIGIP01 device.
 
-.. image:: image/image12.png
+|image12|
 
 Move the mouse over to the yellow triangle in front of the Managed State
 of the certificate app01.termmarc.com.
 
-.. image:: image/image13.png
+|image13|
 
 Click on the app01.termmarc.com certificate, and click on the **Renew
 Certificate** button on the right upper corner.
 
-.. image:: image/image14.png
+|image14|
 
 Accept the default Duration 365 days, and click on Renew button on the
 right lower corner.
 
-.. image:: image/image15.png
+|image15|
 
 The certificate is now renewed to 365 days of Duration.
 
@@ -43,7 +43,7 @@ Source Objects appears. Select “Certificate” from the dropdown list on
 the left Available section, and move the certificate app01.termmarc.com
 to the right side Selected box.
 
-.. image:: image/image16.png
+|image16|
 
 Scroll down the screen and click on “Find Relevant Devices”, you will
 see SEA-vBIGIP01 listed in the Available section on the left. Select and
@@ -51,34 +51,34 @@ move the device to the right side Selected box, and click on Create
 button. The evaluation starts, and you will see the Status marked as
 Evaluation Complete when it is done.
 
-.. image:: image/image17.png
+|image17|
 
 Click on the View link in the middle of the screen under Differences
 column.
 
-.. image:: image/image18.png
+|image18|
 
 Review the differences between the BIG-IQ certificate and the BIG-IP
 certificate for app01.termmarc.com.
 
-.. image:: image/image19.png
+|image19|
 
 Cancel the window to return to the previous screen, select the
 evaluation “Deploy-Renewed-Cert” and click on Deploy button above. Click
 on Deploy again to confirm.
 
-.. image:: image/image20.png
+|image20|
 
 Now the deployment is completed.
 
-.. image:: image/image21.png
+|image21|
 
 Log back into SEA-vBIGIP01 device, navigate back to System ››
 Certificate Management : Traffic Certificate Management : SSL
 Certificate List. Verify that the certificate app01.termmarc.com has
 been renewed to 365 days duration by BIG-IQ.
 
-.. image:: image/image22.png
+|image22|
 
 
 .. |image12| image:: media/image12.png

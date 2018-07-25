@@ -1,7 +1,7 @@
 Class 2 - SSL Certificate Management
-=======================
+======================================
 
-Goal:
+**Goal:**
 
 The following labs will get you familiar with the BIG-IQ for managing
 the local traffic SSL certificates for the BIG-IP devices from BIG-IQ.
@@ -21,7 +21,7 @@ Once you've imported or created an SSL certificate and keys, you can
 assign them to your managed devices by associating them with a Local
 Traffic Manager clientssl or serverssl profile, and deploying it.
 
-Tasks:
+**Tasks:**
 
 1. Move a certificate from unmanaged to managed state.
 
@@ -29,14 +29,8 @@ Tasks:
 
 3. Renew expired certificates and Deploy from BIG-IQ to managed BIG-IP
 
-Note
-
-When you discover a BIG-IP device, BIG-IQ Centralized Management imports
-its SSL certificates' properties (metadata), but not the actual SSL
-certificates and key pairs. These certificates display as Unmanaged on
-the BIG-IQ Certificates & Keys screen. This allows you to monitor each
-SSL certificate's expiration date from BIG-IQ, without having to log on
-directly to the BIG-IP device.
+.. NOTE::
+	 When you discover a BIG-IP device, BIG-IQ Centralized Management imports its SSL certificates' properties (metadata), but not the actual SSL certificates and key pairs. These certificates display as Unmanaged on the BIG-IQ Certificates & Keys screen. This allows you to monitor each SSL certificate's expiration date from BIG-IQ, without having to log on directly to the BIG-IP device.
 
 Convert an unmanaged SSL key certificate and key pair to managed so you
 can centrally manage it from BIG-IQ Centralized Management. This saves

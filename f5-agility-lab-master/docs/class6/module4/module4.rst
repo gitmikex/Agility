@@ -37,16 +37,16 @@ Click on each change to review the differences.
 
 |image38|
 
-After you have reviewed all of the changes, click the Cancel button in the lower right
+After you have reviewed all of the changes, click the Cancel button in the lower right.
 
 |image39|
 
-Click on the name of the Evaluation to review the options available there
+Click on the name of the Evaluation to review the options available there.
 
 |image40|
 
 
-Note that you can review the changes to be deployed on a device by device basis and you can choose to exclude a device from the deployment at this point. At the bottom of the page, you can schedule the deployment for a later time, or you can Deploy Now.
+**Note** that you can review the changes to be deployed on a device by device basis and you can choose to exclude a device from the deployment at this point. At the bottom of the page, you can schedule the deployment for a later time, or you can Deploy Now.
     
 Click the **Deploy Now** button to push the changes to the BIG-IPs.
 
@@ -66,7 +66,9 @@ Click on the name of the Deployment to review what was deployed
 
 |image44|
 
-Log in to BOS—vBIGIP01 using the TMUI link in UDF and confirm that your deployment was successful. You should now see the **MyAppVS** on the Network Map.
+Log in to BOS—vBIGIP01 using the TMUI link in UDF and confirm that your deployment was successful. 
+
+You should now see the **MyAppVS** on the Network Map.
 
 .. |image33| image:: media/image32.png
    :width: 2.27055in

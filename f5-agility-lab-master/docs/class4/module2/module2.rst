@@ -7,7 +7,7 @@ Objective
 Create a resource group with all of the BIG-IP objects you want to provide access to, and assign a role type to it.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: image/image6.png
+|image6|
 
 Steps:
 ^^^^^^
@@ -49,7 +49,7 @@ Steps:
 3. Select the check box next to the name of each object you want to add
    to this group of resources and click the Add Selected button.
 
-.. image:: image/image7.png
+|image7|
 
 4. Click the Save & Close button.
 

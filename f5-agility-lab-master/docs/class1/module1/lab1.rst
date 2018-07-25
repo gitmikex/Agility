@@ -1,4 +1,5 @@
 Step 1. Import a device to an existing Cluster
+----------------------------------------------
 
 Log in to the BIG-IQ system with your user name (admin) and password (admin).
 
@@ -18,17 +19,17 @@ d. Select a Cluster: **BostonCluster**
 
 e. Leave everything else default.
 
-.. image:: image/image1.png
+|image1|
 
 Click the Add button to add this device to BIG-IQ.
 
 BIG-IQ now exchanges certs with the BIG-IP and pops up a window for the administrator to select which modules to manage from BIG-IQ. For this device, select LTM, ASM, AFM and DNS Services. Keep the Statistics monitoring boxes all checked, and then click the Continue button.
 
-.. image:: image/image2.png
+|image2|
 
 The discovery process will start, and you should see a screen similar to the following screenshot. At this point, BIG-IQ is using REST calls to the BIG-IP to pull the selected parts of the BIG-IP configuration into BIG-IQ.
 
-.. image:: image/image3.png
+|image3|
 
 Allow the import jobs to complete. At this point, the configuration of
 the BIG-IPs that have been imported are not yet editable in BIG-IQ. To

@@ -1,11 +1,6 @@
 
-BIG-IQ provides visibility in to the BIG-IP cluster configuration and
-status. You can review the sync status, drill down to review cluster
-configuration, and initiate cluster sync activities from BIG-IQ.
-
-**Big-IP Clusters - (DSC) Device Service Clusters**
-
-Device Service Clustering, or DSC, is a BIG-IP TMOS feature that lets you organize BIG-IP devices in groups allowing for synchronization of configuration objects.
+Checking DSC Group status
+--------------------------
 
 To start managing DSC devices you must add devices configured in DSC to the BIG-IP Device Inventory. 
 
@@ -19,26 +14,25 @@ Discover the devices into BIGIQ Inventory by assigning the clustered devices to 
 
 4.  Click DSC Groups.
 
-.. image:: image/image16.png
+|image16|
 
 5.  You can skip the discovery steps since the DSC groups have been discovered for you.
 
 6.  Mouse over the status icons to see the status of each of the discovered clusters
 
-.. image:: image/image17.png
+|image17|
 
 7.  Click on the cluster Name to view more details about the cluster. Choose the device-group failover link for your BostonCluster.
 
-.. image:: image/image18.png
+|image18|
 
-8.  Review the Properties tab and notice that you can start a cluster
-    sync operation from the bottom of the screen.
+8.  Review the Properties tab and notice that you can start a cluster sync operation from the bottom of the screen.
 
-.. image:: image/image19.png
+|image19|
 
 9.  Review the Traffic Groups tab。
 
-.. image:: image/image20.png
+|image20|
 
 10. Click the n objects link to view the objects in the traffic group.
     Close the window after the review.

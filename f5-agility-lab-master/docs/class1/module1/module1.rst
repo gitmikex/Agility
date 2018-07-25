@@ -1,5 +1,5 @@
 Module 1 – Import BIG-IP devices for management and inventory
-=============================================
+==============================================================
 
 To start managing a BIG-IP® device, you must add it to the BIG-IP
 Devices inventory list on the BIG-IQ® system.
@@ -28,7 +28,7 @@ In this scenario, we will import a BIG-IP device and associate it with
 an existing Cluster, review the device information available in BIG-IQ,
 export our inventory to a CSV file, and review the inventory.
 
-    Adding devices to BIG-IQ Inventory:
+**Adding devices to BIG-IQ Inventory:**
 
 Dependencies:
 
@@ -38,9 +38,6 @@ Dependencies:
 
 3. Port 22 and 443 must be open to the BIG-IQ management address, or any alternative IP address used to add the BIG-IP device to the BIG-IQ inventory.
 
-K34133507: BIG-IQ Centralized Management compatibility matrix
-
-K15073: BIG-IQ software support policy
 
 .. toctree::
    :maxdepth: 1

@@ -1,84 +1,75 @@
-Module 2 Assign Pool Licensing to a device BIG-IP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Module 2: Managing DNS Profiles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device. 
+A DNS profile allows you to configure various DNS attributes that a
+virtual server or DNS listener object applies to DNS traffic. For
+example, when you enable the DNS Express feature in the DNS profile, the
+BIG-IP system acts as an authoritative secondary DNS server, and
+performs actions such as zone transfers from multiple primary DNS
+servers or zone transfers from the local BIND server on the BIG-IP
+system.
 
-We will start by granting one of our LAB VE keys.
+You can view the DNS listeners configured for the DNS sync groups you
+manage by navigating to Configuration > DNS > Delivery > Profiles. From
+there, click a listener to edit it, click create to setup a new one.
 
-1.  Select the license that you want to assign to a device and click the **Assign** button. 
-    
-.. image:: image/image20.png
+**Create a DNS profile**
 
-You can assign the licenses to managed devices or unmanaged devices from BIG-IQ.
+You create a profile to configure various DNS attributes that a virtual
+server or DNS listener object can apply to DNS traffic.
 
-For this lab, you should avoid giving licenses to BOS-vBIG-IP01 or BOS-vBIG-IP02. We are going to test Managed device licensing by using SEA-vBIG-IP01.
+At the top of the screen, click Configuration, then, on the left, click DNS > Delivery > Profiles.
 
-    | Select **Managed Device**
-    | Device: SEA-vBIG-IP01.termmarc.com
+The screen displays the list of profiles defined on this device.
 
-.. image:: image/image21.png
+Click Create.
 
-Click the Assign button in the lower right.
+The New Profile screen opens.
 
-Click the OK button to proceed with the assignment of the license.
+Type a Name for the DNS profile: **mydnsprofile**
 
-.. image:: image/image22.png
+Select a Parent Profile from which this profile inherits settings: **/Common/dns**
 
-You should now see that license as assigned out of the pool to Device Name: SEA-vBIGIP01.termmarc.com with the License Status as “Licensed”.
+Select the options you want to override from the parent DNS profile.
 
-.. image:: image/image23.png
+The options perform the same function as they do on a BIG-IP device.
 
-You can also view all assignments by clicking on Assignments in the left hand menu
+Click Save & Close.
 
-.. image:: image/image24.png
+|image11|
 
-.. image:: image/image25.png
+The system creates the new profile you specified and adds it to the list of profiles.
 
-2.  Now we can create a report that shows our license usage. Click the Report button below Assignments.
+**Edit a DNS profile**
 
-.. image:: image/image26.png
+You can view and modify the properties for existing DNS profiles. Since
+you are working with an existing profile, you can modify only some
+settings.
 
-We will generate a Historical Report that shows the license assignments that we have done today.
+At the top of the screen, click Configuration, then, on the left, click DNS > Delivery > Profiles.
 
-    | Select Type: Historical Report
-    | Licenses: All License Types
-    | **Move all license pools from Available to Selected**
-    | Usage period: Leave Starting Date and Ending Date as today’s date.
+The screen displays the list of profiles defined on this device.
 
-.. image:: image/image27.png
+Click the name of the profile you want to edit: **mydnsprofile**
 
-Click Download in the lower right lower corner to download the reports
+The screen displays the current settings for the selected profile.
 
-If your browser raises a question about downloading multiple files, click Allow:
+Make the changes to the settings you want to revise.
 
-.. image:: image/image28.png
+Under DNS Features, check the **Use BIND Server on BIG-IP**, and select **Disabled**.
 
-Review the CSV files that are downloaded.
+|image12|
 
-.. |image20| image:: media/image20.png
-   :width: 3.66621in
-   :height: 1.44774in
-.. |image21| image:: media/image21.png
-   :width: 6.23750in
-   :height: 2.79583in
-.. |image22| image:: media/image22.png
-   :width: 6.50000in
-   :height: 1.60139in
-.. |image23| image:: media/image23.png
-   :width: 6.50000in
-   :height: 1.85417in
-.. |image24| image:: media/image24.png
-   :width: 2.31221in
-   :height: 1.02071in
-.. |image25| image:: media/image25.png
-   :width: 6.50000in
-   :height: 1.12500in
-.. |image26| image:: media/image26.png
-   :width: 1.77061in
-   :height: 0.95821in
-.. |image27| image:: media/image27.png
-   :width: 6.49583in
-   :height: 3.79583in
-.. |image28| image:: media/image28.png
-   :width: 3.62455in
-   :height: 1.19777in
+when your edits are complete, click Save & Close.
+
+.. NOTE::
+	 When you edit a default profile, you cannot override the parent profile settings, because default profiles do not have a parent.
+
+The system updates the profile with the settings you specified.
+
+.. |image11| image:: media/image12.png
+   :width: 5.76250in
+   :height: 4.75833in
+.. |image12| image:: media/image13.png
+   :width: 5.39583in
+   :height: 5.36250in

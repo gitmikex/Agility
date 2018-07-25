@@ -1,7 +1,4 @@
-Module 2 – Review BIG-IP cluster status and configurations
-=============================================
-
-Task 2.2: Create and Import a self-signed certificates/key to BIG-IQ
+Module 2 – Create and Import a self-signed certificates/key to BIG-IQ
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. At the top of the screen, click Configuration.
@@ -15,21 +12,21 @@ Name: BIG-IQ-Test-Cert
 
 Common Name: bigiq.testcrt.com
 
-.. image:: image/image7.png
+|image7|
 
-.. image:: image/image8.png
+|image8|
 
 ***Click on Export, and download the BIG-IQ-Test-Cert.crt file.***
 
-.. image:: image/image9.png
+|image9|
 
 ***When importing the key, select “Normal” for Key Security Type:***
 
-.. image:: image/image10.png
+|image10|
 
 ***BigIQ shows the cert/key being active (green status) and managed ***
 
-.. image:: image/image11.png
+|image11|
 
 
 .. |image7| image:: media/image7.png

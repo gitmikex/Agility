@@ -1,128 +1,98 @@
-Module 1: Add licensing base-key to BIG-IQ for consumption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Module 1: Create personas in BIG-IQ for Application Deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Navigate to **LICENSE MANAGEMENT** > **Licenses** under the **Device** tab. (Represents device operations)
+We will be using 4 main personas for this lab:
 
-.. image:: image/image6.png
+1. **Marco**: Full Administrator
 
-Click **Add License**
+2. **David**: Super-NetOps
 
-.. image:: image/image7.png
+3. **Larry**: Application Security Manager
 
-Fill in the form for your purchased license pool (VEP) (Use the key from your lab instructor)
+4. **Paula**: Application Manager
 
-.. image:: image/image8.png
+**Marco** will have full access to BIG-IQ. He knows a lot about F5
+products (BIG-IQ/BIG-IP). He will provide the access to David, Larry and
+Paula. He will also manage the Service Scaline Group (SSG) and
+application templates.
 
-License Name: PurchasedPool\_1G\_Best
+**Larry** will manage the Web Application Firewall (WAF) policies. He
+will work with Paula’s team to define the necessary security policies
+for each applications. Ensure teams comply with security policies,
+industry rules and regulations, and best practices. Keeping up to date
+on threats, determining their potential impact, and mitigating the
+risks.
 
-Copy and Paste the VEP license key obtained from your lab instructor.
+**Paula** will manage the application deployments, monitor levels of app
+incidents, building solutions to address identified, prioritized
+business problems in a timely manner. Maximizing value of app through
+capabilities design, adoption, and usage. Ensuring that the app fits
+within the rest of the organization’s app portfolio strategy.
 
-Click **Activate** in the lower right
+**David** will try automating whenever possible, to enable efficiency
+and ability to solve problems at scale. Automate common network patterns
+that the other teams can consume. Automate existing environment
+management and troubleshooting tasks.
 
-Click **Accept** in the lower right to accept the EULA.
+.. NOTE::
+	 Marco, Paula and Larry are already created in the blueprint, so only the \ **david** user needs to be created.
 
-2. Repeat steps 6-8 for the Volume license pool (VLS) (Use the key from your email)
+Connect to your BIG-IQ as \ **admin** and go to : *System* > *Users Management* > *Users* and verify each user & role below and change where needed.
 
-.. image:: image/image9.png
+**1. Marco: Full Administrator**
 
-While the Volume Pool is activating, click on the pool name to see the activation of all of the offering types for the pool.
+-  *Auth Provider* = Radius
 
-License Name: VolumeLicensePool\_10G\_Best
+-  *User Name* = marco
 
-Copy and Paste the VLS license key obtained from your lab instructor.
+-  *Full Name* = Full Administrator
 
-.. image:: image/image10.png
+-  (*Password stored in Radius server* = marco)
 
-.. image:: image/image11.png
+-  *Role* = Administrator Role
 
-**Note:** This pool will not be active until all of the offerings complete activation.
+**2. Larry: Application Security Manager**
 
-Click the arrow at the top of the pool properties screen to add the next pool.
+-  *Auth Provider* = Radius
 
-.. image:: image/image12.png
+-  *User Name* = larry
 
-3. Repeat steps 6-8 for the Utility license pool (MSP) (Use the key from your lab instructor)
+-  *Full Name* = Application Security Manager
 
-License Name: UtilityLicensePool
+-  (*Password stored in Radius server* = larry)
 
-Copy and Paste the MSP license key obtained from your lab instructor.
+-  *Role* = Security Manager
 
-.. image:: image/image13.png
+**3. Paula: Application Manager**
 
-NOTE: Utility pools activate offerings, just like the Volume pools,
-    so the same holds true that the pool will not be active until the
-    offerings are activated.
+-  *Auth Provider* = Radius
 
-4. Now, we will create a new pool to hold our LAB VE keys. Click the **New RegKey Pool** button.
-   
-.. image:: image/image14.png
+-  *User Name* = paula
 
-Fill out the Registration Key pool name:
+-  *Full Name* = Application Manager
 
-.. image:: image/image15.png
+-  (*Password stored in Radius server* = paula)
 
-Click the **Add RegKey** button to add your first LAB VE key:
+-  *Role* = Application Editor
 
-.. image:: image/image16.png
+**4. David: Super-NetOps**
 
-Add the first LAB VE key to the pool.
+Click on \ *Add*
 
-.. image:: image/image17.png
+-  *Auth Provider* = local
 
-Click **Activate** in the lower right.
+-  *User Name* = david
 
-Click **Accept** in the lower right to accept the EULA.
+-  *Full Name* = Super-NetOps
 
-.. image:: image/image18.png
+-  *Password* = david
 
-Repeat step 16-18 for your second LAB VE regkey.
+-  *Role* = Administrator Role
 
-You should now have a screen that looks like this:
+Click on \ *Save & Close*
 
-.. image:: image/image19.png
+|image0|
 
-Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device.
-
-
-.. |image6| image:: media/image6.png
-   :width: 2.24972in
-   :height: 0.96863in
-.. |image7| image:: media/image7.png
-   :width: 6.48958in
-   :height: 1.66667in
-.. |image8| image:: media/image8.png
-   :width: 5.03062in
-   :height: 2.71841in
-.. |image9| image:: media/image9.png
-   :width: 5.04104in
-   :height: 2.71841in
-.. |image10| image:: media/image10.png
+.. |image0| image:: media/image1.png
    :width: 6.50000in
-   :height: 1.82917in
-.. |image11| image:: media/image11.png
-   :width: 3.04129in
-   :height: 3.48915in
-.. |image12| image:: media/image12.png
-   :width: 4.89522in
-   :height: 0.98946in
-.. |image13| image:: media/image13.png
-   :width: 5.10353in
-   :height: 2.82256in
-.. |image14| image:: media/image14.png
-   :width: 3.19752in
-   :height: 0.96863in
-.. |image15| image:: media/image15.png
-   :width: 4.50833in
-   :height: 2.09583in
-.. |image16| image:: media/image16.png
-   :width: 6.50000in
-   :height: 2.73333in
-.. |image17| image:: media/image17.png
-   :width: 6.49583in
-   :height: 3.25417in
-.. |image18| image:: media/image18.png
-   :width: 6.49167in
-   :height: 4.17500in
-.. |image19| image:: media/image19.png
-   :width: 6.49167in
-   :height: 2.40417in
+   :height: 3.56291in

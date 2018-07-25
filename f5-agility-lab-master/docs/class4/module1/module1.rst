@@ -7,7 +7,7 @@ Objective
 Creating a custom role type is the first step to providing custom role-based access to users.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: image/image2.png
+|image2|
 
 Steps:
 ^^^^^^
@@ -34,7 +34,7 @@ Steps:
 7. Select the check box next to Select All beneath the permissions you
    want to grant for this role type.
 
-.. image:: image/image3.png
+|image3|
 
 1. Before saving the custom role type, we are going to customize the
    Permissions for this new custom role type.
@@ -46,9 +46,9 @@ Steps:
 
    Rule Lists
 
-.. image:: image/image4.png
+|image4|
 
-.. image:: image/image5.png
+|image5|
 
    Now you have a custom role type that has some custom privileges for
    some of the Network Security objects such as Rule Lists and Address

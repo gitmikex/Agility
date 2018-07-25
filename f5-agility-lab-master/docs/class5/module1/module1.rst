@@ -1,23 +1,21 @@
 Module 1: Create multiple changes. Deploy single change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Objective
-^^^^^^^^^
+**Objective**
 
 -  The user has the ability to select a specific change out of many made for deploy. We will try to add an additional node to the existing pool in this task.
 
-Partial Deployment
-^^^^^^^^^^^^^^^^^^
+**Partial Deployment**
 
 1. From the tab Configuration, click on LOCAL TRAFFIC > Pools, enter “app1pool” in the upper right Filter and search, select a pool by clicking on name “app1pool” on either BOS-vBIGIP01 or 02.
 
-.. image:: image/image1.png
+|image1|
 
 -  1\ :sup:`st` change
 
 -  Click on New Member, select from Existing Node “app1node2” on port 80 HTTP
 
-.. image:: image/image2.png
+|image2|
 
 -  Leave everything else default, and click on “Save and Close” on lower right
 
@@ -27,7 +25,7 @@ We have just made a change to the BIG-IQ configuration for app1pool on the BOS H
 
 -  Click into Configuration > LOCAL TRAFFIC > Monitors and then click on “Create” button.
 
-.. image:: image/image3.png
+|image3|
 
 -  New Monitor
    -  Name: **mon-https**
@@ -42,7 +40,7 @@ We have just made a change to the BIG-IQ configuration for app1pool on the BOS H
 
 Click “Save and Close”
 
-.. image:: image/image4.png
+|image4|
 
 2. Next, we will add the new monitor to the app2pool.
 
@@ -54,7 +52,7 @@ Click “Save and Close”
 
    -  On Health Monitors, select /Common/mon-https
 
-.. image:: image/image5.png
+|image5|
 
 -  Click Save and Close
 
@@ -76,17 +74,16 @@ Click on top Deployment tab, select under EVALUATE & DEPLOY: Local Traffic & Net
 
       Click “Create” to complete
 
-.. image:: image/image6.png
+|image6|
 
 4. After the evaluation is done, you can click on the “view” link under the Difference column for “partial-deployment” evaluation.
 
-.. image:: image/image7.png
+|image7|
 
-.. image:: image/image8.png
+|image8|
 
-    Note
-
-*Only changes to “app1pool” will be deployed.* The monitor change on app2pool will not be deployed.
+.. NOTE::
+	 *Only changes to “app1pool” will be deployed.* The monitor change on app2pool will not be deployed.
 
 -  Deploy changes
 
@@ -95,15 +92,14 @@ Click on top Deployment tab, select under EVALUATE & DEPLOY: Local Traffic & Net
 
    -  Confirm by click on Deploy button again.
 
-.. image:: image/image9.png
+|image9|
 
 5. After deployment is complete, click into the “partial-deploy” to view the details of the deployment.
 
-.. image:: image/image10.png
+|image10|
 
-    Note
-
-The deployment could fail if the targeted BIG-IP devices are not in full sync on configurations, due to timeout on waiting for sync to complete on target devices. Ensure the devices are in full sync before deploying changes.
+.. NOTE::
+	 The deployment could fail if the targeted BIG-IP devices are not in full sync on configurations, due to timeout on waiting for sync to complete on target devices. Ensure the devices are in full sync before deploying changes.
 
 .. |image1| image:: media/image1.png
    :width: 6.49583in

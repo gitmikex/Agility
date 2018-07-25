@@ -15,7 +15,7 @@ BIG-IQ provides you with the tools you need to provide granular access
 to users. You decide what BIG-IP objects a user interacts with, and how.
 You use these BIG-IQ components for applying role-based user access.
 
-.. image:: image/image1.png
+|image1|
 
 BIG-IQ 5.4 first introduced the ability to create Custom Role Types and
 Resource Groups. The custom role types allow the admin to create

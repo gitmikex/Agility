@@ -1,5 +1,3 @@
-\ **Getting Started**\ 
-
 Overview
 =========================
 
@@ -50,13 +48,12 @@ following elements:
 
 -  Remote storage devices
 
-.. image:: image-intro/image1.png
+|image1|
 
 .. NOTE::
 	 We recommend that all work for this lab be performed from your local Web browser or from the windows jumphost. No installation with your local system is required.
 
-BIG-IQ Centralized Management system
-''''''''''''''''''''''''''''''''''''
+**BIG-IQ Centralized Management system**
 
 Using BIG-IQ Centralized Management, you can centrally manage your
 BIG-IP\ :sup:`®` devices, performing operations such as backups,
@@ -65,8 +62,7 @@ to each area of BIG-IQ is role-based, you can limit access to users,
 thus maximizing work flows while minimizing errors and potential
 security issues.
 
-BIG-IP device
-'''''''''''''
+**BIG-IP device**
 
 A BIG-IP device runs a number of licensed components that are designed
 around application availability, access control, and security solutions.
@@ -76,8 +72,7 @@ specifically to inspect network and application traffic, and make
 real-time decisions based on the configurations you provide. The BIG-IP
 software runs on both hardware and virtualized environments.
 
-Data collection device
-''''''''''''''''''''''
+**Data collection device**
 
 A \ *data collection device* (DCD) is a specially provisioned BIG-IQ
 system that you use to manage and store alerts, events, and statistical
@@ -96,8 +91,7 @@ together to store and manage your data are referred to as the \ *data
 collection cluster*. The individual data collection devices are
 generally referred to as \ *nodes*.
 
-Remote storage device
-'''''''''''''''''''''
+**Remote storage device**
 
 You need a remote storage device only when your deployment includes a
 data collection device (DCD) and you plan to store backups of your
@@ -105,8 +99,7 @@ events, alerts, and statistical data for disaster recovery requirements.
 You also need remote storage so that you can retain this data when you
 upgrade your software.
 
-Network environment for simple device management and configuration
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+**Network environment for simple device management and configuration**
 
 To deploy a simple device management and configuration environment, all
 you need is one or more BIG-IQ\ :sup:`®` systems and the
@@ -137,7 +130,7 @@ Guide* on support.f5.com for details.
 This figure illustrates the network topology required for a simple
 management and configuration deployment.
 
-.. image:: image-intro/image2.png
+|image2|
 
 In this lab, we will only deploy one DCD and one BIG-IQ CM Console.
 
@@ -145,7 +138,6 @@ Device Information
 -------------------
 
 **Management**
-~~~~~~~~~~~~~~
 
 Network 10.1.1.0/24
 
@@ -157,26 +149,15 @@ BOS-vBIGIP01.termmarc.com.v13.1.0.5 10.1.1.8 primary
 
 BOS-vBIGIP02.termmarc.com.v13.1.0.5 10.1.1.10 primary
 
-ESXi 6.5.0 + vCenter 10.1.1.9 primary
-
 BIGIQ\_DCD\_v6.0.0-0.0.1591 10.1.1.6 primary
 
 Ubuntu 16.04 Lamp Server, Radius and DHCP 10.1.1.5 primary
 
 **Subnet 10 (External)**
-~~~~~~~~~~~~~~~~~~~~~~~~
 
 Network 10.1.10.0/24
 
-BOS-vBIGIP01.termmarc.com.v13.1.0.5 10.1.10.8 primary
-
-    10.1.10.18
-
-ESXi 6.5.0 + vCenter 10.1.10.9 primary
-
-    10.1.10.91
-
-    10.1.10.90
+BOS-vBIGIP01.termmarc.com.v13.1.0.5 10.1.10.8 primary, 10.1.10.18
 
 SEA-vBIGIP01.termmarc.com.v13.1.0.5 (VPN) 10.1.10.7 primary
 
@@ -186,102 +167,23 @@ BIGIQ\_CM\_v6.0.0-0.0.1591 10.1.10.4 primary
 
 BIGIQ\_DCD\_v6.0.0-0.0.1591 10.1.10.6 primary
 
-BOS-vBIGIP02.termmarc.com.v13.1.0.5 10.1.10.10 primary
-
-    10.1.10.19
+BOS-vBIGIP02.termmarc.com.v13.1.0.5 10.1.10.10 primary, 10.1.10.19
 
 **Subnet 20 (Internal)**
-~~~~~~~~~~~~~~~~~~~~~~~~
 
 Network 10.1.20.0/24
 
-BOS-vBIGIP01.termmarc.com.v13.1.0.5 10.1.20.8 primary
-
-    10.1.20.18
-
-ESXi 6.5.0 + vCenter 10.1.20.9 primary
+BOS-vBIGIP01.termmarc.com.v13.1.0.5 10.1.20.8 primary, 10.1.20.18
 
 SEA-vBIGIP01.termmarc.com.v13.1.0.5 (VPN) 10.1.20.7 primary
 
-Ubuntu 16.04 Lamp Server, Radius and DHCP 10.1.20.5 primary
-
-    10.1.20.110
-
-    10.1.20.111
-
-    10.1.20.112
-
-    10.1.20.113
-
-    10.1.20.114
-
-    10.1.20.115
-
-    10.1.20.116
-
-    10.1.20.117
-
-    10.1.20.118
-
-    10.1.20.119
-
-    10.1.20.120
-
-    10.1.20.121
-
-    10.1.20.122
-
-    10.1.20.123
-
-    10.1.20.124
-
-    10.1.20.135
-
-    10.1.20.125
-
-    10.1.20.126
-
-    10.1.20.127
-
-    10.1.20.128
-
-    10.1.20.130
-
-    10.1.20.131
-
-    10.1.20.132
-
-    10.1.20.133
-
-    10.1.20.134
-
-    10.1.20.136
-
-    10.1.20.137
-
-    10.1.20.138
-
-    10.1.20.139
-
-    10.1.20.140
-
-    10.1.20.141
-
-    10.1.20.142
-
-    10.1.20.143
-
-    10.1.20.144
-
-    10.1.20.145
+Ubuntu 16.04 Lamp Server, Radius and DHCP 10.1.20.5 primary, 10.1.20.110-145
 
 BIGIQ\_CM\_v6.0.0-0.0.1591 10.1.20.4 primary
 
 BIGIQ\_DCD\_v6.0.0-0.0.1591 10.1.20.6 primary
 
-BOS-vBIGIP02.termmarc.com.v13.1.0.5 10.1.20.10 primary
-
-    10.1.20.19
+BOS-vBIGIP02.termmarc.com.v13.1.0.5 10.1.20.10 primary, 10.1.20.19
 
 The BIG-IQ User Interface
 --------------------------
@@ -301,12 +203,12 @@ After you log into BIG-IQ, you will notice:
 3) A large object browsing and editing area on the right-hand side of
    the screen.
 
-.. image:: image-intro/image3.png
+|image3|
 
 -  Let us look a little deeper at the different options available in bar
    at the top of the page.
 
-.. image:: image-intro/image4.png
+|image4|
 
 -  At the top, each tab describes a high-level functional area for
    BIG-IQ central management:
@@ -356,13 +258,13 @@ entries and statistics data.
 Click on System tab on the top, then BIG-IQ DATA COLLECTION on the left,
 click on BIG-IQ Data Collection Devices.
 
-.. image:: image-intro/image5.png
+|image5|
 
 Click on the device name link and review the detailed settings of the
 DCD. Browse through Services to review the list of service modules that
 are activated on this data collection device.
 
-.. image:: image-intro/image6.png
+|image6|
 
 .. |image1| image:: media/image1.png
    :width: 6.25000in

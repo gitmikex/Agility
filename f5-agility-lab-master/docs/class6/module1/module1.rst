@@ -130,7 +130,6 @@ Click **Save & Close** in the lower right
 
 We now have staged our application and we will deploy it in a later workflow.
 
-
 .. |image1| image:: media/image2.png
    :width: 2.29138in
    :height: 2.18723in

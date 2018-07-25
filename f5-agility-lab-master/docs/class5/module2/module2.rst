@@ -24,11 +24,11 @@ In this deployment, we will be using the 1\ :sup:`st` change made to app1pool, a
 
    -  New mon-https Health Monitor
 
-.. image:: image/image11.png
+|image11|
 
 -  Cancel the differences window to return to Evaluation list window, select **Test-deploy** and click on Deploy button above.
 
-.. image:: image/image12.png
+|image12|
 
 -  Click on Deploy button again to confirm and observe completion
 
@@ -44,7 +44,7 @@ We will need to use a previous snapshot made prior to the two changes done earli
 
    -  Under Restores section, click on Create button to start a task
 
-.. image:: image/image13.png
+|image13|
 
 Name: **partial-restore**
 
@@ -56,15 +56,13 @@ Restore Scope: **Partial Restore**
 
 Method: **Create evaluation**
 
-    Note
-
-Duplicate names are allowed for a snapshot; therefore, the Deployment Date is provided as a reference.
+**Note** that duplicate names are allowed for a snapshot; therefore, the Deployment Date is provided as a reference.
 
 User can narrow the scope of the restore from Full to Partial. For this lab let’s select Partial Restore from the Restore Scope section.
 
 User can “Create Evaluation” or if urgent “Restore Immediately”.
 
-.. image:: image/image14.png
+|image14|
 
 -  Select “Add” for Source Objects
 
@@ -73,17 +71,17 @@ User can “Create Evaluation” or if urgent “Restore Immediately”.
 
 -  Verify difference between BIG-IQ and Snapshot.
 
-.. image:: image/image15.png
+|image15|
 
-.. image:: image/image16.png
+|image16|
 
 -  Click on Save to close the Select Object window, and then click on Create to start the evaluation
 
 -  The user can restore the partial change defined from the Snapshot deployment.
 
-.. image:: image/image17.png
+|image17|
 
-.. image:: image/image18.png
+|image18|
 
 Click on Restore to complete the partial restore of the change made to app1pool.
 

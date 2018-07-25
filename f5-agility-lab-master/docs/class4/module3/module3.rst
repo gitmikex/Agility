@@ -7,7 +7,7 @@ Objective
 In addition to the built-in roles that ship with BIG-IQ, you can create a custom role with specific privileges to particular areas of BIG-IQ and BIG-IP devices.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: image/image8.png
+|image8|
 
 1. On the left, click ROLE MANAGEMENT > Roles.
 
@@ -44,12 +44,12 @@ associated user's ability to see related objects.
 
    Resource Groups: **NsresGroup**
 
-.. image:: image/image9.png
+|image9|
 
 2. To view the type of user access granted for the custom resource group
    associated with this role, click the View Permissions button.
 
-.. image:: image/image10.png
+|image10|
 
     Pay attention to the Type, Services and Resource Groups columns and
     note the previously customized permissions for Address Lists and

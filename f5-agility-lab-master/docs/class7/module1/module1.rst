@@ -1,128 +1,104 @@
-Module 1: Add licensing base-key to BIG-IQ for consumption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Module 1: Check DNS Sync Group Health
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Navigate to **LICENSE MANAGEMENT** > **Licenses** under the **Device** tab. (Represents device operations)
+Before you can monitor the sync group health, you must add a BIG-IP
+device configured in a DNS sync group to the BIG-IP Devices inventory
+list, and import the LTM and DNS services. For the purpose of this lab,
+the sync group on BIG-IP DNS devices are already properly configured.
 
-.. image:: image/image6.png
+When you use F5 BIG-IQ Centralized Management to manage your DNS sync
+group, you can monitor the health status of the group. Sync group health
+relies on complete alignment of a variety of device configuration
+elements. Using BIG-IQ simplifies the process of determining the health
+of your DNS sync groups.
 
-Click **Add License**
+At the top of the screen, click Devices.
 
-.. image:: image/image7.png
+On the left, click BIG-IP CLUSTERS > DNS Sync Groups.
 
-Fill in the form for your purchased license pool (VEP) (Use the key from your lab instructor)
+The screen displays the list of DNS sync groups defined on this device. A health indicator icon and a message describe the status of each group.
 
-.. image:: image/image8.png
+|image0|
 
-License Name: PurchasedPool\_1G\_Best
+To view the general properties for a sync group, click the sync group name.
 
-Copy and Paste the VEP license key obtained from your lab instructor.
+|image1|
 
-Click **Activate** in the lower right
+The screen displays the properties for the selected group. This screen shows an overview of your DNS sync group health. Under Status, you can see the current state (for example, Required Services Down, or Health Check(s) Passed) for each device in the group.
 
-Click **Accept** in the lower right to accept the EULA.
+To view the health for an individual sync group member, on the left click HEALTH.
 
-2. Repeat steps 6-8 for the Volume license pool (VLS) (Use the key from your email)
+|image2|
 
-.. image:: image/image9.png
+The Health screen displays detailed information for each factor that contributes to the health of a DNS sync group. Following a definition of each factor, a Status row provides additional detail.
 
-While the Volume Pool is activating, click on the pool name to see the activation of all of the offering types for the pool.
+For each indicator, the most serious issues impacting that indicator are listed first. Finally, if the status for a health indicator is not Health Check(s) Passed, the Recommended Action setting describes what you can do to correct the issue.
 
-License Name: VolumeLicensePool\_10G\_Best
+Now, we will introduce a problem in the DNS Sync Group to see how that appears in BIG-IQ.
 
-Copy and Paste the VLS license key obtained from your lab instructor.
+Log into the command line of BOS-vBIGIP01 and run the following command.
 
-.. image:: image/image10.png
+|image3|
 
-.. image:: image/image11.png
+Return to the BIG-IQ GUI and select the status check box and then click the Refresh Status button to force a refresh.
 
-**Note:** This pool will not be active until all of the offerings complete activation.
+|image4|
 
-Click the arrow at the top of the pool properties screen to add the next pool.
+Review the Status for the sync group(s). (This may take a minute for it to show down)
 
-.. image:: image/image12.png
+|image5|
 
-3. Repeat steps 6-8 for the Utility license pool (MSP) (Use the key from your lab instructor)
+Click on the DNS Sync Group name to get more information
 
-License Name: UtilityLicensePool
+|image6|
 
-Copy and Paste the MSP license key obtained from your lab instructor.
+Review the Properties of the DNS Sync Group 
 
-.. image:: image/image13.png
+|image7|
 
-NOTE: Utility pools activate offerings, just like the Volume pools,
-    so the same holds true that the pool will not be active until the
-    offerings are activated.
-
-4. Now, we will create a new pool to hold our LAB VE keys. Click the **New RegKey Pool** button.
+Click on the Health tab to get further information. Scroll down to find the problem. 
    
-.. image:: image/image14.png
+|image8|
 
-Fill out the Registration Key pool name:
+Return to the shell for BIG-IP01 and restart gtmd. 
 
-.. image:: image/image15.png
+|image9|
 
-Click the **Add RegKey** button to add your first LAB VE key:
+Return to the BIG-IQ GUI and verify that all indicators have returned
+   to green. (Again, this may take a minute or two)
+   
+|image10|
 
-.. image:: image/image16.png
-
-Add the first LAB VE key to the pool.
-
-.. image:: image/image17.png
-
-Click **Activate** in the lower right.
-
-Click **Accept** in the lower right to accept the EULA.
-
-.. image:: image/image18.png
-
-Repeat step 16-18 for your second LAB VE regkey.
-
-You should now have a screen that looks like this:
-
-.. image:: image/image19.png
-
-Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device.
-
-
-.. |image6| image:: media/image6.png
-   :width: 2.24972in
-   :height: 0.96863in
-.. |image7| image:: media/image7.png
-   :width: 6.48958in
-   :height: 1.66667in
-.. |image8| image:: media/image8.png
-   :width: 5.03062in
-   :height: 2.71841in
-.. |image9| image:: media/image9.png
-   :width: 5.04104in
-   :height: 2.71841in
-.. |image10| image:: media/image10.png
+.. |image0| image:: media/image1.png
    :width: 6.50000in
-   :height: 1.82917in
-.. |image11| image:: media/image11.png
-   :width: 3.04129in
-   :height: 3.48915in
-.. |image12| image:: media/image12.png
-   :width: 4.89522in
-   :height: 0.98946in
-.. |image13| image:: media/image13.png
-   :width: 5.10353in
-   :height: 2.82256in
-.. |image14| image:: media/image14.png
-   :width: 3.19752in
-   :height: 0.96863in
-.. |image15| image:: media/image15.png
-   :width: 4.50833in
-   :height: 2.09583in
-.. |image16| image:: media/image16.png
+   :height: 2.57500in
+.. |image1| image:: media/image2.png
    :width: 6.50000in
-   :height: 2.73333in
-.. |image17| image:: media/image17.png
-   :width: 6.49583in
-   :height: 3.25417in
-.. |image18| image:: media/image18.png
-   :width: 6.49167in
-   :height: 4.17500in
-.. |image19| image:: media/image19.png
-   :width: 6.49167in
-   :height: 2.40417in
+   :height: 2.55833in
+.. |image2| image:: media/image3.png
+   :width: 6.50000in
+   :height: 3.65625in
+.. |image3| image:: media/image4.png
+   :width: 5.48890in
+   :height: 0.47911in
+.. |image4| image:: media/image5.png
+   :width: 3.08295in
+   :height: 1.12486in
+.. |image5| image:: media/image6.png
+   :width: 6.50000in
+   :height: 1.05972in
+.. |image6| image:: media/image7.png
+   :width: 6.50000in
+   :height: 1.08333in
+.. |image7| image:: media/image8.png
+   :width: 6.50000in
+   :height: 2.48542in
+.. |image8| image:: media/image9.png
+   :width: 6.50000in
+   :height: 2.02708in
+.. |image9| image:: media/image10.png
+   :width: 5.96800in
+   :height: 0.45828in
+.. |image10| image:: media/image11.png
+   :width: 6.50000in
+   :height: 2.02153in

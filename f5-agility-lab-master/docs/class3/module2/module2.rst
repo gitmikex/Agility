@@ -7,7 +7,7 @@ We will start by granting one of our LAB VE keys.
 
 1.  Select the license that you want to assign to a device and click the **Assign** button. 
     
-.. image:: image/image20.png
+|image20|
 
 You can assign the licenses to managed devices or unmanaged devices from BIG-IQ.
 
@@ -16,27 +16,27 @@ For this lab, you should avoid giving licenses to BOS-vBIG-IP01 or BOS-vBIG-IP02
     | Select **Managed Device**
     | Device: SEA-vBIG-IP01.termmarc.com
 
-.. image:: image/image21.png
+|image21|
 
 Click the Assign button in the lower right.
 
 Click the OK button to proceed with the assignment of the license.
 
-.. image:: image/image22.png
+|image22|
 
 You should now see that license as assigned out of the pool to Device Name: SEA-vBIGIP01.termmarc.com with the License Status as “Licensed”.
 
-.. image:: image/image23.png
+|image23|
 
 You can also view all assignments by clicking on Assignments in the left hand menu
 
-.. image:: image/image24.png
+|image24|
 
-.. image:: image/image25.png
+|image25|
 
 2.  Now we can create a report that shows our license usage. Click the Report button below Assignments.
 
-.. image:: image/image26.png
+|image26|
 
 We will generate a Historical Report that shows the license assignments that we have done today.
 
@@ -45,13 +45,13 @@ We will generate a Historical Report that shows the license assignments that we 
     | **Move all license pools from Available to Selected**
     | Usage period: Leave Starting Date and Ending Date as today’s date.
 
-.. image:: image/image27.png
+|image27|
 
 Click Download in the lower right lower corner to download the reports
 
 If your browser raises a question about downloading multiple files, click Allow:
 
-.. image:: image/image28.png
+|image28|
 
 Review the CSV files that are downloaded.
 

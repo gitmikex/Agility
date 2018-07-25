@@ -1,84 +1,90 @@
-Module 2 Assign Pool Licensing to a device BIG-IP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Module 2: Application Templates & Deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device. 
+In this module, we will learn how to use Application Templates and how
+to deploy an \ **Application**.
 
-We will start by granting one of our LAB VE keys.
+The Application Templates will be created by \ **marco**, the
+Administrator. \ **larry** will create the security policies and let
+Marco know about the ones to associate with the templates. Once the
+template is ready with all the necessary information, it will be ready
+to use by the Application owner.
 
-1.  Select the license that you want to assign to a device and click the **Assign** button. 
-    
-.. image:: image/image20.png
+**paula** needs to deploy an application, she has multiple Application
+servers. At this time, she needs to test the performance of her
+application, she also wants to make her application secure before
+staging it to production. She connects to the BIG-IQ and has access to
+her Application Dashboard. \ **paula**\ uses the application template
+created by Marco to deploy her Application.
 
-You can assign the licenses to managed devices or unmanaged devices from BIG-IQ.
+After a week of testing her application (in the class ~5 min), she will
+ask \ **larry** to fine tune and validate the learning done by the
+Application Firewall (BIG-IP ASM).
 
-For this lab, you should avoid giving licenses to BOS-vBIG-IP01 or BOS-vBIG-IP02. We are going to test Managed device licensing by using SEA-vBIG-IP01.
+.. NOTE::
+	 A traffic generator located on the \ *Ubuntu Lamp Server, LDAP and DHCP* server, is sending good traffic every minute to the virtual servers.
 
-    | Select **Managed Device**
-    | Device: SEA-vBIG-IP01.termmarc.com
+Once the security policy is tuned and validated, \ **paula** will
+enforce blocking mode in the policy.
 
-.. image:: image/image21.png
+Finally, we will simulate “bad” traffic to show the security policy
+blocking it.
 
-Click the Assign button in the lower right.
+.. NOTE::
+	 A traffic generator located on the \ *Ubuntu Lamp Server, LDAP and DHCP* server, can be launched manually to send bad traffic to the virtual servers.
 
-Click the OK button to proceed with the assignment of the license.
+**Built-in templates**
 
-.. image:: image/image22.png
+BIG-IQ v6.0 will have the default templates below built-in. These
+default templates cannot be modified but they can be cloned. They can be
+used to deploy various type of applications. These default templates are
+only displayed after BIG-IQ is managing a BIG-IP device.
 
-You should now see that license as assigned out of the pool to Device Name: SEA-vBIGIP01.termmarc.com with the License Status as “Licensed”.
+-  Default-AWS-f5-fastHTTP-lb-template: For load balancing an HTTP-based
+   application, speeding up connections and reducing the number of
+   connections to the back-end server. (only for AWS)
 
-.. image:: image/image23.png
+-  Default-AWS-f5-HTTPS-WAF-lb-template: For load balancing an HTTPS
+   application on port 443 with a Web Application Firewall using an ASM
+   Rapid Deployment policy. (only for AWS)
 
-You can also view all assignments by clicking on Assignments in the left hand menu
+-  Default-f5-FastL4-TCP-lb-template: For load balancing a TCP-based
+   application with a FastL4 profile.
 
-.. image:: image/image24.png
+-  Default-f5-FastL4-UDP-lb-template: For load balancing a UDP-based
+   application with a FastL4 profile.
 
-.. image:: image/image25.png
+-  Default-f5-HTTP-lb-template: For load balancing an HTTP application
+   on port 80.
 
-2.  Now we can create a report that shows our license usage. Click the Report button below Assignments.
+-  Default-f5-fastHTTP-lb-template: For load balancing an HTTP-based
+   application, speeding up connections and reducing the number of
+   connections to the back-end server.
 
-.. image:: image/image26.png
+-  Default-f5-HTTPS-WAF-lb-template: For load balancing an HTTPS
+   application on port 443 with a Web Application Firewall using an ASM
+   Rapid Deployment policy.
 
-We will generate a Historical Report that shows the license assignments that we have done today.
+-  Default-f5-HTTPS-offload-lb-template: For load balancing an HTTPS
+   application on port 443 with SSL offloading on BIG-IP.
 
-    | Select Type: Historical Report
-    | Licenses: All License Types
-    | **Move all license pools from Available to Selected**
-    | Usage period: Leave Starting Date and Ending Date as today’s date.
+**Warning**
 
-.. image:: image/image27.png
+    Templates with virtual servers without a HTTP profiles can not be
+    depoyed to a Service Scaling Group
 
-Click Download in the lower right lower corner to download the reports
+Connect as \ **marco**, go to \ *Applications* > *SERVICE CATALOG*:
 
-If your browser raises a question about downloading multiple files, click Allow:
+Look through the different default templates.
 
-.. image:: image/image28.png
+|image1|
 
-Review the CSV files that are downloaded.
+.. toctree::
+   :maxdepth: 1
+   :glob:
 
-.. |image20| image:: media/image20.png
-   :width: 3.66621in
-   :height: 1.44774in
-.. |image21| image:: media/image21.png
-   :width: 6.23750in
-   :height: 2.79583in
-.. |image22| image:: media/image22.png
+   lab*
+   
+.. |image1| image:: media/image2.png
    :width: 6.50000in
-   :height: 1.60139in
-.. |image23| image:: media/image23.png
-   :width: 6.50000in
-   :height: 1.85417in
-.. |image24| image:: media/image24.png
-   :width: 2.31221in
-   :height: 1.02071in
-.. |image25| image:: media/image25.png
-   :width: 6.50000in
-   :height: 1.12500in
-.. |image26| image:: media/image26.png
-   :width: 1.77061in
-   :height: 0.95821in
-.. |image27| image:: media/image27.png
-   :width: 6.49583in
-   :height: 3.79583in
-.. |image28| image:: media/image28.png
-   :width: 3.62455in
-   :height: 1.19777in
+   :height: 2.36611in
