@@ -19,6 +19,24 @@ d. Select a Cluster: **BostonCluster**
 
 e. Leave everything else default.
 
+.. list-table::
+   :header-rows: 1
+   :widths: 30 30
+
+   * - Name
+     - Value
+   * - ``IP Address``
+     - 10.1.10.10
+   * - ``username``
+     - admin
+   * - ``password``
+     - admin
+   * - ``Cluster Display Name``
+     - Use Existing
+   * - ``Select A Cluster``
+     - Boston Cluster
+ 
+
 |image1|
 
 Click the Add button to add this device to BIG-IQ.

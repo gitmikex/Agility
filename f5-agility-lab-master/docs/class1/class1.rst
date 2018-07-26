@@ -3,7 +3,7 @@ Class 1 - Device Management
 
 **Goal:**
 
-The following labs will get you familiar with the management of BIG-IP devices.
+In this module, you will learn how to import, and centrally manage BIG-IP devices utilizing the BIG-IQ Centralized Management Devices functions.
 
 The following steps have been completed for you to ensure the proper setup of the lab environment.
 
@@ -17,7 +17,7 @@ The following steps have been completed for you to ensure the proper setup of th
 
 1. Import BIG-IP device to BIG-IQ for centralized management and inventory
 
-2. Review BIG-IP cluster status and configurations
+2. Review BIG-IP device cluster status and configurations
 
 3. Automate device backups and archive a copy of the backup file
 
