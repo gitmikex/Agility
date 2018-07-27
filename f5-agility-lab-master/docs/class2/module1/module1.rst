@@ -25,21 +25,15 @@ Click Export and then click on **Download f5-ca-bundle.crt** button to save the 
 
 |image4|
 
-After saving the certificate file, click Cancel button to go back to
-previous screen.
+After saving the certificate file, click Cancel button to go back to previous screen.
 
-5. Now, circle back to the BIG-IQ TMUI and go back to the Certificate Properties \ **State** setting, click the \ **Import** button and then:
+5. Now, circle back to the BIG-IQ CM TMUI and go back to the Certificate Properties: State setting, click the Import button and then:
 
 -  To upload the certificate's file, select Upload File and click the Choose File button to navigate to the certificate file you saved before.
 
 |image5|
 
-Since this is a bundled certificate/key pair, you can skip the next
-step.
-
-6. For the Key Properties State setting, click the Import button and then:
-
--  To upload the key's file, select Upload File and click the Choose File button to navigate to the key file.
+Since this is a bundled certificate/key pair, you do not need to separately import the key file.
 
 7. Click the Save & Close button. Your certificate/key pair is now **Managed** by BIG-IQ.
 
