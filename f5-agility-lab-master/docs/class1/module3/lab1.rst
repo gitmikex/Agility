@@ -1,9 +1,7 @@
 Step 1. Create a device group
 -----------------------------
 
-In this scenario, we are going to create a group of all of the devices
-in our Boston data center and schedule a nightly backup that archives a
-copy off to our archive for DR purposes.
+In this scenario, we are going to create a group of all of the devices in our Boston data center and schedule a nightly backup that archives a copy off to our archive for DR purposes.
 
 First, we need to create the group for our backup schedule to reference.
 We have two options in BIG-IQ: static groups, where devices are added

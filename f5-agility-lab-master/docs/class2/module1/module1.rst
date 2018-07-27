@@ -1,6 +1,8 @@
 Module 1: Move a certificate from unmanaged to managed state
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**From the TMUI of the BIG-IQ Centralized Management system BIG_IQ_CM_v6.0.0:**
+
 1. At the top of the screen, click Configuration.
 
 2. On the left, click LOCAL TRAFFIC > Certificate Management > Certificates & Keys. These are the imported from BIG-IP but not yet managed by BIG-IQ.

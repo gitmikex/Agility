@@ -3,8 +3,8 @@ Class 2 - SSL Certificate Management
 
 **Goal:**
 
-The following labs will get you familiar with the BIG-IQ for managing
-the local traffic SSL certificates for the BIG-IP devices from BIG-IQ.
+In this lab, you will be able to manage the BIG-IP local traffic SSL certificates from BIG-IQ. 
+
 From one centralized location, BIG-IQ makes it easy for you to request,
 import, and manage CA-signed SSL certificates, as well as import signed
 SSL certificates, keys, and PKCS #12 archive files created elsewhere.
