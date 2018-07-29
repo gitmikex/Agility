@@ -1,11 +1,11 @@
 Module 2 Assign Pool Licensing to a device BIG-IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device. 
+Now that we have all these different key types available in BIG-IQ, we will use BIG-IQ to push a license to a device.
 
 We will start by granting one of our LAB VE keys.
 
-1.  Select the license that you want to assign to a device and click the **Assign** button. 
+1.  Select the license that you want to assign to a device and click the "Assign" button. 
     
 |image20|
 
@@ -14,7 +14,7 @@ You can assign the licenses to managed devices or unmanaged devices from BIG-IQ.
 For this lab, you should avoid giving licenses to BOS-vBIG-IP01 or BOS-vBIG-IP02. We are going to test Managed device licensing by using SEA-vBIG-IP01.
 
     | Select **Managed Device**
-    | Device: SEA-vBIG-IP01.termmarc.com
+    | Device: **SEA-vBIG-IP01.termmarc.com**
 
 |image21|
 
@@ -54,6 +54,8 @@ If your browser raises a question about downloading multiple files, click Allow:
 |image28|
 
 Review the CSV files that are downloaded.
+
+You can also create an Active Report and view the current assignment of the LAB VE license key to SEA-vBIGIP01.
 
 .. |image20| image:: media/image20.png
    :width: 3.66621in
