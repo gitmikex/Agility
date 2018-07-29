@@ -63,24 +63,24 @@ The 4 type of license keys look like the following:
 
 For a **Purchased Pool**:
 
-|Registration Key : G9662-15664-31005-89034-5196190
-|F5 Product           : F5-BIG-**VEP**3-1G-4-V13-LIC-DEV
+- Registration Key : G9662-15664-31005-89034-5196190
+- F5 Product           : F5-BIG-**VEP**3-1G-4-V13-LIC-DEV
 
 For a **Volume License Pool**:
 
-|Registration Key : B4795-94303-19052-81065-9519921
-|F5 Product           : F5-BIG-**VLS**BT10G1003Y-LIC-DEV
+- Registration Key : B4795-94303-19052-81065-9519921
+- F5 Product           : F5-BIG-**VLS**BT10G1003Y-LIC-DEV
 
 For a **Utility Pool**:
 
-|Registration Key : T2990-58088-27576-27649-7411953
-|F5 Product           : F5-BIG-**MSP**-LOADV1-LIC-DEV
+- Registration Key : T2990-58088-27576-27649-7411953
+- F5 Product           : F5-BIG-**MSP**-LOADV1-LIC-DEV
 
 
 For a **Registration Keys Pool**:
 
-|Registration Key : P2344-09047-04931-00126-7428473
-|F5 Product           : F5-BIG-**VE-LAB**-V13-LIC-DEV
+- Registration Key : P2344-09047-04931-00126-7428473
+- F5 Product           : F5-BIG-**VE-LAB**-V13-LIC-DEV
 
 
 .. toctree::
