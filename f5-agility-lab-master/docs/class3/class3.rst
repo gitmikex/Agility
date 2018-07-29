@@ -64,12 +64,12 @@ The 4 type of license keys look like the following:
 For a **Purchased Pool**:
 
 - Registration Key : G9662-15664-31005-89034-5196190
-- F5 Product           : F5-BIG\-**VEP**3-1G-4-V13-LIC-DEV
+- F5 Product           : F5-BIG\-\**VEP**3-1G-4-V13-LIC-DEV
 
 For a **Volume License Pool**:
 
 - Registration Key : B4795-94303-19052-81065-9519921
-- F5 Product           : F5-BIG\-**VLS**BT10G1003Y-LIC-DEV
+- F5 Product           : F5-BIG\-\**VLS**BT10G1003Y-LIC-DEV
 
 For a **Utility Pool**:
 
