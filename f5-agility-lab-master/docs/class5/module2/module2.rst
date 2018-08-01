@@ -1,12 +1,11 @@
 Module 2: Create and deploy multiple changes with selected roll-back. 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Objective
-^^^^^^^^^
-
 In this deployment, we will be using the 1\ :sup:`st` change made to app1pool, as well as 2\ :sup:`nd` change made to app2pool in the previous task 5.1, to demonstrate the ability to partially roll back one of the two changes for this deployment.
 
 1. First, we will need to deploy the 2\ :sup:`nd` change that consists of a new monitor to the app2pool.
+
+Recall that from the las task, the 2nd change on the monitor did not get pushed to BIG-IP.
 
 -  Starting from the Deployment tab on the top, and under EVALUATE & DEPLOY, click on Local Traffic & Network on the left.
 
@@ -32,7 +31,7 @@ In this deployment, we will be using the 1\ :sup:`st` change made to app1pool, a
 
 -  Click on Deploy button again to confirm and observe completion
 
-   What we have done so far, is to deploy the 2\ :sup:`nd` change made to the HA pair in task 5.1, since we only deployed 1\ :sup:`st` change.
+   What we have done so far, is to deploy the 2\ :sup:`nd` change made to the HA pair in task 5.1, in which only the 1st change to add pool member was deployed to BIG-IP.
 
 2. Next, we will do a restore of the configurations on the HA pair, by rolling back one of the two changes we just made. 
 
@@ -86,6 +85,11 @@ User can “Create Evaluation” or if urgent “Restore Immediately”.
 Click on Restore to complete the partial restore of the change made to app1pool.
 
 Close the complete window and click on View to see the restored configuration. You can see that the added member has been removed from app1pool.
+
+Select Configuration Tab on the top and click on Local Traffic >> Pools on the left. Locate pool app2pool and verify that the previously deployed mon-https monitor has been removed from the pool by the partial restore/rollback action.
+
+.. NOTE::
+     This restore (remove the monitor association to the pool) rolled back the change made to BIG-IQ configuration comparing to the snapshot made before the monitor was even added. However, the monitor change was deployed already to BOS-vBIGIP01, and the restore action does not remove the monitor association on managed BIG-IP. You will need to deploy another change in order remove the monitor association on the BOS-vBIGIP01 device.
 
 .. |image11| image:: media/image11.png
    :width: 6.50000in

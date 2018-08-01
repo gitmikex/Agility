@@ -1,33 +1,45 @@
 Module 1: Create multiple changes. Deploy single change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Objective**
+**Take a snapshot**
 
--  The user has the ability to select a specific change out of many made for deploy. We will try to add an additional node to the existing pool in this task.
+The user has the ability to select a specific change out of many made for deploy. We will try to add an additional node to the existing pool in this task.
+
+Before we start to deploy our first change, we will need to take a snapshot on the current configurations of the BIG-IQ, so we have a reference point to compare before and after the change.
+
+
+From the Deployment tab on the top, click on the left SNAPSHOTS >> Local Traffic & Network on the left, 
+
+Click on Create under Snapshot – Local Traffic & Network title.
+
+Enter the name: Snapshot-Before-Deploy, then click on Create button on the lower right.
+
+Proceed to the first change on BIG-IQ.
+
 
 **Partial Deployment**
 
-1. From the tab Configuration, click on LOCAL TRAFFIC > Pools, enter “app1pool” in the upper right Filter and search, select a pool by clicking on name “app1pool” on either BOS-vBIGIP01 or 02.
+-  1\ :sup:`st` change - add a pool member
+
+From the tab Configuration, click on LOCAL TRAFFIC > Pools, enter “app1pool” in the upper right Filter and search, select a pool by clicking on name “app1pool” on either BOS-vBIGIP01 or 02.
 
 |image1|
 
--  1\ :sup:`st` change
-
--  Click on New Member, select from Existing Node “app1node2” on port 80 HTTP
+Click on New Member, select from Existing Node “app1node2” on port 80 HTTP
 
 |image2|
 
--  Leave everything else default, and click on “Save and Close” on lower right
+Leave everything else default, and click on “Save and Close” on lower right
 
 We have just made a change to the BIG-IQ configuration for app1pool on the BOS HA pair.
 
 -  2\ :sup:`nd` change – Create a New Monitor “mon-https”
 
--  Click into Configuration > LOCAL TRAFFIC > Monitors and then click on “Create” button.
+Click into Configuration > LOCAL TRAFFIC > Monitors and then click on “Create” button.
 
 |image3|
 
--  New Monitor
+New Monitor
    -  Name: **mon-https**
 
    -  Type: **HTTPS**
@@ -44,7 +56,7 @@ Click “Save and Close”
 
 2. Next, we will add the new monitor to the app2pool.
 
--  Add newly created Health Monitor “mon-https” to Pool “app2pool”
+Add newly created Health Monitor “mon-https” to Pool “app2pool”
 
    -  Under Configuration > LOCAL TRAFFIC > Pools, search app2pool in the upper right filter
 
@@ -76,7 +88,7 @@ Click on top Deployment tab, select under EVALUATE & DEPLOY: Local Traffic & Net
 
 |image6|
 
-4. After the evaluation is done, you can click on the “view” link under the Difference column for “partial-deployment” evaluation.
+After the evaluation is done, you can click on the “view” link under the Difference column for “partial-deployment” evaluation.
 
 |image7|
 
@@ -85,7 +97,7 @@ Click on top Deployment tab, select under EVALUATE & DEPLOY: Local Traffic & Net
 .. NOTE::
 	 *Only changes to “app1pool” will be deployed.* The monitor change on app2pool will not be deployed.
 
--  Deploy changes
+Deploy changes
 
    -  Cancel to dismiss the popup window and click on Deploy under
       Evaluation
@@ -94,9 +106,11 @@ Click on top Deployment tab, select under EVALUATE & DEPLOY: Local Traffic & Net
 
 |image9|
 
-5. After deployment is complete, click into the “partial-deploy” to view the details of the deployment.
+After deployment is complete, click into the “partial-deploy” to view the details of the deployment.
 
 |image10|
+
+You can see that the change went in is only the addition of the pool member which is the first change. The change on mon-https monitor did not get pushed to BIG-IP, because it was not selected as the Partial Deploy.
 
 .. NOTE::
 	 The deployment could fail if the targeted BIG-IP devices are not in full sync on configurations, due to timeout on waiting for sync to complete on target devices. Ensure the devices are in full sync before deploying changes.
