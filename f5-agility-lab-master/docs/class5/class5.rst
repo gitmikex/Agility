@@ -3,8 +3,11 @@ Class 5 - Partial Deployment & Roll Back
 
 Goal:
 
-In this lab, we will demonstrate how to manage Virtual Servers on the
-managed BIG-IP devices.
+In this lab, we will demonstrate how to partially deploy the changes made to the device specific objects to the managed BIG-IP devices.
+
+This figure illustrates the workflow you perform to manage the objects on BIG-IP devices. 
+
+|image01|
 
 The objects that you manage using BIG-IQ® depend on associations with
 other, supporting objects. These objects are called \ ***shared
@@ -37,3 +40,5 @@ Tasks:
    :glob:
 
    module*/module*
+
+.. |image01| image:: media/image01.png
