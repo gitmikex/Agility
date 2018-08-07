@@ -1,25 +1,25 @@
 Module 1: Create multiple changes. Deploy single change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Take a snapshot**
-
 The user has the ability to select a specific change out of many made for deploy. We will try to add an additional node to the existing pool in this task.
+
+
+**Take a snapshot**
 
 Before we start to deploy our first change, we will need to take a snapshot on the current configurations of the BIG-IQ, so we have a reference point to compare before and after the change.
 
+- From the Deployment tab on the top, click on the left SNAPSHOTS >> Local Traffic & Network on the left, 
 
-From the Deployment tab on the top, click on the left SNAPSHOTS >> Local Traffic & Network on the left, 
+- Click on Create under Snapshot – Local Traffic & Network title.
 
-Click on Create under Snapshot – Local Traffic & Network title.
+- Enter the name: **Snapshot-Before-Deployment**, then click on Create button on the lower right.
 
-Enter the name: Snapshot-Before-Deploy, then click on Create button on the lower right.
+**Create multiple changes**
 
-Proceed to the first change on BIG-IQ.
+-  1\ :sup:`st` change
 
+We will first add a pool member to app1pool
 
-**Partial Deployment**
-
--  1\ :sup:`st` change - add a pool member
 
 From the tab Configuration, click on LOCAL TRAFFIC > Pools, enter “app1pool” in the upper right Filter and search, select a pool by clicking on name “app1pool” on either BOS-vBIGIP01 or 02.
 
@@ -33,7 +33,11 @@ Leave everything else default, and click on “Save and Close” on lower right
 
 We have just made a change to the BIG-IQ configuration for app1pool on the BOS HA pair.
 
--  2\ :sup:`nd` change – Create a New Monitor “mon-https”
+-  2\ :sup:`nd` change 
+
+Now we will make a few changes on another pool "app2pool".
+
+First, we will create a New Monitor **mon-https**.
 
 Click into Configuration > LOCAL TRAFFIC > Monitors and then click on “Create” button.
 
@@ -56,7 +60,7 @@ Click “Save and Close”
 
 2. Next, we will add the new monitor to the app2pool.
 
-Add newly created Health Monitor “mon-https” to Pool “app2pool”
+Add newly created Health Monitor **mon-https** to Pool “app2pool”
 
    -  Under Configuration > LOCAL TRAFFIC > Pools, search app2pool in the upper right filter
 
@@ -66,21 +70,26 @@ Add newly created Health Monitor “mon-https” to Pool “app2pool”
 
 |image5|
 
--  Click Save and Close
+Click on New Member in Resources section and add a new pool member app2node2:80 to app2pool. 
+ 
+|image05|
 
-Switch back to Deployment tab, under EVALUATE & DEPLOY, click on Local Traffic & Network
+Click Save and Close to add the pool member, and then click on Save and Close again to complete the change to the app2pool.
 
-3. Next, we will create evaluation and deploy this change we just made above
+Now that we made multiple changes, a new member to pool app1pool, a new mon-https monitor, the association of monitor to the app2pool, and a new member to app2pool. 
+
+
+3. Next, we will create evaluation and deploy one of these changes we just made above.
 
 Click on top Deployment tab, select under EVALUATE & DEPLOY: Local Traffic & Network
 
-   -  Click Create under Evaluations and enter the following:
+Click Create under Evaluations and enter the following:
 
       Name: **partial-deploy**
 
       From Evaluation > Source Scope, Select “\ **Partial Changes**\ ”
 
-      From Source Objects > Available, select “Pools”, from pool list, select **only “app1pool**\ ” for Both BOS-vBIGIP01 & 02, and add them to Selected on the right
+      From Source Objects > Available, select “Pools”, from pool list, select **only** “app1pool” for Both BOS-vBIGIP01 & 02, and add them to Selected on the right
 
       Under Target Devices, click “Find Relevant Devices”, select both and add to right
 
@@ -95,12 +104,11 @@ After the evaluation is done, you can click on the “view” link under the Dif
 |image8|
 
 .. NOTE::
-	 *Only changes to “app1pool” will be deployed.* The monitor change on app2pool will not be deployed.
+	 Only changes to “app1pool” will be deployed. The monitor change on app2pool will not be deployed.
 
-Deploy changes
+Now let's deploy the change.
 
-   -  Cancel to dismiss the popup window and click on Deploy under
-      Evaluation
+   -  Cancel to dismiss the popup window and click on Deploy under Evaluation
 
    -  Confirm by click on Deploy button again.
 
