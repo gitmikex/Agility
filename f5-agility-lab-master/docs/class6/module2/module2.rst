@@ -15,17 +15,16 @@ Type forward in the filter box on the right-hand side of the screen and press re
 
 |image20|
 
-Click the check box to the left of the first virtual server entry
+Click the check box to the left of the first virtual server entry.
 
 |image21|
 
-Click the **Clone** button under Virtual Servers at the top of the page
+Click the **Clone** button under Virtual Servers at the top of the page.
 
-Edit the Virtual Server Properties
+Edit the Virtual Server Properties:
 
    | Name: **forward\_vs\_udf\_CLONED**
    | Device: **SEA-vBIGIP01.termmarc.com**
-
    | Destination Address: **1.0.0.0/8**
    | Type: **Forwarding (IP)
    | Protocol: **All Protocols**
@@ -34,11 +33,11 @@ Edit the Virtual Server Properties
 
 |image22|
 
-Click the **Save & Close** button in the lower right
-
-| Close out of the filter
+Click the **Save & Close** button in the lower right.
 
 |image23|
+
+Click on the X in the “Filtered by” box to clear the filter and move to next task.
 
 .. |image19| image:: media/image16.png
    :width: 2.32263in
@@ -53,5 +52,5 @@ Click the **Save & Close** button in the lower right
    :width: 6.50000in
    :height: 2.80417in
 .. |image23| image:: media/image23.png
-   :width: 3.04129in
-   :height: 1.16652in
+   :width: 5.73887in
+   :height: 1.56230in

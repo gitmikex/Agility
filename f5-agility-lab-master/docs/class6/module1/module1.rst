@@ -23,12 +23,12 @@ Fill out the configuration properties for the node
 
 Click the **Save & Close** button in the lower right
 
-Repeat steps 4 and 5 for the second node
+Repeat above steps for the second node:
     | Name: **BIQAppNode2**
     | Device: **BOS-vBIGIP01.termmarc.com**
     | Address: **10.1.20.121**
 
-Verify that the MyApp nodes are created by typing MyApp in the filter box in the upper right and pressing return.
+Verify that the nodes are created by typing “BIQApp” in the filter box in the upper right and pressing return.
  
  |image4|
 
@@ -37,6 +37,7 @@ You should now see an entry for each of the MyApp nodes on BIG-IP01 and BIG-IP02
 \*\*\ ***When you create an object on a clustered device, BIG-IQ automatically replicates that configuration to the peer node in the staged configuration.***
 
 |image5|
+
 
 2. Now we will create a pool with these nodes as pool members.
 
@@ -57,28 +58,23 @@ Fill out the Pool Properties
 
 |image8|
 
-Click the **Save & Close** button in the lower right
-
-Click on the MyAppPool name in the list of pools to add pool members
-
-|image9|
-
 Click on the New Member button under Resources to add pool members
 
 |image10|
 
 Complete the Pool Member Properties for the first pool member
-    | Node Type: Existing Node
+    | Node Type: **Existing Node**
     | Node: **BIQAppNode1**
     | Port: **80**
 
 |image11|
 
-Click the **Save** button in the lower right to save the pool member.
+Click the Save & Close button in the lower right to close the Add New Member window.
 
-Repeat steps 15 and 16 for the second pool member MyAppNode2 port 80.
+Repeat the above steps for the second pool member **BIQAppNode2 port 80**.
 
-Click the **Save** **& Close** button in the lower right to save your pool.
+At last, click the **Save** **& Close** button in the lower right to save your pool.
+
 
 3. Now we will create a custom profile for our Virtual Server.
 
@@ -86,11 +82,12 @@ Navigate to **LOCAL TRAFFIC > Profiles**
  
  |image12|
 
-Click the Create button to create our custom profile
+Click the Create button to create our custom profile.
 
 |image13|
 
-Fill out the Profile Properties
+Fill out the Profile Properties.
+
     | Name: **Source\_Addr\_Timeout\_75**
     | Type: **Persistence Source Address**
     | Parent Profile: **Source\_addr**
@@ -100,17 +97,20 @@ Fill out the Profile Properties
 
 Click **Save & Close** in the lower right.
 
-4. Now we will create our Virtual Server. Navigate to **LOCAL TRAFFIC > Virtual Servers**
+
+4. Now we will create our Virtual Server. 
+
+Navigate to **LOCAL TRAFFIC > Virtual Servers**.
 
 |image15|
 
-
-Click the Create button to create the Virtual Server
+Click the Create button to create the Virtual Server.
 
 |image16|
 
 
-Fill out the Virtual Server Properties
+Fill out the Virtual Server Properties:
+
     | Name: **BIQAppVS**
     | Device: **BOS-vBIGIP01.termmarc.com**
     | Destination Address: **10.1.10.120**
@@ -119,14 +119,15 @@ Fill out the Virtual Server Properties
 
 |image17|
 
-Scroll down and fill out the Resources
+Scroll down and fill out the "Resources" section:
+
     | Default Pool: **BIQAppPool**
-    | Default Persistence Profile: **Source\_Addr\_Timeout\_75
-      **\ Leave all other options at their default settings.
+    | Default Persistence Profile: **Source\_Addr\_Timeout\_75**
+    | Leave all other options at their default settings.
 
 |image18|
 
-Click **Save & Close** in the lower right
+Click **Save & Close** in the lower right.
 
 We now have staged our application and we will deploy it in a later workflow.
 

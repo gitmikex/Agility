@@ -5,13 +5,14 @@ Now that we have staged a number of changes on the BIG-IQ, we will evaluate the 
 
 Navigate to **Deployment** on the top menu bar.
 
-Navigate to **EVALUATE & DEPLOY > Local Traffic & Network**
+Navigate to **EVALUATE & DEPLOY > Local Traffic & Network**.
 
 |image33|
 
-Click the **Create** button under **Evaluations**
+Click the **Create** button under **Evaluations**.
 
-Fill out the fields to Create Evaluation
+Fill out the fields to Create Evaluation:
+
     | Name: **DeployChgSet1
     | Source: **Current Changes**
     | Source Scope: **All Changes**
@@ -20,7 +21,7 @@ Fill out the fields to Create Evaluation
 
 |image34|
 
-Click the Create button in the lower right
+Click the Create button in the lower right.
 
 |image35|
 
@@ -68,7 +69,7 @@ Click on the name of the Deployment to review what was deployed
 
 Log in to BOS—vBIGIP01 using the TMUI link in UDF and confirm that your deployment was successful. 
 
-You should now see the **MyAppVS** on the Network Map.
+You should now see the **BIQAppVS** on the Network Map.
 
 .. |image33| image:: media/image32.png
    :width: 2.27055in
