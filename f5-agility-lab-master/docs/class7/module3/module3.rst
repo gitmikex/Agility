@@ -1,21 +1,17 @@
 Module 3: Managing DNS Listeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A \ *listener* is a specialized virtual server that passively checks for
-DNS packets on port 53 and the IP address you assign to the listener.
-When a DNS query is sent to the IP address of the listener, BIG-IP DNS
-either handles the request locally or forwards the request to the
-appropriate resource.
+A \ *listener* is a specialized virtual server that passively checks for DNS packets on port 53 and the IP address you assign to the listener.
 
-You can view the DNS listeners configured for the DNS sync groups you
-manage by navigating to "Configuration > DNS > Delivery > Listeners".
+When a DNS query is sent to the IP address of the listener, BIG-IP DNS either handles the request locally or forwards the request to the appropriate resource.
 
-From there, click a listener to edit it, click Create to set up a new
-one.
+You can view the DNS listeners configured for the DNS sync groups you manage by navigating to "Configuration > DNS > Delivery > Listeners".
+
+From there, click a listener to edit it, click Create to set up a new one.
 
 
 
-**Edit a DNS listener**
+**Edit an Existing DNS listener**
 
 You can view and modify the properties for existing DNS listeners. Since you are working with an existing listener, you can modify only some settings.
 
