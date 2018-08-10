@@ -10,7 +10,7 @@ servers or zone transfers from the local BIND server on the BIG-IP
 system.
 
 You can view the DNS listeners configured for the DNS sync groups you
-manage by navigating to Configuration > DNS > Delivery > Profiles. From
+manage by navigating to "Configuration > DNS > Delivery > Profiles". From
 there, click a listener to edit it, click create to setup a new one.
 
 **Create a DNS profile**
@@ -18,7 +18,7 @@ there, click a listener to edit it, click create to setup a new one.
 You create a profile to configure various DNS attributes that a virtual
 server or DNS listener object can apply to DNS traffic.
 
-At the top of the screen, click Configuration, then, on the left, click DNS > Delivery > Profiles.
+At the top of the screen, click Configuration, then, on the left, click "DNS > Delivery > Profiles".
 
 The screen displays the list of profiles defined on this device.
 
@@ -46,7 +46,7 @@ You can view and modify the properties for existing DNS profiles. Since
 you are working with an existing profile, you can modify only some
 settings.
 
-At the top of the screen, click Configuration, then, on the left, click DNS > Delivery > Profiles.
+At the top of the screen, click Configuration, then, on the left, click "DNS > Delivery > Profiles".
 
 The screen displays the list of profiles defined on this device.
 

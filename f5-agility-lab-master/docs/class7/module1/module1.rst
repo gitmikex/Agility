@@ -64,8 +64,7 @@ Return to the shell for BIG-IP01 and restart gtmd.
 
 |image9|
 
-Return to the BIG-IQ GUI and verify that all indicators have returned
-   to green. (Again, this may take a minute or two)
+12.	Return to the BIG-IQ DNS Sync Group page and click on Refresh Status button again, and verify that all indicators have returned to green.
    
 |image10|
 

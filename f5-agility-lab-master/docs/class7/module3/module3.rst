@@ -8,18 +8,18 @@ either handles the request locally or forwards the request to the
 appropriate resource.
 
 You can view the DNS listeners configured for the DNS sync groups you
-manage by navigating to Configuration > DNS > Delivery > Listeners.
+manage by navigating to "Configuration > DNS > Delivery > Listeners".
 
 From there, click a listener to edit it, click Create to set up a new
 one.
 
+
+
 **Edit a DNS listener**
 
-You can view and modify the properties for existing DNS listeners. Since
-you are working with an existing listener, you can modify only some
-settings.
+You can view and modify the properties for existing DNS listeners. Since you are working with an existing listener, you can modify only some settings.
 
-1. At the top of the screen, click Configuration, then, on the left, click DNS > Delivery > Listeners.
+1. At the top of the screen, click Configuration, then, on the left, click "DNS > Delivery > Listeners".
 
 The screen displays the list of listeners defined on this device.
 
@@ -37,6 +37,8 @@ The screen displays the current settings for the selected listener.
 
 The system updates the listener with the settings you specified.
 
+
+
 **Create a DNS listener**
 
 Before you create a DNS listener, make sure you have a pool of DNS servers.
@@ -48,7 +50,7 @@ with the same IPv4 address that handles TCP traffic; one with an IPv6
 address that handles UDP traffic, and one with the same IPv6 address
 that handles TCP traffic.
 
-1. At the top of the screen, click Configuration, then, on the left, click DNS > Delivery > Listeners.
+1. At the top of the screen, click Configuration, then, on the left, click "DNS > Delivery > Listeners".
 
 The screen displays the list of listeners defined on this device.
 
@@ -80,7 +82,7 @@ Name, Device, Address, and DNS Profile are the only required parameters when
 
 The system creates the new listener you specified and adds it to the list of listeners.
 
-9. Create another listener with the same IPv4 address and configuration, but select TCP from the Protocol list.
+9. Create another listener with the same IPv4 address and configuration, but **select TCP from the Protocol list**.
 
 | Name: **my-listener-tcp**
 | BIG-IP Device: **SEA-vBIGIP01.termmarc.com** 

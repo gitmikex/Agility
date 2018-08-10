@@ -37,7 +37,7 @@ management and troubleshooting tasks.
 .. NOTE::
 	 Marco, Paula and Larry are already created in the blueprint, so only the \ **david** user needs to be created.
 
-Connect to your BIG-IQ as \ **admin** and go to : *System* > *Users Management* > *Users* and verify each user & role below and change where needed.
+Connect to your BIG-IQ as \ **admin** and go to: *System* > *Users Management* > *Users* and verify each user & role below and change where needed.
 
 **1. Marco: Full Administrator**
 

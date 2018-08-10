@@ -9,8 +9,7 @@ Advanced WAF, respectively, to isolate workloads and for better
 manageability.
 
 In addition, you can auto-scale application services based on predefined
-thresholds. Application auto-scaling uses the **Service Scaling Group
-(SSG)** feature, which enables administrators to configure the BIG-IQ
+thresholds. Application auto-scaling uses the **Service Scaling Group (SSG)** feature, which enables administrators to configure the BIG-IQ
 system to scale-out or scale-in BIG-IP virtual edition instances based
 on scaling rules, such as CPU and memory use or throughput.
 
