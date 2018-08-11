@@ -26,7 +26,6 @@ Edit the Virtual Server Properties:
    | Name: **forward\_vs\_udf\_CLONED**
    | Device: **SEA-vBIGIP01.termmarc.com**
    | Destination Address: **1.0.0.0/8**
-   | Type: **Forwarding (IP)
    | Protocol: **All Protocols**
    | VLANs and Tunnels: **Enabled on…**
    | VLANs and Tunnels: Selected: **internal**

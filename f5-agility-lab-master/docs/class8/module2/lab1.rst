@@ -1,40 +1,33 @@
-Create custom security policies & Application Service Template
----------------------------------------------------------------
+Create Custom Security Policies
+--------------------------------
 
 Connect as \ **larry**
 
-1. Create the custom ASM policy, go
-   to \ *Configuration* > *SECURITY* > *Web Application
-   Security* > *policies*.
+1. Create the custom ASM policy, go to \ *Configuration* > *SECURITY* > *Web Application Security* > *policies*.
 
 |image2|
 
-Select the viol\_subviol ASM policy from the list and look through its
-settings. Notice the policy is in Transparent mode.
+Select the viol\_subviol ASM policy from the list and look through its settings. Notice the policy is in Transparent mode.
 
-Edit the Policy viol\_subviol, switch to Manual Learning Mode
-and Make available in Application Templates, click Save.
+Edit the Policy viol\_subviol, switch to Manual Learning Mode and Make available in Application Templates, click Save.
 
 |image3|
 
-In addition, go to \ *POLICY BUILDING* > *Settings* and set \ *Policy
-Building Mode* to Central and switch to Manual Learning Mode, click Save
-& Close.
+In addition, go to \ *POLICY BUILDING* > *Settings* and set \ *Policy Building Mode* to Central and switch to Manual Learning Mode, click Save & Close.
 
 |image4|
 
 .. NOTE::
 	 If you want to use learning/blocking mode, you will need a dedicated app template per application.
 
-2. Create the AFM Policy, go
-to \ *Configuration* > *SECURITY* > *Network Security* > *Firewall
-Policies*, click Create. Then enter the name of your
-policy: f5-afm-policy1. Make sure the
-box Make available in Application Templates is checked. Click Save.
+
+2. Create the AFM Policy, go to \ *Configuration* > *SECURITY* > *Network Security* > *Firewall Policies*, click Create. Then enter the name of your policy: f5-afm-policy1. Make sure the box Make available in Application Templates is checked. Click Save.
 
 |image5|
 
-Create 2 Rules:
+Create 2 Rules by clicking on the “Create Rule” button and then the pencil icon at the beginning of each rule. 
+
+Use the “add” button in each column under the title to:
 
 -  rule 1: set the destination ports to 443 and 80, Protocol to tcp
 
@@ -44,18 +37,22 @@ Click Save & Close.
 
 |image6|
 
-Connect as \ **marco**
+Now that we have created our own ASM & AFM security policies, we can proceed to create our own Application Service Template that consists of these two security policies.
 
-1. Create a Clone of the \ *Default-f5-HTTPS-WAF-lb-template* policy, go to \ *Applications* > *SERVICE CATALOG*, and click on \ *Clone*. Enter the name of your cloned template: f5-HTTPS-WAF-lb-template-custom1
+
+Log out of **larry** and connect as \ **marco**
+
+1. Create a Clone of the Default-f5-HTTPS-WAF-lb-template policy:
+
+Go to \ *Applications* > *SERVICE CATALOG*, check the "Default-f5-HTTPS-WAF-lb-template" policy and click on \ *Clone*. 
+
+Enter the name of your cloned template: f5-HTTPS-WAF-lb-template-custom1
 
 |image7|
 
-2. Then select the ASM policy viol\_subviol, the AFM
-   policy f5-afm-policy1 and the Logging Profile templates-default in
-   the SECURITY POLICIES section on both Virtual Servers (Standalone
-   Device).
+2. Then select the ASM policy viol\_subviol, the AFM policy f5-afm-policy1 and the Logging Profile templates-default in the SECURITY POLICIES section on both Virtual Servers (Standalone Device).
 
-    Save & Close
+Click on Save & Close
 
 |image8|
 

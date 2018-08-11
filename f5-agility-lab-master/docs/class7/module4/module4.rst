@@ -37,7 +37,6 @@ The screen displays the properties for the selected object.
 
 |image22|
 
-
 .. |image19| image:: media/image20.png
    :width: 6.49583in
    :height: 2.91250in
