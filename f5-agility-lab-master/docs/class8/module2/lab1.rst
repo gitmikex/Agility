@@ -40,22 +40,6 @@ Click Save & Close.
 Now that we have created our own ASM & AFM security policies, we can proceed to create our own Application Service Template that consists of these two security policies.
 
 
-Log out of **larry** and connect as \ **marco**
-
-1. Create a Clone of the Default-f5-HTTPS-WAF-lb-template policy:
-
-Go to \ *Applications* > *SERVICE CATALOG*, check the "Default-f5-HTTPS-WAF-lb-template" policy and click on \ *Clone*. 
-
-Enter the name of your cloned template: f5-HTTPS-WAF-lb-template-custom1
-
-|image7|
-
-2. Then select the ASM policy viol\_subviol, the AFM policy f5-afm-policy1 and the Logging Profile templates-default in the SECURITY POLICIES section on both Virtual Servers (Standalone Device).
-
-Click on Save & Close
-
-|image8|
-
 .. |image2| image:: media/image3.png
    :width: 6.50000in
    :height: 3.24322in
@@ -71,9 +55,3 @@ Click on Save & Close
 .. |image6| image:: media/image7.png
    :width: 6.50000in
    :height: 2.19608in
-.. |image7| image:: media/image8.png
-   :width: 6.50000in
-   :height: 2.80884in
-.. |image8| image:: media/image9.png
-   :width: 6.50000in
-   :height: 3.85489in
