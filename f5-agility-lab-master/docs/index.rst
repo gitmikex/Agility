@@ -21,7 +21,6 @@ Expected time to complete: **3.5 Hours**
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Contents:
    :glob:
 
