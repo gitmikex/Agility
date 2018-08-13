@@ -8,7 +8,7 @@
 classname = "BIG-IQ 6.0 Centralized Management - Up and Running"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/gitmikex/Agility"
+github_repo = "https://github.com/gitmikex/f5-agility-labs-big-iq"
 
 # OPTIONAL: Google Analytics
 # googleanalytics_id = 'UA-85156643-4'
