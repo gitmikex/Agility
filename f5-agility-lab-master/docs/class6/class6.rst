@@ -1,7 +1,7 @@
 Class 6 - Local Traffic Management Virtual Servers
 ====================================================
 
-Goal:
+**Goal:**
 
 In this lab, we will demonstrate how to manage Virtual Servers on the managed BIG-IP devices.
 

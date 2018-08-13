@@ -1,7 +1,7 @@
 Class 3 - License Management 
 =============================
 
-Goal:
+**Goal:**
 
 The following tasks will get you familiar with the BIG-IQ for managing licenses for the BIG-IP devices from BIG-IQ.
 

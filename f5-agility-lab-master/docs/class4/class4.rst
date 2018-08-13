@@ -1,7 +1,7 @@
 Class 4 - Role Management 
 =========================
 
-Goal:
+**Goal:**
 
 The following labs will get you familiar with managing Role Based Access
 Control for the BIG-IP devices from BIG-IQ Centralized Management

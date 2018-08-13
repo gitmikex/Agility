@@ -1,7 +1,7 @@
 Class 7 - BIG-IQ DNS Sync Group Administration
 ===============================================
 
-Goal:
+**Goal:**
 
 In this lab, we will demonstrate how to manage the major DNS components
 on the managed BIG-IP devices from BIG-IQ CM perspective. We will

@@ -1,11 +1,11 @@
 Module 4 - Add a user to a custom role
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Objective**
-
-Add a user to a custom role to give them specific permissions to a resource group.
+In this module, we will add a user to a custom role to give them specific permissions to a resource group.
 
 |image11|
+
+**Steps:**
 
 1. On the left navigation area, click USER MANAGEMENT > Users.
 

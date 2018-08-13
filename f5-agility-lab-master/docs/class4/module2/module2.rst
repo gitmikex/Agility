@@ -1,16 +1,11 @@
 Module 2 - Create a resource group and associate it with a role type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Objective
-^^^^^^^^^
-
-Create a resource group with all of the BIG-IP objects you want to provide access to, and assign a role type to it.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this module, we will create a resource group with all of the BIG-IP objects you want to provide access to, and assign a role type to it.
 
 |image6|
 
-Steps:
-^^^^^^
+**Steps:**
 
 1. Click ROLE MANAGEMENT > Resource Groups on the left navigation area.
 

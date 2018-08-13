@@ -1,16 +1,11 @@
 Module 1 - Create a custom role type to give permissions to BIG-IP object types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Objective
-^^^^^^^^^
-
-Creating a custom role type is the first step to providing custom role-based access to users.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this module, we will be creating a custom role type is the first step to providing custom role-based access to users.
 
 |image2|
 
-Steps:
-^^^^^^
+**Steps:**
 
 1. At the top of the screen, click System.
 
