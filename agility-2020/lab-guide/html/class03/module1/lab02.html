@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 3 - Adding a WAF policy to an application" href="lab03.html" />
+    <link rel="prev" title="Lab 1 - Creating a Simple HTTP Application using AS3" href="lab01.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class09/class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging</a><ul>
+<li><a class="reference internal" href="#https-application-with-ssl-offload">HTTPS application with SSL Offload</a></li>
+<li><a class="reference internal" href="#https-application-with-ssl-bridging">HTTPS Application with SSL Bridging</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a>
+
+          <span class="right">
+             <a href="../../_sources/class03/module1/lab02.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-2-creating-an-https-application-with-ssl-offload-or-ssl-bridging">
+<h1>Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging<a class="headerlink" href="#lab-2-creating-an-https-application-with-ssl-offload-or-ssl-bridging" title="Permalink to this headline">¶</a></h1>
+<p>In this portion of the lab, you will be creating more applications via AS3.
+The focus in these labs is creating applications that require SSL.</p>
+<div class="section" id="https-application-with-ssl-offload">
+<h2>HTTPS application with SSL Offload<a class="headerlink" href="#https-application-with-ssl-offload" title="Permalink to this headline">¶</a></h2>
+<p>#. In this section we will start by building out a basic HTTPS application with
+SSL Offload.</p>
+<ol class="arabic">
+<li><p class="first">In Postman expand the section for <code class="docutils literal notranslate"><span class="pre">Lab</span> <span class="pre">2</span></code>.</p>
+</li>
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">Authenticate</span></code> declaration, and click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to refresh
+the token used for authentication.</p>
+</li>
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">Basic</span> <span class="pre">HTTPS</span> <span class="pre">Load</span> <span class="pre">Balancing</span></code> option and click on the
+<code class="docutils literal notranslate"><span class="pre">Body</span></code> section of the POST Request. The body will look like the following:</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="p">{</span>
+  <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;AS3&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;persist&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;syncToGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/failoverGroup&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;declaration&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;ADC&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123abc&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample 2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTPS with predictive-node pool&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Sample_02&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Tenant&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;A1&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Application&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;serviceMain&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Service_HTTPS&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;virtualAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;10.1.20.101&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;pool&quot;</span><span class="p">:</span> <span class="s2">&quot;web_pool&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;serverTLS&quot;</span><span class="p">:</span> <span class="s2">&quot;webtls&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;web_pool&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Pool&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;loadBalancingMode&quot;</span><span class="p">:</span> <span class="s2">&quot;round-robin&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;monitors&quot;</span><span class="p">:</span> <span class="p">[</span>
+           <span class="s2">&quot;http&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;servicePort&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;shareNodes&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;serverAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;10.1.10.33&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;10.1.10.34&quot;</span>
+            <span class="p">]</span>
+          <span class="p">}]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;webtls&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;TLS_Server&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;certificates&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;webcert&quot;</span>
+          <span class="p">}]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;webcert&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Certificate&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;in practice we recommend using a passphrase&quot;</span><span class="p">,</span>
+<span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+<span class="nt">&quot;privateKey&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;passphrase&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ciphertext&quot;</span><span class="p">:</span> <span class="s2">&quot;ZjVmNQ==&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;protected&quot;</span><span class="p">:</span> <span class="s2">&quot;eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0&quot;</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Click on <code class="docutils literal notranslate"><span class="pre">Send</span></code>.</p>
+</li>
+<li><p class="first">Confirm the results of the POST, and make sure you receive a result of 200.</p>
+<img alt="../../_images/Postman200OK_HTTPS_Highlighted.JPG" src="../../_images/Postman200OK_HTTPS_Highlighted.JPG" />
+</li>
+<li><p class="first">Login to the BIG-IP to confirm our changes. Open Chrome and navigate to
+<a class="reference external" href="https://10.1.1.4">https://10.1.1.4</a> (or you can click on the <code class="docutils literal notranslate"><span class="pre">BIG-IP01</span></code> bookmark in Chrome).</p>
+</li>
+<li><p class="first">Login with the following credentials: username = admin , password = admin.</p>
+</li>
+<li><p class="first">Expand Local Traffic and then Virtual Servers.  In the Partition expand
+<code class="docutils literal notranslate"><span class="pre">Sample_02</span></code>.  You should see the following:</p>
+<img alt="../../_images/lab2-verify.png" src="../../_images/lab2-verify.png" />
+</li>
+<li><p class="first">In a new tab open <code class="docutils literal notranslate"><span class="pre">http://10.1.20.101</span></code>.  This will automatically redirect
+to SSL and throw a certificate error since our cert doesn't match the
+hostname used.</p>
+</li>
+<li><p class="first">Click through ignoring the certificate error and the application is working.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="https-application-with-ssl-bridging">
+<h2>HTTPS Application with SSL Bridging<a class="headerlink" href="#https-application-with-ssl-bridging" title="Permalink to this headline">¶</a></h2>
+<p>In many environments it is required to perform TLS (SSL) from beginning to end
+of the communication path.  In this example we will perform SSL Bridging by
+adding a <code class="docutils literal notranslate"><span class="pre">serverSSL</span></code> profile in addition to the <code class="docutils literal notranslate"><span class="pre">clientSSL</span></code> profile in the
+previous exercise.</p>
+<ol class="arabic">
+<li><p class="first">In Postman select the Lab2, <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">HTTPS</span> <span class="pre">with</span> <span class="pre">Serverssl</span> <span class="pre">profile</span></code>.
+Notice in the body that we have added a <code class="docutils literal notranslate"><span class="pre">clientTLS</span></code> option.  Why is a
+serverssl profile applied as a clientTLS option?</p>
+<p>The body of the post will be as follows:</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="p">{</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;AS3&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;persist&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;syncToGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/failoverGroup&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;declaration&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;ADC&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123abc&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample 3&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTPS with sslbridging&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;Sample_03&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Tenant&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;A1&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Application&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;serviceMain&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Service_HTTPS&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;virtualAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="s2">&quot;10.1.20.102&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;pool&quot;</span><span class="p">:</span> <span class="s2">&quot;web_pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;clientTLS&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;bigip&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/serverssl&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;serverTLS&quot;</span><span class="p">:</span> <span class="s2">&quot;webtls&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;web_pool&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;loadBalancingMode&quot;</span><span class="p">:</span> <span class="s2">&quot;predictive-node&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;monitors&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">&quot;https&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;servicePort&quot;</span><span class="p">:</span> <span class="mi">443</span><span class="p">,</span>
+               <span class="nt">&quot;shareNodes&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;serverAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="s2">&quot;10.1.10.33&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;10.1.10.34&quot;</span>
+               <span class="p">]</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webtls&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;TLS_Server&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificates&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;webcert&quot;</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webcert&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Certificate&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;in practice we recommend using a passphrase&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;privateKey&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;passphrase&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;ciphertext&quot;</span><span class="p">:</span> <span class="s2">&quot;ZjVmNQ==&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;protected&quot;</span><span class="p">:</span> <span class="s2">&quot;eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0&quot;</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Click on <code class="docutils literal notranslate"><span class="pre">Send</span></code>.</p>
+</li>
+<li><p class="first">Confirm results of the POST, and make sure you receive a result of 200.</p>
+</li>
+<li><p class="first">Verify that the configuration is on the BIG-IP. Select the partition
+Sample_03 and notice the new virtual servers:</p>
+<img alt="../../_images/lab2-verify2.png" src="../../_images/lab2-verify2.png" />
+</li>
+<li><p class="first">Click on the <code class="docutils literal notranslate"><span class="pre">serviceMain</span></code> virtual server and notice in the SSL section
+that we have both a ClientSSL profile and a ServerSSL profile applied:</p>
+<img alt="../../_images/lab2-serverssl.png" src="../../_images/lab2-serverssl.png" />
+</li>
+<li><p class="first">In your browser now go to <code class="docutils literal notranslate"><span class="pre">http://10.1.20.102</span></code>.</p>
+</li>
+<li><p class="first">Do you notice in your declaration what the persistence settings are?  If you
+refresh do you end up rotating through the two web servers or do you stay on
+one?</p>
+<ul class="simple">
+<li>You are actually experiencing part of what the AS3 Service_HTTPS template
+does by default.  The Service_HTTPS class has some default values that you
+can modify, but if you do not modify them they will automatically set.
+Cookie Persistence is the default persistence value for the Service_HTTPS
+class.</li>
+<li>You can see the default values here:
+<a class="reference external" href="https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/examples.html#example-2-https-application">https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/examples.html#example-2-https-application</a></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab01.html" title="Lab 1 - Creating a Simple HTTP Application using AS3" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab03.html" title="Lab 3 - Adding a WAF policy to an application" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

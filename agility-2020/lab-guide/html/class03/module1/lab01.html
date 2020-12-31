@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 1 - Creating a Simple HTTP Application using AS3</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 1 - Creating a Simple HTTP Application using AS3"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 1 - Creating a Simple HTTP Application using AS3 &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging" href="lab02.html" />
+    <link rel="prev" title="Getting Started" href="startup.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class09/class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1 - Creating a Simple HTTP Application using AS3</a></li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a>
+
+          <span class="right">
+             <a href="../../_sources/class03/module1/lab01.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-1-creating-a-simple-http-application-using-as3">
+<h1>Lab 1 - Creating a Simple HTTP Application using AS3<a class="headerlink" href="#lab-1-creating-a-simple-http-application-using-as3" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, we will create a simple HTTP application using AS3. Before sending
+the AS3 declaration, we will use Microsoft Visual Studio Code to validate our
+JSON schema.</p>
+<p><strong>Exercise 1 - AS3 declaration</strong></p>
+<ol class="arabic">
+<li><p class="first">Expand the AS3 collections folder that we imported by clicking on it.</p>
+</li>
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">Lab</span> <span class="pre">1</span></code> folder.</p>
+</li>
+<li><p class="first">For the lab, we will be using token-based authentication via HTTP/HTTPS to
+the BIG-IP API by sending requests to the BIG-IP and including a valid
+BIG-IP authentication token in the <code class="docutils literal notranslate"><span class="pre">X-F5-Auth-Token</span></code> header.</p>
+<img alt="../../_images/token_auth.jpg" src="../../_images/token_auth.jpg" />
+</li>
+<li><p class="first">Click and examine the <code class="docutils literal notranslate"><span class="pre">BIG-IP</span> <span class="pre">Authenticate</span></code> declaration. Click <code class="docutils literal notranslate"><span class="pre">Send</span></code>
+and ensure a 200 OK response in the Postman response window.</p>
+<img alt="../../_images/Postname200OK_Highlighted.JPG" src="../../_images/Postname200OK_Highlighted.JPG" />
+</li>
+<li><p class="first">Now that we have setup token authentication, we can continue working with
+our BIG-IP.</p>
+</li>
+<li><p class="first">We will send a GET request to our BIG-IP to see information about the AS3
+software package that was previously installed.</p>
+</li>
+<li><p class="first">Locate the <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">AS3</span> <span class="pre">Info</span></code> request and double click. Notice that we are
+sending a GET request to an API endpoint with an empty body. Click the blue
+<strong>Send</strong> button, and ensure you get a 200 OK response.</p>
+</li>
+<li><p class="first">In the response, you will see the version fo AS3 that is installed on the
+BIG-IP.</p>
+</li>
+<li><p class="first">Locate the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Application</span></code> request in the same folder. Notice that we
+are sending a POST request to an API endpoint. To examine the body of our
+request, click the <code class="docutils literal notranslate"><span class="pre">Body</span></code> tab.</p>
+</li>
+<li><p class="first">Before we send our AS3 JSON to the BIG-IP, we want to ensure the schema is
+valid. In order to do this, we will use Visual Studio Code in the next
+Exercise.</p>
+</li>
+</ol>
+<p><strong>Exercise 2 - Visual Studio Code Schema Validation</strong></p>
+<ol class="arabic">
+<li><p class="first">Open Visual Studio Code.</p>
+<img alt="../../_images/vs_code.jpg" src="../../_images/vs_code.jpg" />
+</li>
+<li><p class="first">Once open, create a new working file by navigating to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">New</span> <span class="pre">File</span></code>.</p>
+<img alt="../../_images/vscode_newfile.jpg" src="../../_images/vscode_newfile.jpg" />
+</li>
+<li><p class="first">Copy the contents of the file <code class="docutils literal notranslate"><span class="pre">AS3</span> <span class="pre">Schema</span> <span class="pre">Validation</span></code> JSON body and paste
+into VS Code.</p>
+</li>
+<li><p class="first">Save the file to your desktop by selecting <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Save</span> <span class="pre">As</span></code>. Note: make sure to save with a .json
+filename.</p>
+</li>
+<li><p class="first">Once the file has been saved, you will notice a wavy line around line 17.
+This is notifying you that there is a syntax error. You can hover over the
+wavy line to see more information.</p>
+<img alt="../../_images/tenantt.jpg" src="../../_images/tenantt.jpg" />
+<p>You <strong>must</strong> save the file before Visual Studio Code will show you a syntax
+error.</p>
+</li>
+<li><p class="first">For a full declaration, it is easier to view the Problems
+(navigate to <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">-&gt;</span> <span class="pre">Problems</span></code>).</p>
+<img alt="../../_images/view_problems.jpg" src="../../_images/view_problems.jpg" />
+</li>
+<li><p class="first">Correct the JSON syntax error by correcting the typo from <code class="docutils literal notranslate"><span class="pre">Tenantt</span></code> to
+<code class="docutils literal notranslate"><span class="pre">Tenant</span></code>.</p>
+<img alt="../../_images/tenant.jpg" src="../../_images/tenant.jpg" />
+</li>
+<li><p class="first">Using Schema Validation can be very useful when creating AS3 JSON
+declarations. It can help check the accuracy of a declaration before
+deployment for existing declarations. It can also be used as a powerful tool
+while composing your declarations.  It can suggest valid options for a
+property in a declaration and inform you of required values.</p>
+<img alt="../../_images/schema1.jpg" src="../../_images/schema1.jpg" />
+<img alt="../../_images/schema2.jpg" src="../../_images/schema2.jpg" />
+</li>
+<li><p class="first">Now that we have validated our JSON schema, we could confidently send this
+declaration to the BIG-IP to successfully create an HTTP application.</p>
+</li>
+</ol>
+<p><strong>Exercise 3 - Send AS3 declaration</strong></p>
+<ol class="arabic">
+<li><p class="first">Navigate back to Postman and find the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Application</span></code> JSON file. Note
+the only difference between this and the one we used to validate is the
+first line with the key/value of 'schema' and the schema format URL.</p>
+</li>
+<li><p class="first">Send the AS3 declaration by clicking the blue <code class="docutils literal notranslate"><span class="pre">Send</span></code> button. Ensure once
+it is done processing that you receive a 200 OK response.</p>
+<img alt="../../_images/200.jpg" src="../../_images/200.jpg" />
+</li>
+</ol>
+<p><strong>Exercise 4 - Confirm changes on BIG-IP</strong></p>
+<ol class="arabic">
+<li><p class="first">Login to the BIG-IP to confirm our changes. Open Chrome and navigate to
+<code class="docutils literal notranslate"><span class="pre">https://10.1.1.4</span></code> (or you can click on the <code class="docutils literal notranslate"><span class="pre">BIG-IP01</span></code> bookmark in
+Chrome).</p>
+</li>
+<li><p class="first">Login with the following credentials: username = admin , password = admin.</p>
+</li>
+<li><p class="first">Once you are logged in, expand the <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">Traffic</span></code> tab by clicking on it
+on the left and click <code class="docutils literal notranslate"><span class="pre">Virtual</span> <span class="pre">Servers</span></code>.</p>
+</li>
+<li><p class="first">Change your partition by choosing the tenant we created, <code class="docutils literal notranslate"><span class="pre">http_tenant</span></code> on
+the top right of your BIG-IP GUI.</p>
+<img alt="../../_images/change_tenant.jpg" src="../../_images/change_tenant.jpg" />
+</li>
+<li><p class="first">You should now see the virtual server that was just created.</p>
+<img alt="../../_images/virtual_server.jpg" src="../../_images/virtual_server.jpg" />
+</li>
+<li><p class="first">Navigate to <code class="docutils literal notranslate"><span class="pre">Pools</span></code> and examine the pool that was created.</p>
+<img alt="../../_images/pool.jpg" src="../../_images/pool.jpg" />
+</li>
+<li><p class="first">Click on the <code class="docutils literal notranslate"><span class="pre">http_pool</span></code> and click on the <code class="docutils literal notranslate"><span class="pre">Members</span></code> tab to view the pool
+members.</p>
+<img alt="../../_images/pool_members.jpg" src="../../_images/pool_members.jpg" />
+</li>
+</ol>
+<p><strong>Exercise 5 - Modify AS3 declaration</strong></p>
+<ol class="arabic">
+<li><p class="first">Currently, our declaration only has 1 pool member. In this exercise, we will
+modify the AS3 declaration to add another pool member to our virtual server.</p>
+</li>
+<li><p class="first">Go back to Postman and find the AS3 declaration we just pushed previously,
+<code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Application</span></code>.</p>
+</li>
+<li><p class="first">Locate in the declaration where we declare the pool members:</p>
+<img alt="../../_images/one_pool_member.jpg" src="../../_images/one_pool_member.jpg" />
+</li>
+<li><p class="first">In order to add another pool member, we must follow appropriate syntax and
+declare an additional pool member, <code class="docutils literal notranslate"><span class="pre">10.1.10.31</span></code>, as follows:</p>
+<img alt="../../_images/two_pool_members.jpg" src="../../_images/two_pool_members.jpg" />
+</li>
+<li><p class="first">Once we have done this, we can send this updated declaration by clicking the
+blue <code class="docutils literal notranslate"><span class="pre">Send</span></code> button.</p>
+<img alt="../../_images/send.jpg" src="../../_images/send.jpg" />
+</li>
+<li><p class="first">Go back to BIG-IP to see the new pool member that was added. Note: if you are still on the <code class="docutils literal notranslate"><span class="pre">Pool</span></code> page, you can click <code class="docutils literal notranslate"><span class="pre">Refresh</span></code> on the browser to see the newly added pool member.</p>
+<img alt="../../_images/PoolMemberAdded.JPG" src="../../_images/PoolMemberAdded.JPG" />
+</li>
+<li><p class="first"><strong>NOTE</strong>: When changing the AS3 declaration, we changed the end state which
+we would like the BIG-IP to be in. This is one major advantage of a
+declarative interface.</p>
+</li>
+</ol>
+<p><strong>Exercise 6 - Delete HTTP tenant</strong></p>
+<ol class="arabic">
+<li><p class="first">In order to delete our virtual server, pool, and pool members, we can simply
+send a POST with an empty tenant body.</p>
+<img alt="../../_images/clear_tenant.jpg" src="../../_images/clear_tenant.jpg" />
+</li>
+<li><p class="first">Since AS3 is declarative, it will notice that we are sending a POST with an
+empty tenant body, and by default AS3 will delete the existing virtual
+server, pool and pool members.</p>
+</li>
+<li><p class="first">In Postman, find the <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">Application</span></code> declaration. Examine the URI and
+Body declaration. Notice we are sending a POST to the same API endpoint, but
+take a close look at the JSON body.</p>
+</li>
+<li><p class="first">The body declares a AS3 tenant called http_tenant, but the body describing
+the state of the tenant is empty. By default, AS3 will remove the virtual
+server, pool and pool members. <strong>NOTE:</strong> Since this would cause the entire
+tenant to be empty, AS3 will also remove the tenant for us.</p>
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> and ensure a 200 OK response. Navigate back to the BIG-IP,
+refresh the page and confirm the changes that the tenant has been deleted.</p>
+<img alt="../../_images/delete_tenant.jpg" src="../../_images/delete_tenant.jpg" />
+</li>
+</ol>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="startup.html" title="Getting Started" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab02.html" title="Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

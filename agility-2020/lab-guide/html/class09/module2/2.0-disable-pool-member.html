@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Exercise 2.0: Disabling a pool member</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Exercise 2.0: Disabling a pool member"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercise 2.0: Disabling a pool member &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise 2.1: Using a combination of modules to delete configuration on the BIG-IP" href="2.1-delete-configuration.html" />
+    <link rel="prev" title="Section 2 - Ansible F5 Operational/Advanced Exercises" href="module2.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class03/class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Exercise 2.0: Disabling a pool member</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#guide">Guide</a><ul>
+<li><a class="reference internal" href="#step-1">Step 1:</a></li>
+<li><a class="reference internal" href="#step-2">Step 2:</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a></li>
+<li><a class="reference internal" href="#step-5">Step 5</a></li>
+<li><a class="reference internal" href="#step-6">Step 6</a></li>
+<li><a class="reference internal" href="#step-7">Step 7</a></li>
+<li><a class="reference internal" href="#step-8">Step 8</a></li>
+<li><a class="reference internal" href="#step-9">Step 9</a></li>
+<li><a class="reference internal" href="#step-10">Step 10</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#playbook-output">Playbook Output</a></li>
+<li><a class="reference internal" href="#solution">Solution</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a>
+              &gt; <a href="module2.html">Section 2 - Ansible F5 Operational/Advanced Exercises</a>
+
+          <span class="right">
+             <a href="../../_sources/class09/module2/2.0-disable-pool-member.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="exercise-2-0-disabling-a-pool-member">
+<span id="disable-pool-members"></span><h1>Exercise 2.0: Disabling a pool member<a class="headerlink" href="#exercise-2-0-disabling-a-pool-member" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>For this last exercise instead of prescriptive step-by-step walkthrough
+a framework of objectives with hints for each step will be provided.</p>
+<p>Demonstrate the removal of a node from the pool. Build a Playbook that:
+- Retrieve Facts from BIG-IP for the pools present on the BIG-IP (in our
+example only one pool is present) - Display pools available - Store the
+pool name as a fact - Display all the pool members that belong to the
+pool =&gt; IP and port information to the terminal window - Prompt the user
+to disable a particular member or disable all members of the pool -
+Force the appropriate pool members offline</p>
+</div>
+<div class="section" id="guide">
+<h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1">
+<h3>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<p>Using your text editor of choice create a new file called
+<code class="docutils literal notranslate"><span class="pre">disable-pool-member.yml</span></code>.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> nano disable-pool-member.yml
+</pre></div>
+</div>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">vim</span></code> and <code class="docutils literal notranslate"><span class="pre">nano</span></code> are available on the control node, as well as
+Visual Studio and Atom via RDP</div></blockquote>
+</div>
+<div class="section" id="step-2">
+<h3>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
+<p>Enter the following play definition into <code class="docutils literal notranslate"><span class="pre">disable-pool-member.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">Disabling a pool member</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">f5</span>
+  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
+  <span class="nt">gather_facts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3">
+<h3>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
+<p>Add a tasks section and then set a fact for the provider. Once you set
+the provider you can re-use this key in future tasks instead of giving
+the server/user/password/server_port and validate_certs info to each
+task.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Disabling</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">pool</span><span class="nv"> </span><span class="s">member&quot;</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lb</span>
+  <span class="nt">gather_facts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Setup provider</span>
+    <span class="nt">set_fact</span><span class="p">:</span>
+     <span class="nt">provider</span><span class="p">:</span>
+      <span class="nt">server</span><span class="p">:</span> <span class="s">&quot;{{private_ip}}&quot;</span>
+      <span class="nt">user</span><span class="p">:</span> <span class="s">&quot;{{ansible_user}}&quot;</span>
+      <span class="nt">password</span><span class="p">:</span> <span class="s">&quot;{{ansible_ssh_pass}}&quot;</span>
+      <span class="nt">server_port</span><span class="p">:</span> <span class="s">&quot;8443&quot;</span>
+      <span class="nt">validate_certs</span><span class="p">:</span> <span class="s">&quot;no&quot;</span>
+</pre></div>
+</div>
+<p>Now in the next task you can use provider as follows:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bigip_device_info</span><span class="p">:</span>
+  <span class="nt">provider</span><span class="p">:</span> <span class="s">&quot;{{provider}}&quot;</span>
+  <span class="nt">gather_subset</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ltm-pools</span>
+</pre></div>
+</div>
+<p>You DO NOT need to pass the server_ip/user/password etc. for each module
+going forward</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Disabling</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">pool</span><span class="nv"> </span><span class="s">member&quot;</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lb</span>
+  <span class="nt">gather_facts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
+</pre></div>
+</div>
+<p>Next, add a task for the objective listed below:</p>
+<ul class="simple">
+<li>Retrieve Facts from BIG-IP for the subset ltm-pools</li>
+</ul>
+<p>HINT: Try using the bigip_device_info module from Exercise 1.1</p>
+</div>
+<div class="section" id="step-5">
+<h3>Step 5<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h3>
+<p>Next, add a task for the objective listed below:</p>
+<ul class="simple">
+<li>Display the pool information to the terminal window</li>
+</ul>
+<p>HINT: Find a way to <code class="docutils literal notranslate"><span class="pre">loop</span></code> on the output from the above step. Remember
+to also use the debug module</p>
+</div>
+<div class="section" id="step-6">
+<h3>Step 6<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h3>
+<p>Next, add a task for the objective listed below:</p>
+<ul class="simple">
+<li>Store the pool name as a fact</li>
+</ul>
+<p>HINT: An easy way to set fact variables within a Playbook dynamically is
+using the set_fact module</p>
+</div>
+<div class="section" id="step-7">
+<h3>Step 7<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h3>
+<p>Next, add a task for the objective listed below:</p>
+<ul class="simple">
+<li>Display members belonging to the pool</li>
+</ul>
+<p>HINT: Remember to use the debug and refer Exercise 1.4</p>
+</div>
+<div class="section" id="step-8">
+<h3>Step 8<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h3>
+<p>Next, add a task for the objective listed below:</p>
+<ul class="simple">
+<li>Prompt the user to enter a Host:Port to disable a particular member
+or ‘all’ to disable all members</li>
+</ul>
+<p>HINT: Use the prompts module</p>
+</div>
+<div class="section" id="step-9">
+<h3>Step 9<a class="headerlink" href="#step-9" title="Permalink to this headline">¶</a></h3>
+<p>Next, add a task for the objective listed below:</p>
+<ul class="simple">
+<li>Read the prompt information and disable all members or a single
+member based on the input from the user</li>
+</ul>
+<p>HINT: Remember to use when conditions and loops and <a class="reference external" href="https://docs.ansible.com/ansible/latest/modules/bigip_pool_member_module.html">BIG-IP pool member
+module</a></p>
+</div>
+<div class="section" id="step-10">
+<h3>Step 10<a class="headerlink" href="#step-10" title="Permalink to this headline">¶</a></h3>
+<p>Run the playbook - exit back into the command line of the control host
+and execute the following:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> ansible-playbook disable-pool-member.yml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="playbook-output">
+<h2>Playbook Output<a class="headerlink" href="#playbook-output" title="Permalink to this headline">¶</a></h2>
+<p>The output will look as follows.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> ansible-playbook disable-pool-member.yml
+
+<span class="go">PLAY [Disabling a pool member] ******************************************************************************************************************************</span>
+
+<span class="go">TASK [Setup provider] *******************************************************************************************************************************</span>
+<span class="go">ok: [f5]</span>
+
+<span class="go">TASK [Query BIG-IP facts] ***********************************************************************************************************************************</span>
+<span class="go">changed: [f5]</span>
+
+<span class="go">TASK [Display Pools available] ******************************************************************************************************************************</span>
+<span class="go">ok: [f5] =&gt; (item=http_pool) =&gt; {</span>
+<span class="go">    &quot;msg&quot;: &quot;http_pool&quot;</span>
+<span class="go">}</span>
+
+<span class="go">TASK [Store pool name in a variable] ************************************************************************************************************************</span>
+<span class="go">ok: [f5] =&gt; (item=None)</span>
+<span class="go">ok: [f5]</span>
+
+<span class="go">TASK [Show members belonging to pool http_pool] *************************************************************************************************************</span>
+<span class="go">ok: [f5] =&gt; (item=host1:80) =&gt; {</span>
+<span class="go">    &quot;msg&quot;: &quot;host1:80&quot;</span>
+<span class="go">}</span>
+<span class="go">ok: [f5] =&gt; (item=host2:80) =&gt; {</span>
+<span class="go">    &quot;msg&quot;: &quot;host2:80&quot;</span>
+<span class="go">}</span>
+
+<span class="go">TASK [pause] ************************************************************************************************************</span>
+<span class="go">[pause]</span>
+<span class="go">To disable a particular member enter member with format member_name:port</span>
+<span class="go">To disable all members of the pool enter &#39;all&#39;:</span>
+<span class="go">host1:80</span>
+
+<span class="go">TASK [Disable ALL pool members] ************************************************************************************************************************</span>
+<span class="go">skipping: [f5] =&gt; (item=host1:80)</span>
+<span class="go">skipping: [f5] =&gt; (item=host2:80)</span>
+
+<span class="go">TASK [Disable pool member host1:80] *************************************************************************************************************************</span>
+<span class="go">changed: [f5]</span>
+
+<span class="go">PLAY RECAP **************************************************************************************************************</span>
+<span class="go">f5                         : ok=7    changed=2    unreachable=0    failed=0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p>The solution will be provided by the instructor if you are stuck. The
+GUI should show something similar to the following with a black diamond
+indicating the specified node was forced offline.</p>
+<div class="figure" id="id1">
+<img alt="f5bigip-gui" src="../../_images/f5bigip-gui.png" />
+<p class="caption"><span class="caption-text">f5bigip-gui</span></p>
+</div>
+<p>You have finished this exercise. <a class="reference external" href="..">Click here to return to the lab
+guide</a></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="module2.html" title="Section 2 - Ansible F5 Operational/Advanced Exercises" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="2.1-delete-configuration.html" title="Exercise 2.1: Using a combination of modules to delete configuration on the BIG-IP" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

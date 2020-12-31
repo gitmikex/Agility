@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 3 - Adding a WAF policy to an application</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 3 - Adding a WAF policy to an application"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 3 - Adding a WAF policy to an application &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 4 - Creating Multiple HTTP Applications per tenant using AS3" href="lab04.html" />
+    <link rel="prev" title="Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging" href="lab02.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class09/class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 3 - Adding a WAF policy to an application</a><ul>
+<li><a class="reference internal" href="#already-existing-waf-policy-deployment">Already Existing WAF policy deployment</a></li>
+<li><a class="reference internal" href="#waf-policy-in-source-repository">WAF policy in source repository</a></li>
+<li><a class="reference internal" href="#setting-waf-policy-to-blocking-mode">Setting WAF policy to Blocking mode:</a></li>
+<li><a class="reference internal" href="#delete-the-applications-deployed">Delete the Applications deployed</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a>
+
+          <span class="right">
+             <a href="../../_sources/class03/module1/lab03.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-3-adding-a-waf-policy-to-an-application">
+<h1>Lab 3 - Adding a WAF policy to an application<a class="headerlink" href="#lab-3-adding-a-waf-policy-to-an-application" title="Permalink to this headline">¶</a></h1>
+<p>This lab will be broken down to 3 parts.</p>
+<ol class="arabic simple">
+<li>We will apply an already existing WAF policy to an HTTPS virtual server.</li>
+<li>We will apply an policy that is stored in a source repository to an HTTPS
+virtual server.</li>
+<li>We will update the policy to be in blocking mode.</li>
+<li>We will delete our application configurations.</li>
+</ol>
+<div class="section" id="already-existing-waf-policy-deployment">
+<h2>Already Existing WAF policy deployment<a class="headerlink" href="#already-existing-waf-policy-deployment" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">If you already have a WAF policy on the BIG-IP that you would like to apply
+to your application then it is easy enough to just reference it in the AS3
+declaration in the policyWAF area.</p>
+</li>
+<li><p class="first">In Postman select the Lab3, <code class="docutils literal notranslate"><span class="pre">HTTPS</span> <span class="pre">with</span> <span class="pre">local</span> <span class="pre">WAF</span> <span class="pre">policy</span></code> request.
+Notice in the body the <code class="docutils literal notranslate"><span class="pre">policyWAF</span></code> option.</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;AS3&quot;</span><span class="p">,</span>
+<span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span>
+<span class="nt">&quot;persist&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="nt">&quot;syncToGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/failoverGroup&quot;</span><span class="p">,</span>
+<span class="nt">&quot;declaration&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;ADC&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123abc&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample 4&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTPS with sslbridging and WAF&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;Sample_04&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Tenant&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;A1&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Application&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;serviceMain&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Service_HTTPS&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;virtualAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;10.1.10.103&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;pool&quot;</span><span class="p">:</span> <span class="s2">&quot;web_pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;policyWAF&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;bigip&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/test-policy&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;clientTLS&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;bigip&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/serverssl&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;serverTLS&quot;</span><span class="p">:</span> <span class="s2">&quot;webtls&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;web_pool&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;loadBalancingMode&quot;</span><span class="p">:</span> <span class="s2">&quot;predictive-node&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;monitors&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">&quot;https&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;servicePort&quot;</span><span class="p">:</span> <span class="mi">443</span><span class="p">,</span>
+            <span class="nt">&quot;shareNodes&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;serverAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;10.1.10.31&quot;</span>
+            <span class="p">]</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webtls&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;TLS_Server&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificates&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;webcert&quot;</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webcert&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Certificate&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;in practice we recommend using a passphrase&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;privateKey&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;passphrase&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ciphertext&quot;</span><span class="p">:</span> <span class="s2">&quot;ZjVmNQ==&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;protected&quot;</span><span class="p">:</span> <span class="s2">&quot;eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0&quot;</span>
+         <span class="p">}</span>
+         <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Click on <code class="docutils literal notranslate"><span class="pre">Send</span></code>.</p>
+</li>
+<li><p class="first">Confirm the results of the POST, and make sure you receive a result of 200.</p>
+</li>
+<li><p class="first">Look at the BIG-IP configuration and select <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">Traffic</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Virtual</span> <span class="pre">Servers</span></code>.  Select the <code class="docutils literal notranslate"><span class="pre">Sample_04</span></code> partition.</p>
+</li>
+<li><p class="first">Select the <code class="docutils literal notranslate"><span class="pre">serviceMain</span></code> virtual server, and then go to the <code class="docutils literal notranslate"><span class="pre">Security</span></code>
+tab and see the <code class="docutils literal notranslate"><span class="pre">test-policy</span></code> applied to the virtual server.</p>
+<img alt="../../_images/lab3-waf-onbox.png" src="../../_images/lab3-waf-onbox.png" />
+</li>
+<li><p class="first">You can also open a tab and browse to <code class="docutils literal notranslate"><span class="pre">https://10.1.20.103</span></code>.  We have now
+deployed the hackazon application with a WAF policy in learning mode.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="waf-policy-in-source-repository">
+<h2>WAF policy in source repository<a class="headerlink" href="#waf-policy-in-source-repository" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">If you store your WAF policy in a Source Control Repository, you can assign
+it via AS3 as follows.</p>
+</li>
+<li><p class="first">Select the <code class="docutils literal notranslate"><span class="pre">Lab</span> <span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">HTTPS</span> <span class="pre">with</span> <span class="pre">external</span> <span class="pre">WAF</span> <span class="pre">policy</span></code> request, and look
+at the <code class="docutils literal notranslate"><span class="pre">Body</span></code>. Notice the Policy at the bottom and the <code class="docutils literal notranslate"><span class="pre">policyWAF</span></code>
+referencing it, with the URL for the WAF Policy file:</p>
+<p>The body of the post will be as follows:</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;AS3&quot;</span><span class="p">,</span>
+<span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span>
+<span class="nt">&quot;persist&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="nt">&quot;syncToGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/failoverGroup&quot;</span><span class="p">,</span>
+<span class="nt">&quot;declaration&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;ADC&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123abc&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample 4&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTPS with sslbridging and external WAF&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;Sample_04&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Tenant&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;A1&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Application&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;serviceMain&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Service_HTTPS&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;virtualAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;10.1.10.103&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;pool&quot;</span><span class="p">:</span> <span class="s2">&quot;web_pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;policyWAF&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;use&quot;</span><span class="p">:</span> <span class="s2">&quot;My_AWAF_Policy&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;clientTLS&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;bigip&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/serverssl&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;serverTLS&quot;</span><span class="p">:</span> <span class="s2">&quot;webtls&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;web_pool&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;loadBalancingMode&quot;</span><span class="p">:</span> <span class="s2">&quot;predictive-node&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;monitors&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">&quot;https&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;servicePort&quot;</span><span class="p">:</span> <span class="mi">443</span><span class="p">,</span>
+            <span class="nt">&quot;shareNodes&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;serverAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;10.1.10.31&quot;</span>
+            <span class="p">]</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webtls&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;TLS_Server&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificates&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;webcert&quot;</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webcert&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Certificate&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;in practice we recommend using a passphrase&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;privateKey&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;passphrase&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ciphertext&quot;</span><span class="p">:</span> <span class="s2">&quot;ZjVmNQ==&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;protected&quot;</span><span class="p">:</span> <span class="s2">&quot;eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0&quot;</span>
+         <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;My_AWAF_Policy&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;WAF_Policy&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ignoreChanges&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/Larsende/Agility2020-AS3/masterimages/Common_test_policy__2020-1-13_9-38-13__bigip02.as3lab.com.xml&quot;</span>
+         <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Click on <code class="docutils literal notranslate"><span class="pre">Send</span></code>.</p>
+</li>
+<li><p class="first">Confirm the results of the POST, and make sure you receive a result of 200.</p>
+</li>
+<li><p class="first">If you go to <code class="docutils literal notranslate"><span class="pre">/Security/Application</span> <span class="pre">Security/Security</span> <span class="pre">Policies</span></code> and then
+select the <code class="docutils literal notranslate"><span class="pre">Sample_04</span></code> partition, you will notice there are two security
+policies.  One in the <code class="docutils literal notranslate"><span class="pre">Common</span></code> partition and one in the <code class="docutils literal notranslate"><span class="pre">Sample_04</span></code>
+partition.  The <code class="docutils literal notranslate"><span class="pre">Sample_04</span></code> instance is named <code class="docutils literal notranslate"><span class="pre">My_AWAF_Policy</span></code>.</p>
+<p>Also notice in the Virtual Server Security settings that the new
+<code class="docutils literal notranslate"><span class="pre">My_AWAF_Policy</span></code> is applied to the <code class="docutils literal notranslate"><span class="pre">serviceMain</span></code> virtual server instead
+of the test-policy.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="setting-waf-policy-to-blocking-mode">
+<h2>Setting WAF policy to Blocking mode:<a class="headerlink" href="#setting-waf-policy-to-blocking-mode" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Select the <code class="docutils literal notranslate"><span class="pre">Lab</span> <span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">HTTPS</span> <span class="pre">with</span> <span class="pre">external</span> <span class="pre">WAF</span> <span class="pre">policy</span> <span class="pre">in</span> <span class="pre">blocking</span>
+<span class="pre">mode</span></code>, and look at the <code class="docutils literal notranslate"><span class="pre">Body</span></code>.</p>
+<p>In order to set blocking mode we can override what is defined in the Policy
+with an additional enforcementMode option in our WAF Policy declaration:</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;AS3&quot;</span><span class="p">,</span>
+<span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span>
+<span class="nt">&quot;persist&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="nt">&quot;syncToGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/failoverGroup&quot;</span><span class="p">,</span>
+<span class="nt">&quot;declaration&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;ADC&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123abc&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample 4&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTPS with sslbridging and external WAF&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;Sample_04&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Tenant&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;A1&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Application&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;serviceMain&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Service_HTTPS&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;virtualAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;10.1.10.103&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;pool&quot;</span><span class="p">:</span> <span class="s2">&quot;web_pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;policyWAF&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;use&quot;</span><span class="p">:</span> <span class="s2">&quot;My_AWAF_Policy&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;clientTLS&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;bigip&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/serverssl&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;serverTLS&quot;</span><span class="p">:</span> <span class="s2">&quot;webtls&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;web_pool&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Pool&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;loadBalancingMode&quot;</span><span class="p">:</span> <span class="s2">&quot;predictive-node&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;monitors&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">&quot;https&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;servicePort&quot;</span><span class="p">:</span> <span class="mi">443</span><span class="p">,</span>
+            <span class="nt">&quot;shareNodes&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;serverAddresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;10.1.10.31&quot;</span>
+            <span class="p">]</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webtls&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;TLS_Server&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificates&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;webcert&quot;</span>
+         <span class="p">}]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;webcert&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Certificate&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;remark&quot;</span><span class="p">:</span> <span class="s2">&quot;in practice we recommend using a passphrase&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;privateKey&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;passphrase&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ciphertext&quot;</span><span class="p">:</span> <span class="s2">&quot;ZjVmNQ==&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;protected&quot;</span><span class="p">:</span> <span class="s2">&quot;eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0&quot;</span>
+         <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;My_AWAF_Policy&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;WAF_Policy&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/Larsende/Agility2020-AS3/masterimages/Common_test_policy__2020-1-13_9-38-13__bigip02.as3lab.com.xml&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ignoreChanges&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;enforcementMode&quot;</span><span class="p">:</span> <span class="s2">&quot;blocking&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;serverTechnologies&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="s2">&quot;PHP&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;MySQL&quot;</span>
+            <span class="p">]</span>
+         <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Click on <code class="docutils literal notranslate"><span class="pre">Send</span></code>.</p>
+</li>
+<li><p class="first">Confirm the results of the POST, and make sure you receive a result of 200.</p>
+</li>
+<li><p class="first">Now go to the BIG-IP configuration and look at the Security Policies.
+Select the <code class="docutils literal notranslate"><span class="pre">My_AWAF_Policy</span></code> and look at the Enforcement Mode.</p>
+<img alt="../../_images/lab3-blocking.png" src="../../_images/lab3-blocking.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="delete-the-applications-deployed">
+<h2>Delete the Applications deployed<a class="headerlink" href="#delete-the-applications-deployed" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>This time we will delete all the AS3 declarations that are currently
+deployed.</li>
+<li>In Postman open the <code class="docutils literal notranslate"><span class="pre">Getting</span> <span class="pre">Started</span></code> section.</li>
+<li>Select the <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">Delete</span> <span class="pre">ALL</span> <span class="pre">declarations</span></code> declaration, and look at the
+<code class="docutils literal notranslate"><span class="pre">Body</span></code> of the declaration.</li>
+<li>In this instance we are setting the Action to <code class="docutils literal notranslate"><span class="pre">remove</span></code>.  Also notice that
+we set a <code class="docutils literal notranslate"><span class="pre">syncToGroup</span></code> option in order to cause the HA pair to sync
+configurations.</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab02.html" title="Lab 2 - Creating an HTTPS application with SSL Offload or SSL Bridging" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab04.html" title="Lab 4 - Creating Multiple HTTP Applications per tenant using AS3" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

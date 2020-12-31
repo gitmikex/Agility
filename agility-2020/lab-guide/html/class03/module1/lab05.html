@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 5 - How to work with multiple tenants using AS3</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 5 - How to work with multiple tenants using AS3"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 5 - How to work with multiple tenants using AS3 &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 6 - Creating a Applications using AS3 Declarative Interface &amp; BIG-IQ" href="lab06.html" />
+    <link rel="prev" title="Lab 4 - Creating Multiple HTTP Applications per tenant using AS3" href="lab04.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class09/class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 5 - How to work with multiple tenants using AS3</a></li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a>
+
+          <span class="right">
+             <a href="../../_sources/class03/module1/lab05.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-5-how-to-work-with-multiple-tenants-using-as3">
+<h1>Lab 5 - How to work with multiple tenants using AS3<a class="headerlink" href="#lab-5-how-to-work-with-multiple-tenants-using-as3" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, you will work with multiple tenants on a BIG-IP platform.</p>
+<p><strong>Exercise 1 - Deploy Applications for First Tenant</strong></p>
+<ol class="arabic">
+<li><p class="first">Expand the AS3 collections folder that we imported by clicking on it.</p>
+</li>
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">Lab</span> <span class="pre">5</span></code> folder.</p>
+</li>
+<li><p class="first">Click and examine the <code class="docutils literal notranslate"><span class="pre">BIG-IP</span> <span class="pre">Authenticate</span></code> declaration. Click <code class="docutils literal notranslate"><span class="pre">Send</span></code>
+and ensure a 200 OK response in the Postman response window.</p>
+<img alt="../../_images/Postname200OK_Highlighted.JPG" src="../../_images/Postname200OK_Highlighted.JPG" />
+</li>
+<li><p class="first">Locate the <code class="docutils literal notranslate"><span class="pre">Tenant</span> <span class="pre">1:</span> <span class="pre">HTTP</span> <span class="pre">Multi-Applications</span> <span class="pre">(2</span> <span class="pre">Apps)</span></code> request in the
+same folder.  If you look at the <code class="docutils literal notranslate"><span class="pre">Body</span></code> of the request, you will see a
+declaration to create 2 applications in the tenant named <code class="docutils literal notranslate"><span class="pre">http_tenant</span></code>.</p>
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to send the declaration to the BIG-IP.</p>
+</li>
+<li><p class="first">Confirm the results of the POST, and make sure you receive a result of 200.</p>
+</li>
+<li><p class="first">Locate the <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">Get</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">first</span> <span class="pre">tenant's</span> <span class="pre">deployed</span> <span class="pre">declarations</span></code>
+request.  In the request note that you will only retrieve the applications
+deployed for <code class="docutils literal notranslate"><span class="pre">http_tenant</span></code> tenant.</p>
+<img alt="../../_images/Postman_GetTenantDeclaration-Highlighted.JPG" src="../../_images/Postman_GetTenantDeclaration-Highlighted.JPG" />
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to retrieve the deployed applications on the BIG-IP.</p>
+</li>
+<li><p class="first">In the response, you will see the declaration of the both applications.</p>
+</li>
+<li><p class="first">If you login to the BIG-IP, you will see the applications deployed in the
+<code class="docutils literal notranslate"><span class="pre">http_tenant</span></code> partition.</p>
+</li>
+</ol>
+<p><strong>Exercise 2 - Deploy Application for Second Tenant</strong></p>
+<ol class="arabic">
+<li><p class="first">Locate the <code class="docutils literal notranslate"><span class="pre">Tenant</span> <span class="pre">2:</span> <span class="pre">HTTP</span> <span class="pre">Application</span></code> request in the same folder. If you
+look at the <code class="docutils literal notranslate"><span class="pre">Body</span></code> of the request, you will see a declaration to create an
+application in the tenant named <code class="docutils literal notranslate"><span class="pre">http_tenant_2</span></code>.</p>
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to send the declaration to the BIG-IP.</p>
+</li>
+<li><p class="first">You should receive an error <code class="docutils literal notranslate"><span class="pre">422</span> <span class="pre">Unprocessable</span> <span class="pre">Entity</span></code>.  The reason you
+received this error is that the second tenant is attemping to use the same
+pool member IP addresses in the declaration.  In order to use the same pool
+members in the second tenant, you must use the <code class="docutils literal notranslate"><span class="pre">ShareNodes</span></code> option in the
+pool declaration.</p>
+<img alt="../../_images/Postman_Tenant2_Error.JPG" src="../../_images/Postman_Tenant2_Error.JPG" />
+</li>
+<li><p class="first">Open the declaration <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">Delete</span> <span class="pre">first</span> <span class="pre">tenants</span> <span class="pre">declarations</span></code> in order
+to delete the applications for tenant <code class="docutils literal notranslate"><span class="pre">http_tenant</span></code>.</p>
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to delete the applications.</p>
+</li>
+<li><p class="first">Verify that you received a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">200</span> <span class="pre">OK</span></code> response.</p>
+</li>
+<li><p class="first">Open the declaration <code class="docutils literal notranslate"><span class="pre">Tenant</span> <span class="pre">1:</span> <span class="pre">HTTP</span> <span class="pre">Multi-Applications</span> <span class="pre">(2</span> <span class="pre">Apps)</span> <span class="pre">-</span>
+<span class="pre">ShareNodes</span></code>.</p>
+</li>
+<li><p class="first">Scroll down the declaration to see the <code class="docutils literal notranslate"><span class="pre">ShareNodes</span></code> option set to
+<code class="docutils literal notranslate"><span class="pre">true</span></code>.  The default setting for this is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<img alt="../../_images/Postman_Tenant1_ShareNodes-Highlighted.JPG" src="../../_images/Postman_Tenant1_ShareNodes-Highlighted.JPG" />
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to send the updated declaration to the BIG-IP.</p>
+</li>
+<li><p class="first">Verify that you received a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">200</span> <span class="pre">OK</span></code> response.</p>
+</li>
+<li><p class="first">If you look on the BIG-IP now, you will see the Nodes have been created in
+the <code class="docutils literal notranslate"><span class="pre">Common</span></code> partition.  This will allow the second tenant to use the same
+Nodes in its applications.</p>
+</li>
+<li><p class="first">Open the declaration <code class="docutils literal notranslate"><span class="pre">Tenant</span> <span class="pre">2:</span> <span class="pre">HTTP</span> <span class="pre">Application</span></code>.  You will notice that
+this declaration is for a second tenant, <code class="docutils literal notranslate"><span class="pre">http_tenant_2</span></code>.  It also has the
+<code class="docutils literal notranslate"><span class="pre">ShareNodes</span></code> set to <code class="docutils literal notranslate"><span class="pre">true</span></code> for the pool members.</p>
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to send the updated declaration to the BIG-IP.</p>
+</li>
+<li><p class="first">Verify that you received a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">200</span> <span class="pre">OK</span></code> response.</p>
+</li>
+<li><p class="first">Locate the <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">Get</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">ALL</span> <span class="pre">deployed</span> <span class="pre">declarations</span></code> request.  In
+the request note that you will retrieve the applications deployed for all
+tenants.</p>
+<img alt="../../_images/Postman_GetAllTenantDeclarations.JPG" src="../../_images/Postman_GetAllTenantDeclarations.JPG" />
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to retrieve the deployed applications on the BIG-IP.  If you
+look at the response, you will see the declaration of the both applications.</p>
+</li>
+<li><p class="first">If you look at the BIG-IP, you will also see a new partition for
+<code class="docutils literal notranslate"><span class="pre">http_tenant_2</span></code> has been added.</p>
+</li>
+<li><p class="first">If you look at the <code class="docutils literal notranslate"><span class="pre">Nodes</span></code> in the <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">Traffic</span></code> section, you will see
+that there are two nodes in the <code class="docutils literal notranslate"><span class="pre">Common</span></code> partition.</p>
+</li>
+<li><p class="first">Open the declaration <code class="docutils literal notranslate"><span class="pre">BIG-IP:</span> <span class="pre">Delete</span> <span class="pre">ALL</span> <span class="pre">declarations</span></code>.  This will delete
+all applications for all tenants on the BIG-IP.</p>
+</li>
+<li><p class="first">Click <code class="docutils literal notranslate"><span class="pre">Send</span></code> to send the updated declaration to the BIG-IP.</p>
+</li>
+<li><p class="first">Verify that you received a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">200</span> <span class="pre">OK</span></code> response.</p>
+</li>
+</ol>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab04.html" title="Lab 4 - Creating Multiple HTTP Applications per tenant using AS3" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab06.html" title="Lab 6 - Creating a Applications using AS3 Declarative Interface &amp; BIG-IQ" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

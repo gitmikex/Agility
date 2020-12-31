@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Exercise 4.0: Explore Red Hat Ansible Tower</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Exercise 4.0: Explore Red Hat Ansible Tower"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercise 4.0: Explore Red Hat Ansible Tower &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 4.1: Creating a Tower Job Template" href="../4.1-tower-job-template/4.1-tower-job-template.html" />
+    <link rel="prev" title="Section 4 - Ansible Tower F5 Exercises" href="../module4.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class03/class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Exercise 4.0: Explore Red Hat Ansible Tower</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#guide">Guide</a><ul>
+<li><a class="reference internal" href="#step-1-login-to-ansible-tower">Step 1: Login to Ansible Tower</a></li>
+<li><a class="reference internal" href="#step-2-examine-the-ansible-tower-inventory">Step 2: Examine the Ansible Tower Inventory</a></li>
+<li><a class="reference internal" href="#step-3-examine-the-ansible-tower-workshop-project">Step 3: Examine the Ansible Tower Workshop Project</a></li>
+<li><a class="reference internal" href="#step-4-examine-the-ansible-tower-workshop-credential">Step 4: Examine the Ansible Tower Workshop Credential</a></li>
+<li><a class="reference internal" href="#step-5-examine-the-ansible-tower-template">Step 5: Examine the Ansible Tower Template</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#takeaways">Takeaways</a></li>
+<li><a class="reference internal" href="#complete">Complete</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a>
+              &gt; <a href="../module4.html">Section 4 - Ansible Tower F5 Exercises</a>
+
+          <span class="right">
+             <a href="../../../_sources/class09/module4/4.0-explore-tower/4.0-explore-tower.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="exercise-4-0-explore-red-hat-ansible-tower">
+<span id="explore-tower"></span><h1>Exercise 4.0: Explore Red Hat Ansible Tower<a class="headerlink" href="#exercise-4-0-explore-red-hat-ansible-tower" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Ansible Tower is a web-based solution than runs on top of Ansible that
+provides additional functionality while simplifying the operations of
+the software.</p>
+<p>In this lab, you will log in and perform some basic configurations that
+will be used in later labs to perform automation tasks against your F5
+BIG-IP device. This exercise will cover: - Determining the Ansible
+version running on the control node - Locating and understanding: -
+Ansible Tower <strong>Inventories</strong> - Ansible Tower <strong>Credentials</strong> - Ansible
+Tower <strong>Projects</strong> - Ansible Tower <strong>Templates</strong></p>
+</div>
+<div class="section" id="guide">
+<h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-login-to-ansible-tower">
+<h3>Step 1: Login to Ansible Tower<a class="headerlink" href="#step-1-login-to-ansible-tower" title="Permalink to this headline">¶</a></h3>
+<p>Open up your web browser and type in the Ansible control node’s DNS name</p>
+<blockquote>
+<div>For example if the student was assigned the student1 workbench and
+the workshop name was <code class="docutils literal notranslate"><span class="pre">durham-workshop</span></code> the link would be:</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">student1</span><span class="o">.</span><span class="n">durham</span><span class="o">-</span><span class="n">workshop</span><span class="o">.</span><span class="n">rhdemo</span><span class="o">.</span><span class="n">io</span><span class="o">**</span>
+</pre></div>
+</div>
+<blockquote>
+<div>This login information has been provided by the instructor at the
+beginning of class.</div></blockquote>
+<p><img alt="Tower Login Window" src="../../../_images/login_window.png" /> - The username will be <code class="docutils literal notranslate"><span class="pre">admin</span></code> - password
+provided by instructor</p>
+<p>After logging in the Job Dashboard will be the default view as shown
+below. <img alt="Tower Job Dashboard" src="../../../_images/tower_login.png" /></p>
+<ol class="arabic">
+<li><p class="first">Click on the <strong>i</strong> information button on the top right of the user
+interface.</p>
+<div class="figure" id="id1">
+<img alt="information button link" src="../../../_images/information_button.png" />
+<p class="caption"><span class="caption-text">information button link</span></p>
+</div>
+</li>
+<li><p class="first">A window will pop up similar to the following:</p>
+<div class="figure" id="id2">
+<img alt="version info window" src="../../../_images/version_info.png" />
+<p class="caption"><span class="caption-text">version info window</span></p>
+</div>
+<p>Take note that both the Ansible Tower version and the Ansible Engine
+version are provided here.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="step-2-examine-the-ansible-tower-inventory">
+<h3>Step 2: Examine the Ansible Tower Inventory<a class="headerlink" href="#step-2-examine-the-ansible-tower-inventory" title="Permalink to this headline">¶</a></h3>
+<p>An inventory is required for Red Hat Ansible Tower to be able to run
+jobs. An inventory is a collection of hosts against which jobs may be
+launched, the same as an Ansible inventory file. In addition, Red Hat
+Ansible Tower can make use of an existing configuration management data
+base (cmdb) such as ServiceNow or Infoblox DDI.</p>
+<blockquote>
+<div>More info on Inventories in respect to Ansible Tower can be found in
+the <a class="reference external" href="https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html">documentation
+here</a></div></blockquote>
+<ol class="arabic">
+<li><p class="first">Click on the <strong>Inventories</strong> button under <strong>RESOURCES</strong> on the left
+menu bar.</p>
+<div class="figure" id="id3">
+<img alt="Inventories Button" src="../../../_images/inventories.png" />
+<p class="caption"><span class="caption-text">Inventories Button</span></p>
+</div>
+</li>
+<li><p class="first">Under <strong>Inventories</strong> there will be inventories. Click on the
+<code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Inventory</span></code>.</p>
+</li>
+<li><p class="first">Under the <code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Inventory</span></code>, click the <strong>HOSTS</strong> button at the top.
+There will be hosts configured here. Click on one of the devices.</p>
+</li>
+<li><p class="first">Click on the <code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Inventory</span></code> link at the top of the page to return
+the top level menu.</p>
+</li>
+<li><p class="first">Click on <strong>GROUPS</strong>. This is where you can configure Group of hosts
+<img alt="Inventory" src="../../../_images/inventory.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="step-3-examine-the-ansible-tower-workshop-project">
+<h3>Step 3: Examine the Ansible Tower Workshop Project<a class="headerlink" href="#step-3-examine-the-ansible-tower-workshop-project" title="Permalink to this headline">¶</a></h3>
+<p>A project is how Ansible Playbooks are imported into Red Hat Ansible
+Tower. You can manage playbooks and playbook directories by either
+placing them manually under the Project Base Path on your Ansible Tower
+server, or by placing your playbooks into a source code management (SCM)
+system supported by Tower, including Git, Subversion, and Mercurial etc.</p>
+<blockquote>
+<div>For more information on Projects in Tower, please <a class="reference external" href="https://docs.ansible.com/ansible-tower/latest/html/userguide/projects.html">refer to the
+documentation</a></div></blockquote>
+<ol class="arabic">
+<li><p class="first">Click on the <strong>Projects</strong> button under <strong>RESOURCES</strong> on the left menu
+bar.</p>
+<div class="figure" id="id4">
+<img alt="projects link" src="../../../_images/projects.png" />
+<p class="caption"><span class="caption-text">projects link</span></p>
+</div>
+</li>
+<li><p class="first">Under <strong>PROJECTS</strong> there will be one pre-configured projects, or
+<code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Project</span></code>. Click on the <code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Project</span></code>.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">Git</span></code> is listed for this project. This means this project
+is using <code class="docutils literal notranslate"><span class="pre">Git</span></code> for SCM.</p>
+</li>
+<li><p class="first">Under the <code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Project</span></code> click the <strong>SCM TYPE</strong> drop down menu</p>
+<p>Note that Git, Mercurial and Subversion are some of the choices.
+Return the choice to Git so that the Project continues to function
+correctly. <img alt="project link" src="../../../_images/project.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="step-4-examine-the-ansible-tower-workshop-credential">
+<h3>Step 4: Examine the Ansible Tower Workshop Credential<a class="headerlink" href="#step-4-examine-the-ansible-tower-workshop-credential" title="Permalink to this headline">¶</a></h3>
+<p>Credentials are utilized by Tower for authentication when launching
+<strong>Jobs</strong> against machines, synchronizing with inventory sources, and
+importing project content from a version control system. For the
+workshop we need a credential to authenticate to the network devices.</p>
+<blockquote>
+<div>For more information on Credentials in Tower please <a class="reference external" href="https://docs.ansible.com/ansible-tower/latest/html/userguide/credentials.html">refer to the
+documentation</a>.</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Click on the <strong>Credentials</strong> button under <strong>RESOURCES</strong> on the left
+menu bar.</p>
+<div class="figure" id="id5">
+<img alt="credentials link" src="../../../_images/credentials.png" />
+<p class="caption"><span class="caption-text">credentials link</span></p>
+</div>
+</li>
+<li><p class="first">Under <strong>CREDENTIALS</strong> there will be one pre-configured credential, or
+<code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Credential</span></code>. Click on the <code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Credential</span></code>.</p>
+</li>
+<li><p class="first">Under the <code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Credential</span></code> examine the following:</p>
+<ul class="simple">
+<li>The <strong>CREDENTIAL TYPE</strong> is a <strong>Machine</strong> credential.</li>
+<li>The <strong>USERNAME</strong> is set to <code class="docutils literal notranslate"><span class="pre">admin</span></code>.</li>
+<li>The <strong>PASSWORD</strong> is already configured, and is <strong>ENCRYPTED</strong>.</li>
+<li>The <strong>SSH PRIVATE KEY</strong> is blank.</li>
+</ul>
+</li>
+</ol>
+<div class="figure" id="id6">
+<img alt="credential" src="../../../_images/credential.png" />
+<p class="caption"><span class="caption-text">credential</span></p>
+</div>
+</div>
+<div class="section" id="step-5-examine-the-ansible-tower-template">
+<h3>Step 5: Examine the Ansible Tower Template<a class="headerlink" href="#step-5-examine-the-ansible-tower-template" title="Permalink to this headline">¶</a></h3>
+<p>Templates or Job Templates define the parameters that will be used when
+executing an Ansible playbook. These parameters include previously
+mentioned features such as which project and inventory will be used.
+Additionally, parameters such as logging level and process forks allow
+for additional granularity on how playbooks are ran.</p>
+<ol class="arabic simple">
+<li>Click on the <strong>Templates</strong> button under <strong>RESOURCES</strong> on the left
+menu bar.</li>
+<li>Under <strong>TEMPLATES</strong> there will be one pre-configured credential, or
+<code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Job</span> <span class="pre">Template</span></code>. Click on the <code class="docutils literal notranslate"><span class="pre">Demo</span> <span class="pre">Job</span> <span class="pre">Template</span></code>.</li>
+</ol>
+<div class="figure" id="id7">
+<img alt="template link" src="../../../_images/template.png" />
+<p class="caption"><span class="caption-text">template link</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ansible Tower needs an inventory to execute Ansible Playbooks
+against. This inventory is identical to what users would use with the
+command line only Ansible project.</li>
+<li>Ansible Tower can sync to existing SCM (source control management)
+including <code class="docutils literal notranslate"><span class="pre">GitHub</span></code>.</li>
+<li>Ansible Tower can store and encrypt credentials including SSH private
+keys and plain-text passwords. Ansible Tower can also sync to
+existing credential storage systems such as CyberArk and Vault by
+HashiCorp</li>
+<li>Ansible Job Templates define the parameters that will be used when
+executing an Ansible playbook</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="complete">
+<h2>Complete<a class="headerlink" href="#complete" title="Permalink to this headline">¶</a></h2>
+<p>You have completed lab exercise 4.0</p>
+<p>You have now examined all three components required to get started with
+Ansible Tower. A credential, an inventory and a project. In the next
+exercise we will create a job template.</p>
+<p><a class="reference external" href="..">Click here to return to the Ansible Network Automation
+Workshop</a></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module4.html" title="Section 4 - Ansible Tower F5 Exercises" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../4.1-tower-job-template/4.1-tower-job-template.html" title="Exercise 4.1: Creating a Tower Job Template" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../../_static/js/index.js"></script>
+  <script src="../../../_static/js/jquery.appear.js"></script>
+  <script src="../../../_static/js/printThis.js"></script>
+  <script src="../../../_static/js/bootstrap.min.js"></script>
+  <script src="../../../_static/js/clouddocs.js"></script>
+  <script src="../../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

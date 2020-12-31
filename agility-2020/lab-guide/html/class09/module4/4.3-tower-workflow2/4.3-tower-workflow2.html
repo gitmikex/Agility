@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Exercise 4.3: Creating Node Maintenance Workflow</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Exercise 4.3: Creating Node Maintenance Workflow"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercise 4.3: Creating Node Maintenance Workflow &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Class 10: Advanced BIG-IP Configuration Management with Ansible" href="../../../class10/class10.html" />
+    <link rel="prev" title="Exercise 4.2: Creating a Workflow" href="../4.2-tower-workflow/4.2-tower-workflow.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class03/class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Exercise 4.3: Creating Node Maintenance Workflow</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#guide">Guide</a><ul>
+<li><a class="reference internal" href="#step-0-prepare-job-templates">Step 0: Prepare Job Templates</a></li>
+<li><a class="reference internal" href="#create-server-credential">Create Server Credential</a></li>
+<li><a class="reference internal" href="#create-job-templates">Create Job Templates</a></li>
+<li><a class="reference internal" href="#step-1-create-a-workflow-template">Step 1: Create a Workflow Template</a></li>
+<li><a class="reference internal" href="#step-2-the-workflow-visualizer">Step 2: The Workflow Visualizer</a></li>
+<li><a class="reference internal" href="#step-3-disable-node-job-template">Step 3: Disable node Job Template</a></li>
+<li><a class="reference internal" href="#step-4-attach-irule-to-virtual-server-template">Step 4: Attach iRule to virtual server Template</a></li>
+<li><a class="reference internal" href="#step-4-patch-server-template">Step 4: Patch server Template</a></li>
+<li><a class="reference internal" href="#step-5-enable-node-template">Step 5: Enable node Template</a></li>
+<li><a class="reference internal" href="#step-6-detach-irule-template">Step 6: Detach iRule Template</a></li>
+<li><a class="reference internal" href="#step-6-create-a-converged-link">Step 6: Create a converged link</a></li>
+<li><a class="reference internal" href="#step-7-run-the-workflow">Step 7: Run the Workflow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#takeaways">Takeaways</a></li>
+<li><a class="reference internal" href="#complete">Complete</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a>
+              &gt; <a href="../module4.html">Section 4 - Ansible Tower F5 Exercises</a>
+
+          <span class="right">
+             <a href="../../../_sources/class09/module4/4.3-tower-workflow2/4.3-tower-workflow2.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="exercise-4-3-creating-node-maintenance-workflow">
+<span id="tower-workflow2"></span><h1>Exercise 4.3: Creating Node Maintenance Workflow<a class="headerlink" href="#exercise-4-3-creating-node-maintenance-workflow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Demonstrate anothe use case of <a class="reference external" href="https://docs.ansible.com/ansible-tower/latest/html/userguide/workflows.html">Ansible Tower
+workflow</a>
+for F5 BIG-IP.</p>
+<p>For this exercise, we will create a workflow for server patch
+management, first to disable the pool members, patch the nodes, and then
+enable the nodes. In parallel, we also attach an iRule to virtual
+server, to respond to the users when servers are under maintenance.</p>
+</div>
+<div class="section" id="guide">
+<h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-0-prepare-job-templates">
+<h3>Step 0: Prepare Job Templates<a class="headerlink" href="#step-0-prepare-job-templates" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="create-server-credential">
+<h3>Create Server Credential<a class="headerlink" href="#create-server-credential" title="Permalink to this headline">¶</a></h3>
+<p>Before creating templates, you should create one more credential
+<code class="docutils literal notranslate"><span class="pre">Server</span> <span class="pre">credential</span></code> beforehand, to be utilized by one of the jobs
+(<code class="docutils literal notranslate"><span class="pre">Patch</span> <span class="pre">server</span></code>) to access servers.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>Server Credential</td>
+</tr>
+<tr class="row-odd"><td>Credential type:</td>
+<td><code class="docutils literal notranslate"><span class="pre">Machine</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>For this credential, we use the <strong>SSH private key</strong> instead. Get the
+private key from Ansible server, copy the output and paste in the <strong>SSH
+PRIVATE KEY</strong> box, and click SAVE.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[student1@ansible ~]$</span> cat ~/.ssh/aws-private.pem
+</pre></div>
+</div>
+<div class="figure" id="id1">
+<img alt="server credential" src="../../../_images/server-credential.png" />
+<p class="caption"><span class="caption-text">server credential</span></p>
+</div>
+</div>
+<div class="section" id="create-job-templates">
+<h3>Create Job Templates<a class="headerlink" href="#create-job-templates" title="Permalink to this headline">¶</a></h3>
+<p>Similar to the previous lab, we would need to prepare the following
+templates by following <code class="docutils literal notranslate"><span class="pre">Lab</span> <span class="pre">4.2</span></code>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="65%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Job template Name</th>
+<th class="head">Playbook</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Disable node</td>
+<td>disable_node.yml</td>
+</tr>
+<tr class="row-odd"><td>Enable node</td>
+<td>enable_node.yml</td>
+</tr>
+<tr class="row-even"><td>Patch server</td>
+<td>patch_server.yml</td>
+</tr>
+<tr class="row-odd"><td>Attach iRule to virtual server</td>
+<td>attach_irule.yml</td>
+</tr>
+<tr class="row-even"><td>Detach iRule</td>
+<td>detach_irule.yml</td>
+</tr>
+</tbody>
+</table>
+<p>Again, we use the same template parameters as <code class="docutils literal notranslate"><span class="pre">Lab</span> <span class="pre">4.2</span></code> for each of
+the above templates, except the parameter of <code class="docutils literal notranslate"><span class="pre">CREDENTAUL</span></code>.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">CREDENTAUL</span></code>, the <code class="docutils literal notranslate"><span class="pre">Patch</span> <span class="pre">server</span></code> template will use credential
+<code class="docutils literal notranslate"><span class="pre">server</span> <span class="pre">credential</span></code>, and all other templates will be using
+<code class="docutils literal notranslate"><span class="pre">Workshop</span> <span class="pre">Credential</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Job Type</td>
+<td>Run</td>
+</tr>
+<tr class="row-even"><td>Inventory</td>
+<td>Workshop Inventory</td>
+</tr>
+<tr class="row-odd"><td>Project</td>
+<td>Workshop Project</td>
+</tr>
+<tr class="row-even"><td>Playbook</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Credential</td>
+<td>Workshop Credential</td>
+</tr>
+</tbody>
+</table>
+<p>Here is one example of the templates configured: <img alt="job template" src="../../../_images/job-template.png" /></p>
+</div>
+<div class="section" id="step-1-create-a-workflow-template">
+<h3>Step 1: Create a Workflow Template<a class="headerlink" href="#step-1-create-a-workflow-template" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click on the <strong>Templates</strong> link on the left menu.</li>
+<li>Click on the green <strong>+</strong> button. Select the <strong>Workflow Template</strong>.</li>
+<li>Fill out the the form as follows:</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>Node maintenance workflow</td>
+</tr>
+<tr class="row-odd"><td>Organization</td>
+<td>Default</td>
+</tr>
+<tr class="row-even"><td>Inventory</td>
+<td>Workshop Inventory</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="4">
+<li>Click on the <strong>Save</strong> button</li>
+</ol>
+<div class="figure" id="id2">
+<img alt="workflow creation" src="../../../_images/workflow.png" />
+<p class="caption"><span class="caption-text">workflow creation</span></p>
+</div>
+</div>
+<div class="section" id="step-2-the-workflow-visualizer">
+<h3>Step 2: The Workflow Visualizer<a class="headerlink" href="#step-2-the-workflow-visualizer" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>When you click the <strong>SAVE</strong>, the <strong>WORKFLOW VISUALIZER</strong> should
+automatically open. If not click on the blue <strong>WORKFLOW VISUALIZER</strong>
+button.</li>
+<li>By default only a green <strong>START</strong> button will appear. Click on the
+<strong>START</strong> button.</li>
+<li>The <strong>ADD A TEMPLATE</strong> window will appear on the right.</li>
+</ol>
+</div>
+<div class="section" id="step-3-disable-node-job-template">
+<h3>Step 3: Disable node Job Template<a class="headerlink" href="#step-3-disable-node-job-template" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Select the <strong>Disable node</strong> Job Template. Use the drop down box to
+select run. Click the green <strong>SELECT</strong> button.</p>
+<div class="figure" id="id3">
+<img alt="Disable node" src="../../../_images/disable-node.png" />
+<p class="caption"><span class="caption-text">Disable node</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="step-4-attach-irule-to-virtual-server-template">
+<h3>Step 4: Attach iRule to virtual server Template<a class="headerlink" href="#step-4-attach-irule-to-virtual-server-template" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Click on the <strong>START</strong> button, again. The <strong>ADD A TEMPLATE</strong> will
+appear again.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Select the <strong>Attach iRule to virtual server</strong> job template. For the
+<strong>Run</strong> parameter select <strong>On Success</strong> from the drop down menu.</div>
+</div>
+</li>
+<li><p class="first">Click the green <strong>SELECT</strong> button.</p>
+<div class="figure" id="id4">
+<img alt="attach irule" src="../../../_images/attach-irule.png" />
+<p class="caption"><span class="caption-text">attach irule</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="step-4-patch-server-template">
+<h3>Step 4: Patch server Template<a class="headerlink" href="#step-4-patch-server-template" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Hover over the <strong>Disable node</strong> node and click the green <strong>+</strong>
+symbol. The <strong>ADD A TEMPLATE</strong> will appear again.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Select the <strong>Patch server</strong> job template. For the <strong>Run</strong> parameter
+select <strong>On Success</strong> from the drop down menu.</div>
+</div>
+</li>
+<li><p class="first">Click the green <strong>SELECT</strong> button.</p>
+<div class="figure" id="id5">
+<img alt="upgrade server" src="../../../_images/patch-server.png" />
+<p class="caption"><span class="caption-text">upgrade server</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="step-5-enable-node-template">
+<h3>Step 5: Enable node Template<a class="headerlink" href="#step-5-enable-node-template" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Hover over the <strong>Patch server</strong> node and click the green <strong>+</strong>
+symbol. The <strong>ADD A TEMPLATE</strong> will appear again.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Select the <strong>Enable node</strong> job template. For the <strong>Run</strong> parameter
+select <strong>On Success</strong> from the drop down menu.</div>
+</div>
+</li>
+<li><p class="first">Click the green <strong>SELECT</strong> button.</p>
+<div class="figure" id="id6">
+<img alt="enable node" src="../../../_images/enable-node.png" />
+<p class="caption"><span class="caption-text">enable node</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="step-6-detach-irule-template">
+<h3>Step 6: Detach iRule Template<a class="headerlink" href="#step-6-detach-irule-template" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Hover over the <strong>Enable node</strong> node and click the green <strong>+</strong> symbol.
+The <strong>ADD A TEMPLATE</strong> will appear again.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Select the <strong>Detach iRule</strong> job template. For the <strong>Run</strong> parameter
+select <strong>On Success</strong> from the drop down menu.</div>
+</div>
+</li>
+<li><p class="first">Click the green <strong>SELECT</strong> button.</p>
+<div class="figure" id="id7">
+<img alt="attach irule" src="../../../_images/detach-irule.png" />
+<p class="caption"><span class="caption-text">attach irule</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="step-6-create-a-converged-link">
+<h3>Step 6: Create a converged link<a class="headerlink" href="#step-6-create-a-converged-link" title="Permalink to this headline">¶</a></h3>
+<p>Lastly, we create a covergence link, which allows the jobs running in
+parallel to converge. In another word, when both jobs finish,
+<code class="docutils literal notranslate"><span class="pre">Detach</span> <span class="pre">iRule</span></code> node will trigger.</p>
+<ol class="arabic simple">
+<li>Hover over the <code class="docutils literal notranslate"><span class="pre">Attach</span> <span class="pre">iRule</span> <span class="pre">to</span> <span class="pre">virtual</span> <span class="pre">server</span></code> node and click the
+blue chain symbol.</li>
+<li>Now, click on the existing <code class="docutils literal notranslate"><span class="pre">Detach</span> <span class="pre">iRule</span></code>. An ADD LINK window will
+appear. For the RUN parameter choose Always. <img alt="converge link" src="../../../_images/converge-link.png" /></li>
+</ol>
+</div>
+<div class="section" id="step-7-run-the-workflow">
+<h3>Step 7: Run the Workflow<a class="headerlink" href="#step-7-run-the-workflow" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Return to the <strong>Templates</strong> window</p>
+</li>
+<li><p class="first">Click the rocket ship to launch the <strong>Node maintenance workflow</strong>
+workflow template.</p>
+<div class="figure" id="id8">
+<img alt="workflow job launched" src="../../../_images/running-workflow1.png" />
+<p class="caption"><span class="caption-text">workflow job launched</span></p>
+</div>
+<p>At any time during the workflow job you can select an individual job
+template by clicking on the node to see the status.</p>
+</li>
+</ol>
+<p>With iRule attached to virtual server, user will receive a maintenance
+page during the server maintenance: <img alt="maintenance page" src="../../../_images/error-page.png" /></p>
+</div>
+</div>
+<div class="section" id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h2>
+<p>You have - created a workflow template that disables pool memebers,
+upgrade web servers, and add servers back to the pool - attached iRule
+to virtual server, and user will get maintenance page during server
+patch - launched the workflow template and explored the <strong>VISUALIZER</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="complete">
+<h2>Complete<a class="headerlink" href="#complete" title="Permalink to this headline">¶</a></h2>
+<p>You have completed lab exercise 4.3</p>
+<p><a class="reference external" href="..">Click here to return to the Ansible Network Automation
+Workshop</a></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../4.2-tower-workflow/4.2-tower-workflow.html" title="Exercise 4.2: Creating a Workflow" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../../../class10/class10.html" title="Class 10: Advanced BIG-IP Configuration Management with Ansible" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../../_static/js/index.js"></script>
+  <script src="../../../_static/js/jquery.appear.js"></script>
+  <script src="../../../_static/js/printThis.js"></script>
+  <script src="../../../_static/js/bootstrap.min.js"></script>
+  <script src="../../../_static/js/clouddocs.js"></script>
+  <script src="../../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

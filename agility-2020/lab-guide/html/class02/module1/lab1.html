@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 1 Configure Standalone BIG-IP with Declarative Onboarding</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 1 Configure Standalone BIG-IP with Declarative Onboarding"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 1 Configure Standalone BIG-IP with Declarative Onboarding &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 2 Configure Clustered BIG-IP with Declarative Onboarding" href="lab2.html" />
+    <link rel="prev" title="Getting Started" href="startup.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class03/class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class09/class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1 Configure Standalone BIG-IP with Declarative Onboarding</a></li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a>
+              &gt; <a href="module1.html">Module 1: Programmability - Introduction to F5 Declarative Onboarding Concepts</a>
+
+          <span class="right">
+             <a href="../../_sources/class02/module1/lab1.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-1-configure-standalone-big-ip-with-declarative-onboarding">
+<h1>Lab 1 Configure Standalone BIG-IP with Declarative Onboarding<a class="headerlink" href="#lab-1-configure-standalone-big-ip-with-declarative-onboarding" title="Permalink to this headline">¶</a></h1>
+<p>In this lab declarative onboarding (DO) has already been installed.  For
+instructions on how to install declarative onboarding (DO) please see appendix
+A.</p>
+<p>Before we jump into declarative onboarding (DO) lets take a look at the current
+state of one of our <strong>BIGIP</strong> appliances.</p>
+<p>Login to <strong>BIGIP-01</strong> and notice that it is not licensed and nothing has been
+provisioned.  Also notice the hostname in the upper left hand corner.</p>
+<img alt="../../_images/bigip01_01.png" src="../../_images/bigip01_01.png" />
+<p>With the declarative onboarding (DO) package installed on BIG-IP, we are ready
+to build out our first BIG-IP.</p>
+<p>The desired end state of these DO configurations is to configure the objects
+below, built on the BIG-IPs with a single call in a single file.  This
+declarative solution allows us to compose configurations that are reusable with
+templating technologies and storable in Source Control.</p>
+<p>In our first declaration we will configure the following items on the BIG-IP:</p>
+<ul class="simple">
+<li>Licensing</li>
+<li>Credentials</li>
+<li>Provisioning</li>
+<li>DNS</li>
+<li>NTP</li>
+<li>Self-IPs</li>
+<li>Vlans</li>
+</ul>
+<p>Copy <strong>all</strong> of the declarative onboarding (DO) declaration below.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;$schema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/F5Networks/f5-declarative-onboarding/master/src/schema/latest/base.schema.json&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;1.9.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Device&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;async&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;my BIG-IP declaration for declarative onboarding&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Common&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Tenant&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;bigip-01.compute.internal&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;myLicense&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;License&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;licenseType&quot;</span><span class="p">:</span> <span class="s2">&quot;regKey&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;regKey&quot;</span><span class="p">:</span> <span class="s2">&quot;E7135-74831-26771-18995-6988851&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;myDns&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;DNS&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;nameServers&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;10.1.255.254&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;8.8.8.8&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;2001:4860:4860::8844&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;search&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;us-west-2-compute.internal&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;f5.com&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;myNtp&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;NTP&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;servers&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;0.pool.ntp.org&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;1.pool.ntp.org&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;2.pool.ntp.org&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;UTC&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;anotheradmin&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;User&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;userType&quot;</span><span class="p">:</span> <span class="s2">&quot;regular&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;Fu11Pr0%y&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;shell&quot;</span><span class="p">:</span> <span class="s2">&quot;bash&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;guestUser&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;User&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;userType&quot;</span><span class="p">:</span> <span class="s2">&quot;regular&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;Fu11Pr0%y&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;partitionAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;Common&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;guest&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;anotherUser&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;User&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;userType&quot;</span><span class="p">:</span> <span class="s2">&quot;regular&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;Fu11Pr0%y&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;shell&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;partitionAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;all-partitions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;guest&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;myProvisioning&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Provision&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ltm&quot;</span><span class="p">:</span> <span class="s2">&quot;nominal&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;gtm&quot;</span><span class="p">:</span> <span class="s2">&quot;minimum&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;internal&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;VLAN&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="mi">4093</span><span class="p">,</span>
+            <span class="nt">&quot;mtu&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
+            <span class="nt">&quot;interfaces&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;tagged&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;cmpHash&quot;</span><span class="p">:</span> <span class="s2">&quot;dst-ip&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;internal-self&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;SelfIp&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;10.1.10.100/24&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;vlan&quot;</span><span class="p">:</span> <span class="s2">&quot;internal&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;allowService&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;trafficGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic-group-local-only&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;internal-floating&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;SelfIp&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;10.1.10.120/24&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;vlan&quot;</span><span class="p">:</span> <span class="s2">&quot;internal&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;allowService&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;trafficGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic-group-1&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;external&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;VLAN&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="mi">4094</span><span class="p">,</span>
+            <span class="nt">&quot;mtu&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
+            <span class="nt">&quot;interfaces&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;tagged&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;cmpHash&quot;</span><span class="p">:</span> <span class="s2">&quot;src-ip&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;external-self&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;SelfIp&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;10.1.20.100/24&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;vlan&quot;</span><span class="p">:</span> <span class="s2">&quot;external&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;allowService&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;trafficGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic-group-local-only&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;external-floating&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;SelfIp&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;10.1.20.120/24&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;vlan&quot;</span><span class="p">:</span> <span class="s2">&quot;external&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;allowService&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;trafficGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic-group-1&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Route&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;gw&quot;</span><span class="p">:</span> <span class="s2">&quot;10.1.10.1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;network&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;mtu&quot;</span><span class="p">:</span> <span class="mi">1500</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;configsync&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;ConfigSync&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;configsyncIp&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/internal-self/address&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;failoverAddress&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;FailoverUnicast&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/internal-self/address&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;failoverGroup&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;DeviceGroup&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sync-failover&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;bigip-01.compute.internal&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;bigip-02.compute.internal&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/failoverGroup/members/0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;autoSync&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;saveOnAutoSync&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;networkFailover&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;fullLoadOnSync&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;asmSync&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;trust&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;DeviceTrust&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;localUsername&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;localPassword&quot;</span><span class="p">:</span> <span class="s2">&quot;@gi1ity2020&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;remoteHost&quot;</span><span class="p">:</span> <span class="s2">&quot;/Common/failoverGroup/members/0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;remoteUsername&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;remotePassword&quot;</span><span class="p">:</span> <span class="s2">&quot;@gi1ity2020&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>F5 publishes a schema for each of the Automation Toolchain items. This
+published schema can be used in Visual Studio Code allowing you to see context
+and find errors within your different declarations. The schema reference is
+added at the top of your declaration, and requires vscode to know the language
+is JSON.</p>
+<p>Open Visual Studio Code on your jump host desktop and open a New File and paste
+all of the DO declaration contents.  Additionally, the language setting in
+VSCode must be set to JSON.</p>
+<img alt="../../_images/schemavalidation_01.png" src="../../_images/schemavalidation_01.png" />
+<p>Once the declaration and language are set, you can highlight over sections of
+the code to see contect and errors</p>
+<img alt="../../_images/schemacontext_01.png" src="../../_images/schemacontext_01.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Now that you've added the schema validation to your JSON declaration
+you can try misspelling some of the declaration objects to see errors,
+remember to  revert your changes.</p>
+</div>
+<p>We are now ready to send our declaration to <strong>BIGIP-01</strong></p>
+<p>Expand the Declarative Onboarding Collection folder, then Declarative Onboarding
+Request, lastly BIGIP-01.  Select <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Declarative</span> <span class="pre">Onboarding</span> <span class="pre">Version</span> <span class="pre">Info</span></code></p>
+<img alt="../../_images/postman_01.png" src="../../_images/postman_01.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You'll notice that we are sending a GET request to the URL
+<strong>https://{{bigip-01}}/mgmt/shared/declarative-onboarding</strong></p>
+<p>Select <code class="docutils literal notranslate"><span class="pre">SEND</span></code> to the right of the GET request field.</p>
+<img alt="../../_images/postman_02.png" src="../../_images/postman_02.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>When sending a GET request to the <strong>https://{{bigip-01}}/mgmt/shared/declarative-onboarding/info</strong>
+we get a response with the version of declarative that is currently installed.</p>
+<img alt="../../_images/postman_03.png" src="../../_images/postman_03.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Next, select the <code class="docutils literal notranslate"><span class="pre">BIGIP-01</span> <span class="pre">POST</span> <span class="pre">DO</span> <span class="pre">Declaration</span> <span class="pre">to</span> <span class="pre">Configure</span> <span class="pre">BIG_IP</span></code> request
+and select the <code class="docutils literal notranslate"><span class="pre">Body</span></code> tab.</p>
+<p>Notice the following in the request:</p>
+<ol class="arabic simple">
+<li>The request URL <strong>https://{{bigip-01}}/mgmt/shared/declarative-onboarding</strong></li>
+<li>The language is set to <strong>JSON</strong></li>
+</ol>
+<img alt="../../_images/postman_04.png" src="../../_images/postman_04.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Paste the JSON declaration into the Body of the Postman application and click <code class="docutils literal notranslate"><span class="pre">Send</span></code></p>
+<img alt="../../_images/postman_05.png" src="../../_images/postman_05.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>In the response of the field you should see a response the the declaration is
+running.</p>
+<img alt="../../_images/postman_06.png" src="../../_images/postman_06.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>In order to retrieve the status of the DO process we can send a GET request to
+the same URL that we posted our declartion to. In Postman select
+the <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">Declarative</span> <span class="pre">Onboarding</span> <span class="pre">Status</span></code> request in the BIGIP-01 folder and send the
+GET request to view the status of the running process.</p>
+<img alt="../../_images/postman_07.png" src="../../_images/postman_07.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Send the GET request every so often until you receive a status of &quot;OK.&quot; Once
+you receive a status of &quot;OK&quot; the declaration has completed.</p>
+<img alt="../../_images/postman_08.png" src="../../_images/postman_08.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Once the <strong>BIG-IP</strong> has finished processing the declaration, login to
+<strong>BIGIP-01</strong> and notice the host name has changed and the device is now
+licensed.</p>
+<img alt="../../_images/bigip01_02.png" src="../../_images/bigip01_02.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Futhermore, take a look at the following settings on <strong>BIGIP-01</strong> to see what
+all was configured with declarative onboarding (DO)</p>
+<ul class="simple">
+<li>Credentials</li>
+<li>Provisioning</li>
+<li>DNS</li>
+<li>NTP</li>
+<li>Self-IPs</li>
+<li>Vlans</li>
+</ul>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="startup.html" title="Getting Started" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab2.html" title="Lab 2 Configure Clustered BIG-IP with Declarative Onboarding" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Exercise 1.1: Using the bigip_device_info module</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Exercise 1.1: Using the bigip_device_info module"/>
+  <meta name="product" content="F5 Solutions for Containers"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-02-26 07:28:24"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Solutions for Containers" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exercise 1.1: Using the bigip_device_info module &#8212; F5 Solutions for Containers  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise 1.2: Adding nodes to F5 BIG-IP" href="1.2-add-node.html" />
+    <link rel="prev" title="Exercise 1.0: Exploring the lab environment" href="1.0-explore.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Solutions for Containers  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class01/class01.html">Class 1: Programmability - Introduction to BIG-IP Rest Structure and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class02/class02.html">Class 2: A&amp;O Toolchain 111: BIG-IP Deployments with Declarative Onboarding (DO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class03/class03.html">Class 3: Application Deployments with BIG-IP and Application Services (AS3)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class04/class04.html">Class 4: A&amp;O Tool Chain - BIG-IP Service Analytics and Metrics with Telemetry Streaming (TS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class05/class05.html">Class 5: A&amp;O Tool Chain - Advanced Design Patterns with AS3, DO and TS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class06/class06.html">Class 6: Programmability - CI/CD Process Integration with BIG-IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class07/class07.html">Class 7: Dude Where's My Services: Introduction to Service Discovery with Consul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class08/class08.html">Class 8: Containers - Kubernetes &amp; OpenShift Integration with BIG-IP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Advanced BIG-IP Configuration Management with Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class11/class11.html">Class 11: 101 of Terraform BIG-IP Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class12/class12.html">Class 12: Cisco ACI Integration with BIG-IP</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Exercise 1.1: Using the bigip_device_info module</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#guide">Guide</a><ul>
+<li><a class="reference internal" href="#step-1">Step 1:</a></li>
+<li><a class="reference internal" href="#step-2">Step 2:</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a></li>
+<li><a class="reference internal" href="#step-4">Step 4</a></li>
+<li><a class="reference internal" href="#step-5">Step 5</a></li>
+<li><a class="reference internal" href="#step-6">Step 6</a></li>
+<li><a class="reference internal" href="#step-7">Step 7</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#playbook-output">Playbook Output</a></li>
+<li><a class="reference internal" href="#solution">Solution</a></li>
+<li><a class="reference internal" href="#going-further">Going Further</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Solutions for Containers</a>
+              &gt; <a href="../class09.html">Class 9: Basic BIG-IP Configuration Management with Ansible</a>
+              &gt; <a href="module1.html">Section 1 - Ansible F5 Basic Exercises</a>
+
+          <span class="right">
+             <a href="../../_sources/class09/module1/1.1-get-facts.rst.txt" rel="nofollow">Source</a> |
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="exercise-1-1-using-the-bigip-device-info-module">
+<span id="get-facts"></span><h1>Exercise 1.1: Using the bigip_device_info module<a class="headerlink" href="#exercise-1-1-using-the-bigip-device-info-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Demonstrate use of the <a class="reference external" href="https://docs.ansible.com/ansible/latest/modules/bigip_device_info_module.html">BIG-IP Facts
+module</a>
+to grab facts (useful information) from a F5 BIG-IP device and display
+them to the terminal window using the <a class="reference external" href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">debug
+module</a>.</p>
+</div>
+<div class="section" id="guide">
+<h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you are in the home directory</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible networking-workshop]$</span> <span class="nb">cd</span> ~
+</pre></div>
+</div>
+<div class="section" id="step-1">
+<h3>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<p>Using your text editor of choice create a new file called
+<code class="docutils literal notranslate"><span class="pre">bigip-facts.yml</span></code>.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> nano bigip-facts.yml
+</pre></div>
+</div>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">vim</span></code> and <code class="docutils literal notranslate"><span class="pre">nano</span></code> are available on the control node, as well as
+Visual Studio and Atom via RDP</div></blockquote>
+</div>
+<div class="section" id="step-2">
+<h3>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
+<p>Ansible playbooks are <strong>YAML</strong> files. YAML is a structured encoding
+format that is also extremely human readable (unlike it’s subset - the
+JSON format).</p>
+<p>Enter the following play definition into <code class="docutils literal notranslate"><span class="pre">bigip-facts.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">GRAB F5 FACTS</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">f5</span>
+  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
+  <span class="nt">gather_facts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">---</span></code> at the top of the file indicates that this is a YAML
+file.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">hosts:</span> <span class="pre">f5</span></code>, indicates the play is run only on the F5 BIG-IP
+device</li>
+<li><code class="docutils literal notranslate"><span class="pre">connection:</span> <span class="pre">local</span></code> tells the Playbook to run locally (rather than
+SSHing to itself)</li>
+<li><code class="docutils literal notranslate"><span class="pre">gather_facts:</span> <span class="pre">no</span></code> disables facts gathering. We are not using any
+fact variables for this playbook.</li>
+</ul>
+<p>Do not close editor yet.</p>
+</div>
+<div class="section" id="step-3">
+<h3>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
+<p>Next, add the first <code class="docutils literal notranslate"><span class="pre">task</span></code>. This task will use the
+<code class="docutils literal notranslate"><span class="pre">bigip_device_info</span></code> module to grab useful information from the BIG-IP
+device.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">tasks:</span></code> item should line up to the same indentation as <code class="docutils literal notranslate"><span class="pre">gather_facts:</span></code>
+while the <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">name:</span></code> item should be indented 2 spaces under <code class="docutils literal notranslate"><span class="pre">tasks:</span></code></p>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">tasks</span><span class="p">:</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">COLLECT BIG-IP FACTS</span>
+    <span class="nt">bigip_device_info</span><span class="p">:</span>
+      <span class="nt">gather_subset</span><span class="p">:</span>
+       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">system-info</span>
+      <span class="nt">provider</span><span class="p">:</span>
+        <span class="nt">server</span><span class="p">:</span> <span class="s">&quot;{{private_ip}}&quot;</span>
+        <span class="nt">user</span><span class="p">:</span> <span class="s">&quot;{{ansible_user}}&quot;</span>
+        <span class="nt">password</span><span class="p">:</span> <span class="s">&quot;{{ansible_ssh_pass}}&quot;</span>
+        <span class="nt">server_port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8443</span>
+        <span class="nt">validate_certs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+    <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_facts</span>
+</pre></div>
+</div>
+<blockquote>
+<div>A play is a list of tasks. Tasks and modules have a 1:1 correlation.
+Ansible modules are reusable, standalone scripts that can be used by
+the Ansible API, or by the ansible or ansible-playbook programs. They
+return information to ansible by printing a JSON string to stdout
+before exiting.</div></blockquote>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">COLLECT</span> <span class="pre">BIG-IP</span> <span class="pre">FACTS</span></code> is a user defined description that
+will display in the terminal output.</li>
+<li><code class="docutils literal notranslate"><span class="pre">bigip_device_info:</span></code> tells the task which module to use. Everything
+except <code class="docutils literal notranslate"><span class="pre">register</span></code> is a module parameter defined on the module
+documentation page.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">gather_subset:</span> <span class="pre">system_info</span></code> parameter tells the module only to
+grab system level information.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">provider:</span></code> parameter is a group of connection details for the
+BIG-IP.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">server:</span> <span class="pre">&quot;{{private_ip}}&quot;</span></code> parameter tells the module to
+connect to the F5 BIG-IP IP address, which is stored as a variable
+<code class="docutils literal notranslate"><span class="pre">private_ip</span></code> in inventory</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">user:</span> <span class="pre">&quot;{{ansible_user}}&quot;</span></code> parameter tells the module the
+username to login to the F5 BIG-IP device with</li>
+<li>The<code class="docutils literal notranslate"><span class="pre">password:</span> <span class="pre">&quot;{{ansible_ssh_pass}}&quot;</span></code> parameter tells the module
+the password to login to the F5 BIG-IP device with</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">server_port:</span> <span class="pre">8443</span></code> parameter tells the module the port to
+connect to the F5 BIG-IP device with. 8443 is what’s being used in
+this lab, but could be different depending on the deployment.</li>
+<li><code class="docutils literal notranslate"><span class="pre">register:</span> <span class="pre">device_facts</span></code> tells the task to save the output to a
+variable bigip_device_info</li>
+</ul>
+</div>
+<div class="section" id="step-4">
+<h3>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h3>
+<p>Next, append the second <code class="docutils literal notranslate"><span class="pre">task</span></code> to above . This task will use the
+<code class="docutils literal notranslate"><span class="pre">debug</span></code> module to print the output from device_facts variable we
+registered the facts to.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION</span>
+  <span class="nt">debug</span><span class="p">:</span>
+    <span class="nt">var</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_facts</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">COMPLETE</span> <span class="pre">BIG-IP</span> <span class="pre">SYSTEM</span> <span class="pre">INFORMATION</span></code> is a user defined
+description that will display in the terminal output.</li>
+<li><code class="docutils literal notranslate"><span class="pre">debug:</span></code> tells the task to use the debug module.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">var:</span> <span class="pre">device_facts</span></code> parameter tells the module to display the
+variable bigip_device_info.</li>
+</ul>
+<p>Save the file and exit out of editor.</p>
+</div>
+<div class="section" id="step-5">
+<h3>Step 5<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h3>
+<p>Run the playbook - exit back into the command line of the control host
+and execute the following:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> ansible-playbook bigip-facts.yml
+</pre></div>
+</div>
+<p>The output will look as follows.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> ansible-playbook bigip-facts.yml
+
+<span class="go">PLAY [GRAB F5 FACTS] *****************************************************************************************************************************************</span>
+
+<span class="go">TASK [COLLECT BIG-IP FACTS] **********************************************************************************************************************************</span>
+<span class="go">ok: [f5]</span>
+
+<span class="go">TASK [DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION] ************************************************************************************************************</span>
+<span class="go">ok: [f5] =&gt;</span>
+<span class="go">  device_facts:</span>
+<span class="go">    ansible_facts:</span>
+<span class="go">      discovered_interpreter_python: /usr/bin/python</span>
+<span class="go">    changed: false</span>
+<span class="go">    failed: false</span>
+<span class="go">    queried: true</span>
+<span class="go">    system_info:</span>
+<span class="go">      base_mac_address: 06:95:66:ab:b6:1c</span>
+<span class="go">      chassis_serial: a2ad2fec-c283-2cc9-3610e7425914</span>
+<span class="go">      hardware_information:</span>
+<span class="go">      - model: Intel(R) Xeon(R) CPU E5-2666 v3 @ 2.90GHz</span>
+<span class="go">        name: cpus</span>
+<span class="go">        type: base-board</span>
+<span class="go">        versions:</span>
+<span class="go">        - name: cpu stepping</span>
+<span class="go">          version: &#39;2&#39;</span>
+<span class="go">        - name: cpu sockets</span>
+<span class="go">          version: &#39;1&#39;</span>
+<span class="go">        - name: cpu MHz</span>
+<span class="go">          version: &#39;2900.042&#39;</span>
+<span class="go">        - name: cores</span>
+<span class="go">          version: 8  (physical:4)</span>
+<span class="go">        - name: cache size</span>
+<span class="go">          version: 25600 KB</span>
+<span class="go">      marketing_name: BIG-IP Virtual Edition</span>
+<span class="go">      package_edition: Final</span>
+<span class="go">      package_version: Build 0.0.11 - Fri Aug  2 21:38:03 PDT 2019</span>
+<span class="go">      platform: Z100</span>
+<span class="go">      product_build: 0.0.11</span>
+<span class="go">      product_build_date: Fri Aug  2 21:38:03 PDT 2019</span>
+<span class="go">      product_built: 190802213803</span>
+<span class="go">      product_changelist: 3115640</span>
+<span class="go">      product_code: BIG-IP</span>
+<span class="go">      product_jobid: 1128587</span>
+<span class="go">      product_version: 15.0.1</span>
+<span class="go">      time:</span>
+<span class="go">        day: 19</span>
+<span class="go">        hour: 15</span>
+<span class="go">        minute: 41</span>
+<span class="go">        month: 2</span>
+<span class="go">        second: 1</span>
+<span class="go">        year: 2020</span>
+<span class="go">      uptime: 9380.0</span>
+
+<span class="go">PLAY RECAP ***************************************************************************************************************************************************</span>
+<span class="go">f5                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-6">
+<h3>Step 6<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h3>
+<p>Finally let’s append two more tasks to get more specific info from facts
+gathered, to the above playbook.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DISPLAY ONLY THE MAC ADDRESS</span>
+      <span class="nt">debug</span><span class="p">:</span>
+<span class="hll">        <span class="nt">var</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_facts[&#39;system_info&#39;][&#39;base_mac_address&#39;]</span>
+</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DISPLAY ONLY THE VERSION</span>
+      <span class="nt">debug</span><span class="p">:</span>
+<span class="hll">        <span class="nt">var</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_facts[&#39;system_info&#39;][&#39;product_version&#39;]</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">var:</span> <span class="pre">device_facts['system_info']['base_mac_address']</span></code> displays the
+MAC address for the Management IP on the BIG-IP device</li>
+<li><code class="docutils literal notranslate"><span class="pre">device_facts['system_info']['product_version']</span></code> displays the
+product version BIG-IP device</li>
+</ul>
+<blockquote>
+<div>Because the bigip_device_info module returns useful information in
+structured data, it is really easy to grab specific information
+without using regex or filters. Fact modules are very powerful tools
+to grab specific device information that can be used in subsequent
+tasks, or even used to create dynamic documentation (reports, csv
+files, markdown).</div></blockquote>
+</div>
+<div class="section" id="step-7">
+<h3>Step 7<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h3>
+<p>Run the playbook - exit back into the command line of the control host
+and execute the following:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> ansible-playbook bigip-facts.yml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="playbook-output">
+<h2>Playbook Output<a class="headerlink" href="#playbook-output" title="Permalink to this headline">¶</a></h2>
+<p>The output will look as follows.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">[centos@ansible ~]$</span> ansible-playbook bigip-facts.yml
+
+<span class="go">PLAY [GRAB F5 FACTS] *****************************************************************************************************************************************</span>
+
+<span class="go">TASK [COLLECT BIG-IP FACTS] **********************************************************************************************************************************</span>
+<span class="go">ok: [f5]</span>
+
+<span class="go">TASK [DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION] ************************************************************************************************************</span>
+<span class="go">ok: [f5] =&gt;</span>
+<span class="go">  device_facts:</span>
+<span class="go">    ansible_facts:</span>
+<span class="go">      discovered_interpreter_python: /usr/bin/python</span>
+<span class="go">    changed: false</span>
+<span class="go">    failed: false</span>
+<span class="go">    queried: true</span>
+<span class="go">    system_info:</span>
+<span class="go">      base_mac_address: 06:95:66:ab:b6:1c</span>
+<span class="go">      chassis_serial: a2ad2fec-c283-2cc9-3610e7425914</span>
+<span class="go">      hardware_information:</span>
+<span class="go">      - model: Intel(R) Xeon(R) CPU E5-2666 v3 @ 2.90GHz</span>
+<span class="go">        name: cpus</span>
+<span class="go">        type: base-board</span>
+<span class="go">        versions:</span>
+<span class="go">        - name: cpu stepping</span>
+<span class="go">          version: &#39;2&#39;</span>
+<span class="go">        - name: cpu sockets</span>
+<span class="go">          version: &#39;1&#39;</span>
+<span class="go">        - name: cpu MHz</span>
+<span class="go">          version: &#39;2900.042&#39;</span>
+<span class="go">        - name: cores</span>
+<span class="go">          version: 8  (physical:4)</span>
+<span class="go">        - name: cache size</span>
+<span class="go">          version: 25600 KB</span>
+<span class="go">      marketing_name: BIG-IP Virtual Edition</span>
+<span class="go">      package_edition: Final</span>
+<span class="go">      package_version: Build 0.0.11 - Fri Aug  2 21:38:03 PDT 2019</span>
+<span class="go">      platform: Z100</span>
+<span class="go">      product_build: 0.0.11</span>
+<span class="go">      product_build_date: Fri Aug  2 21:38:03 PDT 2019</span>
+<span class="go">      product_built: 190802213803</span>
+<span class="go">      product_changelist: 3115640</span>
+<span class="go">      product_code: BIG-IP</span>
+<span class="go">      product_jobid: 1128587</span>
+<span class="go">      product_version: 15.0.1</span>
+<span class="go">      time:</span>
+<span class="go">        day: 19</span>
+<span class="go">        hour: 15</span>
+<span class="go">        minute: 42</span>
+<span class="go">        month: 2</span>
+<span class="go">        second: 4</span>
+<span class="go">        year: 2020</span>
+<span class="go">      uptime: 9443.0</span>
+
+<span class="go">TASK [DISPLAY ONLY THE MAC ADDRESS] **************************************************************************************************************************</span>
+<span class="go">ok: [f5] =&gt;</span>
+<span class="go">  device_facts[&#39;system_info&#39;][&#39;base_mac_address&#39;]: 06:95:66:ab:b6:1c</span>
+
+<span class="go">TASK [DISPLAY ONLY THE VERSION] ******************************************************************************************************************************</span>
+<span class="go">ok: [f5] =&gt;</span>
+<span class="go">  device_facts[&#39;system_info&#39;][&#39;product_version&#39;]: 15.0.1</span>
+
+<span class="go">PLAY RECAP ***************************************************************************************************************************************************</span>
+<span class="go">f5                         : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p>The finished Ansible Playbook is provided here for an Answer key. Click
+here for
+<a class="reference download internal" download="" href="../../_downloads/e33b65c60749a2784e1995901b1aac7f/bigip-facts.yml"><code class="xref download docutils literal notranslate"><span class="pre">bigip-facts.yml</span></code></a>.</p>
+</div>
+<div class="section" id="going-further">
+<h2>Going Further<a class="headerlink" href="#going-further" title="Permalink to this headline">¶</a></h2>
+<p>For this bonus exercise add the <code class="docutils literal notranslate"><span class="pre">tags:</span> <span class="pre">debug</span></code> paramteter (at the task
+level) to the existing debug task.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION</span>
+  <span class="nt">debug</span><span class="p">:</span>
+    <span class="nt">var</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">device_facts</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
+</pre></div>
+</div>
+<p>Now re-run the playbook with the <code class="docutils literal notranslate"><span class="pre">--skip-tags-debug</span></code> command line
+option.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="go">ansible-playbook bigip-facts.yml --skip-tags=debug</span>
+</pre></div>
+</div>
+<p>The Ansible Playbook will only run three tasks, skipping the
+<code class="docutils literal notranslate"><span class="pre">DISPLAY</span> <span class="pre">COMPLETE</span> <span class="pre">BIG-IP</span> <span class="pre">SYSTEM</span> <span class="pre">INFORMATION</span></code> task.</p>
+<p>You have finished this exercise. <a class="reference external" href="..">Click here to return to the lab
+guide</a></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="1.0-explore.html" title="Exercise 1.0: Exploring the lab environment" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="1.2-add-node.html" title="Exercise 1.2: Adding nodes to F5 BIG-IP" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>
